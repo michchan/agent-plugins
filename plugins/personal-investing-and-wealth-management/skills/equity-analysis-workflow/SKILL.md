@@ -56,10 +56,8 @@ QUARTERLY
 
 ONGOING / AD-HOC
   New idea       →  screen → sector → [initiate: Phase 2] → thesis
-  Portfolio      →  wealth-management:rebalance + equity-research:catalysts
 
 ANNUAL
-  Tax review     →  wealth-management:tlh
   Full review    →  equity-research:thesis (reaffirm or close each position)
 ```
 

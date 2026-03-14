@@ -24,6 +24,4 @@ Model bull/base/bear scenarios. Define what would constitute a beat, miss, or th
 ## Annual Review
 ```
 /equity-research:thesis         ← reaffirm or close each position
-wealth-management:tlh           ← tax-loss harvesting opportunities
-wealth-management:rebalance     ← drift check, rebalancing trades
 ```
