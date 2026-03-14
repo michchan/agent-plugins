@@ -1,0 +1,8 @@
+{
+  "name": "personal-investing-and-wealth-management",
+  "version": "0.1.0",
+  "description": "A plugin for managing personal investments and wealth, riding on the official financial service plugins from Anthropics. It provides features such as portfolio tracking, financial planning, and investment advice.",
+  "author": {
+    "name": "Michael Chan"
+  }
+}
