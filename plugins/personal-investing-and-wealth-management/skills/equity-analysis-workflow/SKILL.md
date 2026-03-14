@@ -99,197 +99,40 @@ See `references/data-fetch-protocol.md` for exact URLs and prompt strings.
 
 ## Phase 1 — Screening & Idea Generation
 
-The top of the funnel. Start here when you don't have a specific name yet.
-
-### Entry Points
-
-**Top-down** (macro → sector → names)
-```
-/equity-research:sector
-```
-Get a sector overview first. Identify where you want exposure, then drill into individual names.
-Good for building Defensive or Core positions where sector health matters.
-
-**Bottom-up** (criteria → names)
-```
-/equity-research:screen
-```
-Run a screen with your criteria. For Defensive: dividend yield, payout ratio, beta, debt/equity.
-For Core: FCF yield, ROIC, revenue growth consistency. For Satellite: revenue growth rate, TAM estimates.
-
-**Event-driven** (catalyst → entry point)
-```
-/equity-research:catalysts
-```
-Check the catalyst calendar for upcoming events across your watchlist or a sector. Useful for
-identifying asymmetric entry points before earnings, product launches, or regulatory decisions.
-
-### Output
-Save screening outputs to `/Equity-analyses/{Type}/Screening/`.
+Top of funnel. Start here when you don't have a specific name yet.
+**Read** `references/phase-1-screening.md` before starting this phase.
 
 ---
 
 ## Phase 2 — Deep Dive (Initiation)
 
-For any stock that clears screening, this phase builds conviction. It runs as a **sequential workflow**
-with a mandatory data-fetch pre-step to minimize token usage.
-
-**Before starting: confirm with the user:**
-1. Equity type (Defensive / Core / Satellite)
-2. Lifecycle stage (Watchlist — not yet held, or Screening — still evaluating)
-
-This determines the folder path for all outputs.
-
-### Modified Initiation Workflow
-
-| Step | Action | Token optimization |
-|------|--------|--------------------|
-| **0. Data Fetch** (mandatory pre-step) | Read `references/data-fetch-protocol.md`, fetch from EDGAR + targeted sources, save to `{TICKER}-data.md` | Front-loads all data in one pass |
-| **1. Company Research** | `/equity-research:initiating-coverage` Task 1 | Read `{TICKER}-data.md` — do not re-fetch |
-| **1b. Competitive Context** (optional, recommended for Core/Satellite) | `/financial-analysis:competitive-analysis` | Read `{TICKER}-data.md` for competitor list |
-| **2. Financial Model** | `/equity-research:initiating-coverage` Task 2 | Read `{TICKER}-data.md` for historical financials |
-| **3. Valuation (DCF)** | `/financial-analysis:dcf` | Read `{TICKER}-data.md` + Task 2 model output |
-| **4. Peer Comparison** | `/financial-analysis:comps` | Read `{TICKER}-data.md` for peer list |
-| **5. Full Report** | `/equity-research:initiating-coverage` Task 5 | Read all prior task outputs |
-
-### Step 0 — Data Fetch (detailed instructions)
-
-1. Read `references/data-fetch-protocol.md` in full before fetching anything.
-2. Fetch EDGAR filing index for `{TICKER}` to get the latest 10-K URL.
-3. Fetch the 10-K with the financial statements prompt from the protocol.
-4. Fetch the 10-K with the business description prompt.
-5. Fetch the 10-K with the risk factors prompt.
-6. If KPIs are not in the 10-K, fetch the company IR page with the key metrics prompt.
-7. Fetch Yahoo Finance only for: current stock price, 52-week range, consensus EPS estimates.
-8. Assemble all data into `{TICKER}-data.md` using the structure in `references/data-fetch-protocol.md`.
-
-### Equity-Type Emphasis in Phase 2
-
-| Type | Emphasize in Tasks 1–5 |
-|------|----------------------|
-| Defensive | Dividend history and payout ratio sustainability; debt maturity profile; regulatory moat |
-| Core | Moat sources and durability; FCF conversion; reinvestment rate and ROIC vs. WACC |
-| Satellite | TAM sizing and penetration assumption; unit economics (CAC/LTV or gross margin trajectory); path to FCF positivity |
+Sequential workflow that builds conviction on a specific stock.
+**Read** `references/phase-2-deep-dive.md` before starting this phase.
 
 ---
 
 ## Phase 3 — Comparison & Relative Value
 
-After the deep dive, validate the stock against peers before committing capital.
-
-```
-/financial-analysis:comps
-```
-Build EV/EBITDA, P/E, EV/Revenue, EV/FCF vs. the peer group. Answer: are you paying a premium,
-at parity, or getting a discount? Is the premium/discount justified?
-
-```
-/financial-analysis:competitive-analysis
-```
-Positioning, moat durability, competitive threats. Especially important for Satellite positions
-where you're making a differentiated bet against consensus.
-
-**Key question by type:**
-- Defensive: Is the dividend yield above peers? Is the balance sheet stronger?
-- Core: Is the FCF yield at a discount to intrinsic value? Does ROIC exceed peers?
-- Satellite: Is the growth rate and TAM opportunity better than peers at this valuation?
+Validate the stock against peers before committing capital.
+**Read** `references/phase-3-comparison.md` before starting this phase.
 
 ---
 
 ## Phase 4 — Thesis Documentation
 
-Before buying, lock the thesis in writing. This is your anchor for every future review.
-
-```
-/equity-research:thesis
-```
-
-**Fields to fill carefully for personal investing context:**
-
-- **Equity type**: Defensive / Core / Satellite (from your classification)
-- **Variant perception**: What do you believe that the market is underpricing?
-- **Key assumptions**: 3–5 specific, falsifiable assumptions the thesis rests on
-- **Invalidation criteria**: What specific events or data points would make you sell?
-  (Be explicit — e.g. "FCF margin falls below 15% for 2 consecutive quarters" not "fundamentals deteriorate")
-- **Position sizing rationale**: Why this size given the type? (Defensive: income weight; Core: conviction weight; Satellite: capped at risk budget)
-- **Price target and horizon**: Intrinsic value estimate + time to realize
-
-Save to `/Equity-analyses/{Type}/Watchlist/{TICKER}/Thesis/thesis-v1-{YYYY-MM}.md`.
+Lock the investment thesis in writing before buying.
+**Read** `references/phase-4-thesis.md` before starting this phase.
 
 ---
 
 ## Phase 5 — Ongoing Review
 
-Once a position is open (folder moves to `/Holding/`), shift to monitoring cadence.
-
-### Pre-Earnings
-```
-/equity-research:earnings-preview
-```
-Model bull/base/bear scenarios. Define what would constitute a beat, miss, or thesis-confirming quarter.
-
-### Post-Earnings
-```
-/equity-research:earnings       ← beat/miss analysis, thesis check
-/equity-research:model-update   ← update actuals, revise forward estimates
-/equity-research:thesis         ← update or reaffirm; never let it go stale
-```
-
-### Between Earnings (lightweight)
-```
-/equity-research:morning-note   ← macro + portfolio-level developments
-/equity-research:catalysts      ← upcoming events across full portfolio
-```
-
-### Annual Review
-```
-/equity-research:thesis         ← reaffirm or close each position
-wealth-management:tlh           ← tax-loss harvesting opportunities
-wealth-management:rebalance     ← drift check, rebalancing trades
-```
+Monitoring cadence for open positions (pre/post-earnings, between, annual).
+**Read** `references/phase-5-ongoing-review.md` before starting this phase.
 
 ---
 
 ## Folder Structure
 
-**Always ask the user to confirm equity type and lifecycle stage before creating any files.**
-This ensures outputs land in the correct folder.
-
-```
-/Equity-analyses/
-  /Defensive/
-    /Screening/        ← Phase 1 screening outputs
-    /Watchlist/        ← initiated, not yet held
-    /Holding/          ← current positions
-    /Closed/           ← exited positions
-  /Core/
-    /Screening/
-    /Watchlist/
-    /Holding/
-    /Closed/
-  /Satellite/
-    /Screening/
-    /Watchlist/
-    /Holding/
-    /Closed/
-
-  /{Type}/{Stage}/{TICKER}/
-    {TICKER}-data.md                       ← Phase 2 data cache (Step 0 output)
-    /Initiation/
-      company-research.md                  ← Phase 2 Task 1
-      competitive-analysis.md              ← Phase 2 Task 1b (optional)
-      financial-model.xlsx                 ← Phase 2 Task 2
-      dcf-model.xlsx                       ← Phase 2 Task 3
-      comps.xlsx                           ← Phase 2 Task 4
-      initiation-report.docx               ← Phase 2 Task 5
-    /Thesis/
-      thesis-v1-{YYYY-MM}.md               ← Phase 4 (increment version on major updates)
-    /Reviews/
-      {YYYY}-Q{N}-earnings-preview.md      ← Phase 5 pre-earnings
-      {YYYY}-Q{N}-earnings-update.md       ← Phase 5 post-earnings
-```
-
-### Lifecycle transitions
-- **Screening → Watchlist**: After Phase 2 initiation + Phase 4 thesis. Stock clears your bar but you haven't bought yet.
-- **Watchlist → Holding**: After buying. Move the folder; no file changes needed.
-- **Holding → Closed**: After selling. Move the folder; add a closing note to the thesis file with exit rationale and date.
+**Always confirm equity type and lifecycle stage with the user before creating any files.**
+**Read** `references/folder-structure.md` for the full tree and lifecycle transition rules.
