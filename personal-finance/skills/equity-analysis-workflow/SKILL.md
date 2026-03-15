@@ -43,6 +43,8 @@ Whenever this workflow instructs you to run a skill — shown as `/namespace:nam
 **Always confirm equity type and lifecycle stage with the user before creating any files.**
 **Read** `references/folder-structure.md` for the full tree and lifecycle transition rules.
 
+**Ignore** any file in a `/_archived/` folder.
+
 ---
 
 ## Workflow Map

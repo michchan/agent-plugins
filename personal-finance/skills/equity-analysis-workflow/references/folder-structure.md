@@ -5,10 +5,12 @@ This ensures outputs land in the correct folder.
 
 ```
 /Equity-analyses/
-  /Screening/                              ← Phase 1 outputs (equity type not yet determined)
-    top-down-{SECTOR}-{YYYY-MM}.md         ← Phase 1 top-down: sector macro + ETF data (overwrite per session)
-    bottom-up-{CRITERIA}-{YYYY-MM}.md      ← Phase 1 bottom-up: screen results (new file per run)
-    events-{YYYY-MM}.md                    ← Phase 1 event-driven: catalyst calendar (overwrite per session)
+  /Screening/                            ← Phase 1 outputs (equity type not yet determined)
+    /Data/                               ← Phase 1 data files (caches)
+    top-down-{SECTOR}-{YYYY-MM}.md       ← Phase 1 top-down: sector macro + ETF data (overwrite per session)
+    bottom-up-{CRITERIA}-{YYYY-MM}.md    ← Phase 1 bottom-up: screen results (new file per run)
+    events-{YYYY-MM}.md                  ← Phase 1 event-driven: catalyst calendar (overwrite per session)
+    /_archived/                          ← ignored/superseded screening cache files
   /Defensive/
     /Watchlist/        ← initiated, not yet held
     /Holding/          ← current positions
@@ -23,7 +25,7 @@ This ensures outputs land in the correct folder.
     /Closed/
 
   /{Type}/{Stage}/{TICKER}/
-    /Data/                                         ← data cache files (inputs to skills)
+    /Data/                                         ← data files (caches) (inputs to skills)
       company-research.md                          ← Phase 2 Step 1a (refresh: ~12 months / 10-K)
       financial-model.md                           ← Phase 2 Step 2 (refresh: ~3 months / earnings)
       comps.md                                     ← Phase 3 Step 1 (refresh: ~3 months)
@@ -31,6 +33,7 @@ This ensures outputs land in the correct folder.
       Q{N}-{YEAR}-earnings.md                      ← Phase 5 post-earnings (per event, archived)
       between-earnings.md                          ← Phase 5 between-earnings (overwritten each session)
       {YEAR}-annual-review.md                      ← Phase 5 annual review (per year, archived)
+      /_archived/                                  ← ignored/superseded data cache files
     /Initiation/
       company-research.md                          ← Phase 2 Step 1a
       competitive-analysis.md                      ← Phase 2 Step 1b (optional)
