@@ -1,6 +1,6 @@
 {
   "name": "personal-finance",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A personal finance plugin covering investing, portfolio management, and financial planning. Wraps Anthropic's equity-research and financial-analysis skills with a personal investor lens.",
   "author": {
     "name": "Michael Chan"

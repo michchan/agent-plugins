@@ -2,6 +2,12 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.1.2] - 2026-03-16
+
+### Changed
+
+- **Top-down screening references**: Added 5 new data fields to `data-requirements.md`, `data-file-template.md`, and `data-fetch-protocol.md` to close gaps identified across two consecutive sector screens (cybersecurity, financial services). New fields: Market Size & TAM, Competitive Landscape, Peer Revenue Snapshot, Regulatory / Structural Risks, Recent M&A / Corporate Events. Updated Analyst Consensus field to include top stock picks by name.
+
 ## [0.1.1] - 2026-03-15
 
 ### Changed
