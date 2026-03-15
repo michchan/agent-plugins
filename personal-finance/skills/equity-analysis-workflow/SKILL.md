@@ -26,7 +26,7 @@ which metrics matter most.
 | **Core** | Stable, long-term wealth accumulation | Medium volatility, strong moat, sustainable growth, slightly outperforms benchmark |
 | **Satellite** | Substantial outperformance, concentrated bet | High volatility, exploding growth, disruptive, may be unprofitable |
 
-Confirm the equity type with the user before starting any phase.
+Confirm the equity type with the user before starting Phase 2 or later. Phase 1 (Screening) is type-agnostic — equity type is not yet determined.
 
 ---
 
@@ -100,7 +100,7 @@ Offer two options:
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
 1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
-2. Determine the file path from `references/folder-structure.md` (e.g. `top-down-{SECTOR}-{YYYY-MM}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
+2. Determine the file path from `references/folder-structure.md` (e.g. `top-down-{SECTOR}-{YYYY-MM-DD}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.
@@ -122,5 +122,3 @@ If the expected previous-step cache file is not found:
 ### 3. Invoke delegated skills to analyze and compose the report
 
 Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
-
-**Skill invocation is unconditional.** The user's choice of Auto-fetch vs. Manual prompt in Step 2 controls how data is collected — it is never a reason to skip calling the skill.

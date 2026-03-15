@@ -6,7 +6,7 @@ Invoke skill `equity-research:thesis`.
 
 ## Save path
 
-`/Equity-analyses/{Type}/Watchlist/{TICKER}/Thesis/thesis-v1-{YYYY-MM}.md`
+`/Equity-analyses/{Type}/Watchlist/{TICKER}/Thesis/thesis-v1-{YYYY-MM-DD}.md`
 
 ## Detailed Instruction Map
 
