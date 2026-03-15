@@ -94,8 +94,18 @@ Each subdirectory contains three files:
 Before fetching any data, ask the user to confirm the fetch.
 Offer two options:
 
-1. **Auto-fetch** — proceed with fetching directly
+1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/folder-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
 2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using `data-requirements.md` for fields/sources and `data-file-template.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
+
+### Post-fetch: write the cache file
+
+After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
+
+1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
+2. Determine the file path from `references/folder-structure.md` (e.g. `bottom-up-{CRITERIA}-{YYYY-MM}.md` under `/Equity-analyses/Screening/`)
+3. Write the file using the Write tool — do not skip this step, even for one-off screens
+
+This cache file is the single source of truth for downstream analysis and cross-step dependencies.
 
 ### Cross-step data dependencies
 
