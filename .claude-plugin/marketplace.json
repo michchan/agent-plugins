@@ -4,13 +4,13 @@
     "name": "Michael Chan"
   },
   "metadata": {
-    "description": "Personal Claude Code plugins for investing and wealth management"
+    "description": "Personal Claude Code plugins for finance, investing, and portfolio management"
   },
   "plugins": [
     {
-      "name": "personal-investing-and-wealth-management",
-      "source": "./personal-investing-and-wealth-management",
-      "description": "Equity analysis and wealth management tools"
+      "name": "personal-finance",
+      "source": "./personal-finance",
+      "description": "Personal finance tools covering equity analysis, portfolio management, and financial planning"
     }
   ]
 }

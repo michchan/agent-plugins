@@ -4,9 +4,9 @@ A collection of Claude Code plugins extending AI agent capabilities for personal
 
 ## Plugins
 
-### `personal-investing-and-wealth-management`
+### `personal-finance`
 
-Skills and commands for a buy-and-hold, core-satellite equity investor. Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with a personal investor lens.
+Skills and commands for personal finance — investing, portfolio management, and financial planning. Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with a personal investor lens.
 
 **Skills**
 - `equity-analysis-workflow` — Full 5-phase workflow: screening → deep dive → comparison → thesis → ongoing review
