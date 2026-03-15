@@ -20,18 +20,13 @@ Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with opi
 Before any analysis, classify the equity. The type determines what you're optimizing for and
 which metrics matter most.
 
-| Type | Goal | Nature | Key Evaluation Criteria |
-|------|------|--------|------------------------|
-| **Defensive** | Cash parking with yield above bonds | Low volatility, high income, defensive sector | Dividend yield >3%, beta <0.8, payout ratio sustainability, balance sheet strength. Sectors: utilities, consumer staples, healthcare |
-| **Core** | Stable, long-term wealth accumulation | Medium volatility, strong moat, sustainable growth, slightly outperforms benchmark | Moat durability (brand/switching costs/network), 5-year FCF CAGR, valuation vs. intrinsic value. Revenue growth 8–15% |
-| **Satellite** | Substantial outperformance, concentrated bet | High volatility, exploding growth, disruptive, may be unprofitable | TAM size and penetration rate, growth durability, unit economics trajectory, path to profitability. Revenue growth >20% or early-stage |
+| Type | Goal | Nature |
+|------|------|--------|
+| **Defensive** | Cash parking with yield above bonds | Low volatility, high income, defensive sector |
+| **Core** | Stable, long-term wealth accumulation | Medium volatility, strong moat, sustainable growth, slightly outperforms benchmark |
+| **Satellite** | Substantial outperformance, concentrated bet | High volatility, exploding growth, disruptive, may be unprofitable |
 
-**Classification quick check — ask yourself:**
-- Dividend yield >3% and beta <0.8? → Defensive
-- Consistent profitable growth, strong FCF, durable competitive advantage? → Core
-- Revenue growth >20%, large TAM, disruptive model, early-stage? → Satellite
-
-If unsure, default to Core and revisit after the deep dive.
+Confirm the equity type with the user before starting any phase.
 
 ---
 

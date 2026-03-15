@@ -3,5 +3,10 @@
     "financial-analysis@financial-services-plugins": true,
     "equity-research@financial-services-plugins": true,
     "wealth-management@financial-services-plugins": true
+  },
+  "permissions": {
+    "allow": [
+      "WebSearch"
+    ]
   }
 }

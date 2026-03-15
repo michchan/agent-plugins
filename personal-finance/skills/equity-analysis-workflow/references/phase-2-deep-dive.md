@@ -6,6 +6,7 @@ with a mandatory data-fetch pre-step to minimize token usage.
 **Before starting: confirm with the user:**
 1. Equity type (Defensive / Core / Satellite)
 2. Lifecycle stage (Watchlist — not yet held, or Screening — still evaluating)
+3. Whether to run steps one at a time (pausing for review between each) or all at once
 
 This determines the folder path for all outputs.
 
@@ -32,10 +33,3 @@ This determines the folder path for all outputs.
 7. Fetch Yahoo Finance only for: current stock price, 52-week range, consensus EPS estimates.
 8. Assemble all data into `{TICKER}-data.md` using the structure in `references/data-fetch-protocol.md`.
 
-## Equity-Type Emphasis in Phase 2
-
-| Type | Emphasize in Tasks 1–5 |
-|------|----------------------|
-| Defensive | Dividend history and payout ratio sustainability; debt maturity profile; regulatory moat |
-| Core | Moat sources and durability; FCF conversion; reinvestment rate and ROIC vs. WACC |
-| Satellite | TAM sizing and penetration assumption; unit economics (CAC/LTV or gross margin trajectory); path to FCF positivity |
