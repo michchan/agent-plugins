@@ -1,6 +1,26 @@
 # Data Fetch Protocol
 
-Token-efficient data fetching for equity analysis. Read this before any Phase 2 fetch.
+Token-efficient data fetching for Phase 2 (Deep Dive). Read this before fetching anything in Step 0.
+
+---
+
+## Fetch Rules
+
+### Rule 1 — Targeted WebFetch Prompts
+Every WebFetch call must include a tight `prompt` parameter. Examples:
+
+- Financials: `"Extract: revenue, operating income, net income, FCF, total debt, cash for last 4 fiscal years only. No prose."`
+- Business description: `"Extract: business segments, revenue by segment, key products, pricing model, major customers. Under 400 words."`
+- Risk factors: `"List top 10 risk factors as bullet points only. No headers, no sub-bullets."`
+- Management: `"Extract: CEO name and tenure, CFO name and tenure. Under 150 words."`
+
+### Rule 2 — EDGAR-First for Financials
+For any public company, use SEC EDGAR structured endpoints before IR pages or news:
+
+1. EDGAR filing index → get 10-K URL
+2. Fetch 10-K with targeted financial prompt
+3. Fall back to company IR page only for segment/KPI data not in EDGAR
+4. Fall back to Yahoo Finance only for stock price and consensus estimates
 
 ---
 

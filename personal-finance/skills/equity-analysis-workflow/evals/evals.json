@@ -1,0 +1,43 @@
+{
+  "skill_name": "equity-analysis-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run the equity:phase-1-screen command with arguments: top down, core/growth, cybersecurity",
+      "expected_output": "A sector overview report for cybersecurity saved under Equity-analyses/Core/Screening/, generated via equity-research:sector. The agent should classify the equity as Core, use top-down approach, invoke equity-research:sector, and stop at Phase 1.",
+      "files": [],
+      "assertions": [
+        "The agent classifies the equity type as Core (not Defensive or Satellite)",
+        "The agent selects the top-down entry point and invokes equity-research:sector (not screen or catalysts)",
+        "The output is saved to a path matching Equity-analyses/Core/Screening/",
+        "The agent does not proceed to Phase 2 or beyond (no initiating coverage, DCF, or comps)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Run the equity:phase-1-screen command with arguments: bottom-up, satellite, high-growth software companies with strong FCF and insider buying, trading below 5-year average NTM P/S multiple",
+      "expected_output": "A stock screen for high-growth software satellite names saved under Equity-analyses/Satellite/Screening/, generated via equity-research:screen with the user's criteria. Agent classifies as Satellite, uses bottom-up approach.",
+      "files": [],
+      "assertions": [
+        "The agent classifies the equity type as Satellite",
+        "The agent selects the bottom-up entry point and invokes equity-research:screen (not sector or catalysts)",
+        "The screening criteria reference FCF strength and/or insider buying and/or NTM P/S valuation",
+        "The output is saved to a path matching Equity-analyses/Satellite/Screening/",
+        "The agent does not proceed to Phase 2 or beyond"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Run the equity:phase-1-screen command with arguments: event-driven, defensive, utilities sector — looking for dividend plays with upcoming analyst days or regulatory decisions ahead of expected rate cuts",
+      "expected_output": "A catalyst calendar or event-driven idea list for defensive utility names saved under Equity-analyses/Defensive/Screening/, generated via equity-research:catalysts. Agent classifies as Defensive, uses event-driven approach.",
+      "files": [],
+      "assertions": [
+        "The agent classifies the equity type as Defensive",
+        "The agent selects the event-driven entry point and invokes equity-research:catalysts (not sector or screen)",
+        "The output references upcoming events, catalysts, or dividend-related triggers in utilities",
+        "The output is saved to a path matching Equity-analyses/Defensive/Screening/",
+        "The agent does not proceed to Phase 2 or beyond"
+      ]
+    }
+  ]
+}

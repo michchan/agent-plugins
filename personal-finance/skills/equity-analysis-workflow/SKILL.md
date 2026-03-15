@@ -58,38 +58,6 @@ ANNUAL
 
 ---
 
-## Token Optimization Rules
-
-**These rules apply to every phase. Read them once; inherit them everywhere.**
-
-### Rule 1 — Fetch Once, Pass Forward (highest impact)
-When executing Phase 2, **Task 0 (Data Fetch pre-step) must run first** and save all company data
-to `{TICKER}-data.md` in the equity folder. Tasks 1–5 **read that file** rather than re-fetching.
-
-> Do not re-fetch a section if its `Fetched:` date is within the threshold in
-> `references/data-fetch-protocol.md`. Stock price and consensus estimates are never
-> cached — always fetch fresh.
-
-### Rule 2 — Targeted WebFetch Prompts
-Every WebFetch call must include a tight `prompt` parameter. Examples:
-
-- Financials: `"Extract: revenue, operating income, net income, FCF, total debt, cash for last 4 fiscal years only. No prose."`
-- Business description: `"Extract: business segments, revenue by segment, key products, pricing model, major customers. Under 400 words."`
-- Risk factors: `"List top 10 risk factors as bullet points only. No headers, no sub-bullets."`
-- Management: `"Extract: CEO name and tenure, CFO name and tenure. Under 150 words."`
-
-### Rule 3 — EDGAR-First for Financials
-For any public company, use SEC EDGAR structured endpoints before IR pages or news:
-
-1. EDGAR filing index → get 10-K URL
-2. Fetch 10-K with targeted financial prompt
-3. Fall back to company IR page only for segment/KPI data not in EDGAR
-4. Fall back to Yahoo Finance only for stock price and consensus estimates
-
-See `references/data-fetch-protocol.md` for exact URLs and prompt strings.
-
----
-
 ## Sub-Skill Invocation
 
 Whenever this workflow instructs you to run a skill — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
