@@ -68,3 +68,43 @@ ONGOING / AD-HOC
 ANNUAL
   Full review    →  Phase 5 (annual review)
 ```
+
+---
+
+## Data Handling
+
+These rules apply to every phase and step.
+
+### Locating reference files
+
+Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
+That table maps each step to a subdirectory (e.g. `step-1a-company-research/`).
+Each subdirectory contains three files:
+
+| File | When to read |
+|---|---|
+| `data-requirements.md` | When you need to know what data fields are required, or what the cache TTL / refresh policy is |
+| `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
+| `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
+
+### Pre-fetch confirmation
+
+Before fetching any data, ask the user to confirm the fetch.
+Offer two options:
+
+1. **Auto-fetch** — proceed with fetching directly
+2. **Manual prompt** — compose a fetch prompt based on `data-requirements.md` and `data-file-template.md`, return it in a code block so the user can copy-paste it into their own tools
+
+### Cross-step data dependencies
+
+Some fields in a step's data file depend on cached output from a previous step (for token efficiency).
+If the expected previous-step cache file is not found:
+- Do **not** silently skip or blindly re-fetch
+- Ask the user: was the previous step intentionally skipped, or should you re-fetch the missing data?
+- Proceed only after the user confirms
+
+### Fetch resilience
+
+- Give each individual fetch task a reasonable timeout; do not wait indefinitely
+- If a fetch times out or fails, do **not** retry silently — surface the failure to the user
+- Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data

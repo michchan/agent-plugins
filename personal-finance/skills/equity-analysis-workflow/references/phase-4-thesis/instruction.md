@@ -7,3 +7,9 @@ Invoke skill `equity-research:thesis`.
 ## Save path
 
 `/Equity-analyses/{Type}/Watchlist/{TICKER}/Thesis/thesis-v1-{YYYY-MM}.md`
+
+## Detailed Instruction Map
+
+| Task | Instructions |
+|---|---|
+| Thesis | `thesis/` |

@@ -10,5 +10,10 @@ These are different approaches — ask the user which to use before proceeding:
 - **Bottom-up** (criteria → names): `equity-research:screen` — screen with user's criteria
 - **Event-driven** (catalyst → entry point): `equity-research:catalysts` — upcoming events across watchlist or sector
 
-## Output
-Save screening outputs to `/Equity-analyses/{Type}/Screening/`.
+## Detailed Instruction Map
+
+| Task | Instructions |
+|---|---|
+| Top-down screening | `top-down/` |
+| Bottom-up screening | `bottom-up/` |
+| Event-driven screening | `event-driven/` |
