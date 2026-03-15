@@ -1,4 +1,5 @@
 ---
+name: Release
 description: Bump plugin version, commit, and tag the release
 argument-hint: "[plugin-name] [patch|minor|major]"
 ---
