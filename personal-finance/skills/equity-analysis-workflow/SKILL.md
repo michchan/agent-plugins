@@ -34,6 +34,8 @@ Confirm the equity type with the user before starting any phase.
 
 Whenever this workflow instructs you to run a skill — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
 
+**Skill invocation is unconditional.** The user's choice of Auto-fetch vs. Manual prompt (see Data Handling below) controls how data is fetched *inside* a skill — it is never a reason to skip calling the skill. Always invoke the skill via the Skill tool first, then handle data fetching within the skill's own flow.
+
 ---
 
 ## Folder Structure
