@@ -10,18 +10,17 @@ Skills and commands for personal finance — investing, portfolio management, an
 
 **Skills**
 - `equity-analysis-workflow` — Full 5-phase workflow: screening → deep dive → comparison → thesis → ongoing review
+- `accounting-workflow` *(planned)*
+- `portfolio-management-workflow` *(planned)*
 
-**Commands** (`/equity-analysis/...`)
+**Commands** (`/equity:...`)
 | Command | Description |
 |---------|-------------|
-| `screen` | Screen for equity ideas by type (Defensive / Core / Satellite) |
-| `initiate` | Run a full deep-dive initiation on a stock |
-| `compare` | Compare a stock against peers for relative value |
-| `thesis` | Create or update an investment thesis |
-| `earnings-preview` | Build pre-earnings scenarios |
-| `earnings` | Analyze quarterly earnings results |
-| `catalysts` | View or update the catalyst calendar |
-| `morning-note` | Draft a morning meeting note |
+| `phase-1-screen` | Screen for equity ideas (top-down / bottom-up / event-driven) |
+| `phase-2-deep-dive` | Full deep-dive initiation on a stock |
+| `phase-3-compare` | Compare a stock against peers (comps + competitive analysis) |
+| `phase-4-thesis` | Write or update an investment thesis |
+| `phase-5-review` | Ongoing position review (pre/post-earnings, between-earnings, annual) |
 
 ## Structure
 
