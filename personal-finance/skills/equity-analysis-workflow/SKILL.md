@@ -93,7 +93,7 @@ Before fetching any data, ask the user to confirm the fetch.
 Offer two options:
 
 1. **Auto-fetch** — proceed with fetching directly
-2. **Manual prompt** — compose a fetch prompt based on `data-requirements.md` and `data-file-template.md`, return it in a code block so the user can copy-paste it into their own tools. In the prompt, also ask the tool explicitly "Return as a markdown codeblock".
+2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using `data-requirements.md` for fields/sources and `data-file-template.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
 ### Cross-step data dependencies
 
