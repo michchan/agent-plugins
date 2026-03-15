@@ -30,36 +30,32 @@ Confirm the equity type with the user before starting any phase.
 
 ---
 
-## Sub-Skill Invocation
-
-Whenever this workflow instructs you to run a skill — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
-
-**Skill invocation is unconditional.** The user's choice of Auto-fetch vs. Manual prompt (see Data Handling below) controls how data is fetched *inside* a skill — it is never a reason to skip calling the skill. Always invoke the skill via the Skill tool first, then handle data fetching within the skill's own flow.
-
----
-
 ## Folder Structure
 
 **Always confirm equity type and lifecycle stage with the user before creating any files.**
 **Read** `references/folder-structure.md` for the full tree and lifecycle transition rules.
 
-**Ignore** any file in a `/_archived/` folder.
+**Ignore** any `/_archived/` folder.
 
 ---
 
-## Workflow Map
+## Workflow
 
-### The 5 Phases
+For each task, follow these steps in order.
 
-| Phase | Purpose | Instructions |
-|-------|---------|-------------|
-| 1 — Screening & Idea Generation | Top of funnel | Top of funnel. Start here when you don't have a specific name yet. **Read** `references/phase-1-screening/instruction.md` before starting this phase. |
-| 2 — Deep Dive (Initiation) | Build conviction | Sequential workflow that builds conviction on a specific stock. **Read** `references/phase-2-deep-dive/instruction.md` before starting this phase. |
-| 3 — Comparison & Relative Value | Sanity-check vs. peers | Validate the stock against peers before committing capital. **Read** `references/phase-3-comparison/instruction.md` before starting this phase. |
-| 4 — Thesis Documentation | Lock the thesis before buying | Lock the investment thesis in writing before buying. **Read** `references/phase-4-thesis/instruction.md` before starting this phase. |
-| 5 — Ongoing Review | Monitor open positions | Monitoring cadence for open positions (pre/post-earnings, between, annual). **Read** `references/phase-5-ongoing-review/instruction.md` before starting this phase. |
+### 1. Read phase instructions
 
-### Rhythm at a Glance
+Identify the phase that matches the user's intent, then read its instruction file before doing anything else.
+
+| Phase | Purpose | Instruction file |
+|-------|---------|-----------------|
+| 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
+| 2 — Deep Dive (Initiation) | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-deep-dive/instruction.md` |
+| 3 — Comparison & Relative Value | Validate the stock against peers before committing capital. | `references/phase-3-comparison/instruction.md` |
+| 4 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-4-thesis/instruction.md` |
+| 5 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-5-ongoing-review/instruction.md` |
+
+**Rhythm at a Glance**
 
 ```
 QUARTERLY
@@ -73,13 +69,11 @@ ANNUAL
   Full review    →  Phase 5 (annual review)
 ```
 
----
-
-## Data Handling
+### 2. Data collection and persistence
 
 These rules apply to every phase and step.
 
-### Locating reference files
+#### Locating reference files
 
 Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
 That table maps each step to a subdirectory (e.g. `step-1a-company-research/`).
@@ -91,7 +85,7 @@ Each subdirectory contains three files:
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
 
-### Pre-fetch confirmation
+#### Pre-fetch confirmation
 
 Before fetching any data, ask the user to confirm the fetch.
 Offer two options:
@@ -99,17 +93,19 @@ Offer two options:
 1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/folder-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
 2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using `data-requirements.md` for fields/sources and `data-file-template.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
-### Post-fetch: write the cache file
+**Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
+
+#### Post-fetch: write the cache file
 
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
 1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
-2. Determine the file path from `references/folder-structure.md` (e.g. `bottom-up-{CRITERIA}-{YYYY-MM}.md` under `/Equity-analyses/Screening/`)
+2. Determine the file path from `references/folder-structure.md` (e.g. `top-down-{SECTOR}-{YYYY-MM}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.
 
-### Cross-step data dependencies
+#### Cross-step data dependencies
 
 Some fields in a step's data file depend on cached output from a previous step (for token efficiency).
 If the expected previous-step cache file is not found:
@@ -117,8 +113,14 @@ If the expected previous-step cache file is not found:
 - Ask the user: was the previous step intentionally skipped, or should you re-fetch the missing data?
 - Proceed only after the user confirms
 
-### Fetch resilience
+#### Fetch resilience
 
 - Give each individual fetch task a reasonable timeout; do not wait indefinitely
 - If a fetch times out or fails, do **not** retry silently — surface the failure to the user
 - Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data
+
+### 3. Invoke delegated skills to analyze and compose the report
+
+Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
+
+**Skill invocation is unconditional.** The user's choice of Auto-fetch vs. Manual prompt in Step 2 controls how data is collected — it is never a reason to skip calling the skill.

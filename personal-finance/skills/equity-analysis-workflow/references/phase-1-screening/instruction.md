@@ -4,11 +4,11 @@ The top of the funnel. Start here when you don't have a specific name yet.
 
 ## Entry Points
 
-These are different approaches — ask the user which to use before proceeding:
-
-- **Top-down** (macro → sector → names): Invoke skill `equity-research:sector` — sector overview, then drill into names
-- **Bottom-up** (criteria → names): Invoke skill `equity-research:screen` — screen with user's criteria
-- **Event-driven** (catalyst → entry point): Invoke skill `equity-research:catalysts` — upcoming events across watchlist or sector
+| Approach | Description | Skill |
+|---|---|---|
+| **Top-down** (macro → sector → names) | Sector overview, then drill into names | `/equity-research:sector` |
+| **Bottom-up** (criteria → names) | Screen with user's criteria | `/equity-research:screen` |
+| **Event-driven** (catalyst → entry point) | Upcoming events across watchlist or sector | `/equity-research:catalysts` |
 
 ## Detailed Instruction Map
 

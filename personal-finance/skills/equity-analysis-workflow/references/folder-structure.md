@@ -5,12 +5,15 @@ This ensures outputs land in the correct folder.
 
 ```
 /Equity-analyses/
-  /Screening/                            ← Phase 1 outputs (equity type not yet determined)
-    /Data/                               ← Phase 1 data files (caches)
-    top-down-{SECTOR}-{YYYY-MM}.md       ← Phase 1 top-down: sector macro + ETF data (overwrite per session)
-    bottom-up-{CRITERIA}-{YYYY-MM}.md    ← Phase 1 bottom-up: screen results (new file per run)
-    events-{YYYY-MM}.md                  ← Phase 1 event-driven: catalyst calendar (overwrite per session)
-    /_archived/                          ← ignored/superseded screening cache files
+  /Screening/                                      ← Phase 1 outputs (equity type not yet determined)
+    /Data/                                         ← Phase 1 raw data cache files
+      top-down-{SECTOR}-{YYYY-MM-DD}.md               ← top-down data cache (written from data-file-template.md)
+      bottom-up-{CRITERIA}-{YYYY-MM-DD}.md            ← bottom-up data cache
+      events-{YYYY-MM-DD}.md                          ← event-driven data cache
+    top-down-{SECTOR}-{YYYY-MM-DD}-report.md          ← Phase 1 top-down: polished screening report (output of equity-research:sector)
+    bottom-up-{CRITERIA}-{YYYY-MM-DD}-report.md       ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
+    events-{YYYY-MM-DD}-report.md                     ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
+    /_archived/                                    ← ignored/superseded screening cache files
   /Defensive/
     /Watchlist/        ← initiated, not yet held
     /Holding/          ← current positions
@@ -42,7 +45,7 @@ This ensures outputs land in the correct folder.
       comps.xlsx                                   ← Phase 2 Step 4
       initiation-report.docx                       ← Phase 2 Step 5
     /Thesis/
-      thesis-v1-{YYYY-MM}.md                       ← Phase 4 (increment version on major updates)
+      thesis-v1-{YYYY-MM-DD}.md                       ← Phase 4 (increment version on major updates)
     /Reviews/
       {YYYY}-Q{N}-earnings-preview.md              ← Phase 5 pre-earnings report
       {YYYY}-Q{N}-earnings-update.md               ← Phase 5 post-earnings report
