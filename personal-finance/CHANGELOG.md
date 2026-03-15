@@ -2,6 +2,13 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.1.3] - 2026-03-16
+
+### Changed
+
+- `equity-analysis-workflow`: Standardize date-prefixed filenames — move `{YYYY-MM-DD}` and `{YEAR}` to the front of all file names in the folder structure reference
+- `equity-analysis-workflow`: Move `/_archived/` from `/Data/` to the root of the ticker folder
+
 ## [0.1.2] - 2026-03-16
 
 ### Changed
