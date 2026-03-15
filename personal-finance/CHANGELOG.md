@@ -2,6 +2,12 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.1.1] - 2026-03-15
+
+### Changed
+
+- **`equity-analysis-workflow` SKILL.md**: Restructured into `## Rules` + `## Tasks` sections. Pre-fetch confirmation and other data handling rules are now in `## Rules` (read before any task), preventing the agent from skipping them. Phase table and Rhythm at a Glance moved to `## Tasks`. No content changes — prose preserved verbatim.
+
 ## [0.1.0] - 2026-03-15
 
 Initial release of the `personal-finance` plugin.

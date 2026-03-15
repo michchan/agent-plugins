@@ -15,7 +15,11 @@ Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with opi
 
 ---
 
-## Portfolio Philosophy
+## Rules
+
+Read the following sections before start working on the tasks.
+
+### Portfolio Philosophy
 
 Before any analysis, classify the equity. The type determines what you're optimizing for and
 which metrics matter most.
@@ -28,48 +32,14 @@ which metrics matter most.
 
 Confirm the equity type with the user before starting Phase 2 or later. Phase 1 (Screening) is type-agnostic — equity type is not yet determined.
 
----
-
-## Folder Structure
+### Folder Structure
 
 **Always confirm equity type and lifecycle stage with the user before creating any files.**
 **Read** `references/folder-structure.md` for the full tree and lifecycle transition rules.
 
 **Ignore** any `/_archived/` folder.
 
----
-
-## Workflow
-
-For each task, follow these steps in order.
-
-### 1. Read phase instructions
-
-Identify the phase that matches the user's intent, then read its instruction file before doing anything else.
-
-| Phase | Purpose | Instruction file |
-|-------|---------|-----------------|
-| 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
-| 2 — Deep Dive (Initiation) | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-deep-dive/instruction.md` |
-| 3 — Comparison & Relative Value | Validate the stock against peers before committing capital. | `references/phase-3-comparison/instruction.md` |
-| 4 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-4-thesis/instruction.md` |
-| 5 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-5-ongoing-review/instruction.md` |
-
-**Rhythm at a Glance**
-
-```
-QUARTERLY
-  Pre-earnings   →  Phase 5 (pre-earnings)
-  Post-earnings  →  Phase 5 (post-earnings: earnings → model update → thesis update)
-
-ONGOING / AD-HOC
-  New idea       →  Phase 1 → Phase 2 → Phase 3 → Phase 4
-
-ANNUAL
-  Full review    →  Phase 5 (annual review)
-```
-
-### 2. Data collection and persistence
+### Data Handling
 
 These rules apply to every phase and step.
 
@@ -119,6 +89,46 @@ If the expected previous-step cache file is not found:
 - If a fetch times out or fails, do **not** retry silently — surface the failure to the user
 - Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data
 
-### 3. Invoke delegated skills to analyze and compose the report
+### Skill Invocation
 
 Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
+
+---
+
+## Tasks
+
+Follow the procedures below to complete the task.
+
+### 1. Identify the phase
+
+Identify the phase that matches the user's intent.
+
+| Phase | Purpose | Instruction file |
+|-------|---------|-----------------|
+| 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
+| 2 — Deep Dive (Initiation) | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-deep-dive/instruction.md` |
+| 3 — Comparison & Relative Value | Validate the stock against peers before committing capital. | `references/phase-3-comparison/instruction.md` |
+| 4 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-4-thesis/instruction.md` |
+| 5 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-5-ongoing-review/instruction.md` |
+
+**Rhythm at a Glance**
+
+```
+QUARTERLY
+  Pre-earnings   →  Phase 5 (pre-earnings)
+  Post-earnings  →  Phase 5 (post-earnings: earnings → model update → thesis update)
+
+ONGOING / AD-HOC
+  New idea       →  Phase 1 → Phase 2 → Phase 3 → Phase 4
+
+ANNUAL
+  Full review    →  Phase 5 (annual review)
+```
+
+### 2. Execute the phase
+
+Follow these steps in order:
+
+1. **Read the phase instruction file** identified in Task 1 before doing anything else.
+2. **Collect data** following Rules > Data Handling.
+3. **Invoke delegated skills** per Rules > Skill Invocation.
