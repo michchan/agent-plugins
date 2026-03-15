@@ -95,6 +95,12 @@ See `references/data-fetch-protocol.md` for exact URLs and prompt strings.
 
 ---
 
+## Sub-Skill Invocation
+
+Whenever this workflow instructs you to run a skill — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
+
+---
+
 ## Phase 1 — Screening & Idea Generation
 
 Top of funnel. Start here when you don't have a specific name yet.

@@ -14,12 +14,12 @@ This determines the folder path for all outputs.
 | Step | Action | Token optimization |
 |------|--------|--------------------|
 | **0. Data Fetch** (mandatory pre-step) | Read `references/data-fetch-protocol.md`, fetch from EDGAR + targeted sources, save to `{TICKER}-data.md` | Front-loads all data in one pass |
-| **1. Company Research** | `/equity-research:initiating-coverage` Task 1 | Read `{TICKER}-data.md` — do not re-fetch |
-| **1b. Competitive Context** (optional, recommended for Core/Satellite) | `/financial-analysis:competitive-analysis` | Read `{TICKER}-data.md` for competitor list |
-| **2. Financial Model** | `/equity-research:initiating-coverage` Task 2 | Read `{TICKER}-data.md` for historical financials |
-| **3. Valuation (DCF)** | `/financial-analysis:dcf` | Read `{TICKER}-data.md` + Task 2 model output |
-| **4. Peer Comparison** | `/financial-analysis:comps` | Read `{TICKER}-data.md` for peer list |
-| **5. Full Report** | `/equity-research:initiating-coverage` Task 5 | Read all prior task outputs |
+| **1. Company Research** | Invoke skill `equity-research:initiating-coverage` | Read `{TICKER}-data.md` — do not re-fetch |
+| **1b. Competitive Context** (optional, recommended for Core/Satellite) | Invoke skill `financial-analysis:competitive-analysis` | Read `{TICKER}-data.md` for competitor list |
+| **2. Financial Model** | Invoke skill `equity-research:initiating-coverage` | Read `{TICKER}-data.md` for historical financials |
+| **3. Valuation (DCF)** | Invoke skill `financial-analysis:dcf` | Read `{TICKER}-data.md` + Task 2 model output |
+| **4. Peer Comparison** | Invoke skill `financial-analysis:comps` | Read `{TICKER}-data.md` for peer list |
+| **5. Full Report** | Invoke skill `equity-research:initiating-coverage` | Read all prior task outputs |
 
 ## Step 0 — Data Fetch (detailed instructions)
 

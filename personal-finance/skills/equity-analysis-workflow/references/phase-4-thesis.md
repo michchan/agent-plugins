@@ -2,9 +2,7 @@
 
 Before buying, lock the thesis in writing. This is your anchor for every future review.
 
-```
-/equity-research:thesis
-```
+Invoke skill `equity-research:thesis`.
 
 ## Fields to fill carefully for personal investing context
 
