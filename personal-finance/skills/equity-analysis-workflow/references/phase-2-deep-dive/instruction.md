@@ -13,20 +13,16 @@ This determines the folder path for all outputs.
 
 | Step | Action |
 |------|--------|
-| **1a. Company Research** | Invoke skill `equity-research:initiating-coverage` |
-| **1b. Competitive Context** (optional, recommended for Core/Satellite) | Invoke skill `financial-analysis:competitive-analysis` |
-| **2. Financial Model** | Invoke skill `equity-research:initiating-coverage` |
+| **1. Company Research** | Data collection (workflow handles analysis) |
+| **2. Financial Model** | Data collection (workflow handles analysis) |
 | **3. Valuation (DCF)** | Invoke skill `financial-analysis:dcf` |
-| **4. Peer Comparison** | Invoke skill `financial-analysis:comps` |
-| **5. Full Report** | Invoke skill `equity-research:initiating-coverage` |
+| **4. Full Report** | Invoke skill `equity-research:initiating-coverage` |
 
 ## Detailed Instruction Map
 
 | Task | Instructions |
 |---|---|
-| Step 1a: Company Research | `step-1a-company-research/` |
-| Step 1b: Competitive Context | `step-1b-competitive-context/` |
+| Step 1: Company Research | `step-1-company-research/` |
 | Step 2: Financial Model | `step-2-financial-model/` |
 | Step 3: DCF | `step-3-dcf/` |
-| Step 4: Comps | `step-4-comps/` |
-| Step 5: Full Report | `step-5-full-report/` |
+| Step 4: Full Report | `step-4-full-report/` |

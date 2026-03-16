@@ -2,6 +2,15 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.1.4] - 2026-03-16
+
+### Changed
+
+- `equity-analysis-workflow` Phase 2: Remove overlap with Phase 3 — delete `step-1b-competitive-context/` and `step-4-comps/` sub-steps (competitive analysis and comps now live exclusively in Phase 3)
+- `equity-analysis-workflow` Phase 2: Steps 1a and 5 renumbered — `step-1a-company-research/` → `step-1-company-research/`, `step-5-full-report/` → `step-4-full-report/`
+- `equity-analysis-workflow` Phase 2: `equity-research:initiating-coverage` now invoked only once (Step 4 full report); Steps 1 and 2 are data-collection only
+- `equity-analysis-workflow` Phase 2: All `data-fetch-protocol.md` files updated — prior-step output sources now note `; fallback: data file` for cross-session use
+
 ## [0.1.3] - 2026-03-16
 
 ### Changed

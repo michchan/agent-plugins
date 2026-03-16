@@ -1,7 +1,5 @@
 # Data Requirements — Phase 2 / Step 1: Company Research
 
-Input fields needed to invoke `equity-research:initiating-coverage` for company research.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Business description | Segments, revenue mix, pricing model, customers | "Cloud software, 3 segments: CRM 60%, Analytics 25%, Support 15%" | 1 year |

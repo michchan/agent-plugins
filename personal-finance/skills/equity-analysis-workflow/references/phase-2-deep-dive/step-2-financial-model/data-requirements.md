@@ -1,7 +1,5 @@
 # Data Requirements — Phase 2 / Step 2: Financial Model
 
-Input fields needed to invoke `equity-research:initiating-coverage` for financial modeling.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Income statement (4 years) | Revenue, gross profit, EBIT, net income | "FY2024 Rev: $1.1B, GM: 72%, EBIT: $95M" | 1 year |
