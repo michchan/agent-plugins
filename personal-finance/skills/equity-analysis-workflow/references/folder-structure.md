@@ -29,7 +29,7 @@ This ensures outputs land in the correct folder.
 
   /{Type}/{Stage}/{TICKER}/
     /Data/                                         ← data files (caches) (inputs to skills)
-      company-research.md                          ← Phase 2 Step 1a (refresh: ~12 months / 10-K)
+      company-research.md                          ← Phase 2 Step 1 (refresh: ~12 months / 10-K)
       financial-model.md                           ← Phase 2 Step 2 (refresh: ~3 months / earnings)
       comps.md                                     ← Phase 3 Step 1 (refresh: ~3 months)
       {YEAR}-Q{N}-pre-earnings.md                  ← Phase 5 pre-earnings (per event, archived)
@@ -37,12 +37,10 @@ This ensures outputs land in the correct folder.
       between-earnings.md                          ← Phase 5 between-earnings (overwritten each session)
       {YEAR}-annual-review.md                      ← Phase 5 annual review (per year, archived)
     /Initiation/
-      company-research.md                          ← Phase 2 Step 1a
-      competitive-analysis.md                      ← Phase 2 Step 1b (optional)
+      company-research.md                          ← Phase 2 Step 1
       financial-model.xlsx                         ← Phase 2 Step 2
       dcf-model.xlsx                               ← Phase 2 Step 3
-      comps.xlsx                                   ← Phase 2 Step 4
-      initiation-report.docx                       ← Phase 2 Step 5
+      initiation-report.docx                       ← Phase 2 Step 4
     /Thesis/
       {YYYY-MM-DD}-thesis-v1.md                       ← Phase 4 (increment version on major updates)
     /Reviews/

@@ -46,7 +46,7 @@ These rules apply to every phase and step.
 #### Locating reference files
 
 Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
-That table maps each step to a subdirectory (e.g. `step-1a-company-research/`).
+That table maps each step to a subdirectory (e.g. `step-1-company-research/`).
 Each subdirectory contains three files:
 
 | File | When to read |

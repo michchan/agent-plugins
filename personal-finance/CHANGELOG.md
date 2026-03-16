@@ -2,6 +2,13 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.1.5] - 2026-03-16
+
+### Fixed
+
+- `equity-analysis-workflow` `folder-structure.md`: Update `/Initiation/` and `/Data/` step annotations to match Phase 2 refactor — remove `competitive-analysis.md` (Step 1b) and `comps.xlsx` (Step 4), rename Step 1a → Step 1, renumber Step 5 → Step 4
+- `equity-analysis-workflow` `SKILL.md`: Update step subdirectory example `step-1a-company-research/` → `step-1-company-research/`
+
 ## [0.1.4] - 2026-03-16
 
 ### Changed
