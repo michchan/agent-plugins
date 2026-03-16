@@ -10,9 +10,9 @@ This ensures outputs land in the correct folder.
       {YYYY-MM-DD}-top-down-{SECTOR}.md               ← top-down data cache (written from data-file-template.md)
       {YYYY-MM-DD}-bottom-up-{CRITERIA}.md            ← bottom-up data cache
       {YYYY-MM-DD}-events.md                          ← event-driven data cache
-    {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report (output of equity-research:sector)
-    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
-    {YYYY-MM-DD}-events-report.md                     ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
+    {YYYY-MM-DD}-top-down-{SECTOR}-report.md       ← Phase 1 top-down: polished screening report (output of equity-research:sector)
+    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md    ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
+    {YYYY-MM-DD}-events-report.md                  ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
     /_archived/                                    ← ignored/superseded screening cache files
   /Defensive/
     /Watchlist/        ← initiated, not yet held
@@ -42,7 +42,7 @@ This ensures outputs land in the correct folder.
       dcf-model.xlsx                               ← Phase 2 Step 3
       initiation-report.docx                       ← Phase 2 Step 4
     /Thesis/
-      {YYYY-MM-DD}-thesis-v1.md                       ← Phase 4 (increment version on major updates)
+      {YYYY-MM-DD}-thesis-v1.md                    ← Phase 4 (increment version on major updates)
     /Reviews/
       {YYYY}-Q{N}-earnings-preview.md              ← Phase 5 pre-earnings report
       {YYYY}-Q{N}-earnings-update.md               ← Phase 5 post-earnings report
