@@ -2,6 +2,22 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.0] - 2026-03-17
+
+### Changed
+
+- `equity-analysis-workflow`: Absorbed Phase 3 (Comparison) into Phase 2 as Step 4 — workflow is now 4 phases: Screening → Deep Dive → Thesis → Ongoing Review
+- `equity-analysis-workflow` Phase 2: Now 5 steps — Company Research → Financial Model → DCF → Competitive Analysis → Report Generation
+- `equity-analysis-workflow` Phase 2: Added pre-execution scope confirmation with 14-row branching table (folder check, report/data mode, scope, cadence)
+- `equity-analysis-workflow` Phase 2 Step 3 (DCF): Added peer comparable data section (7 fields, `{YYYY-MM-DD}-peer-data.md`)
+- `equity-analysis-workflow`: Renamed/renumbered phase commands — `equity:phase-3-compare` removed; `equity:phase-4-thesis` → `equity:phase-3-thesis`; `equity:phase-5-review` → `equity:phase-4-review`
+- `equity-analysis-workflow` `folder-structure.md`: Updated for date-prefixed Data/ files and `{YYYY-MM-DD}-initiation-report/` subfolders
+- `equity-analysis-workflow` `SKILL.md`: Updated 4-phase table and rhythm diagram
+
+### Fixed
+
+- `equity-analysis-workflow`: Extended cache TTLs for slow-moving data across 14 `data-requirements.md` files — consensus estimates, peer metrics, peer margins, macro indicators, screening multiples, event dates, and macro developments updated from 1 day to 3–7 days
+
 ## [0.1.5] - 2026-03-16
 
 ### Fixed
