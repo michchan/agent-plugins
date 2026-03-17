@@ -9,4 +9,4 @@ Input fields needed to invoke `equity-research:initiating-coverage` for final re
 | DCF valuation | Intrinsic value, price target | _(Step 3 output)_ | Current session |
 | Competitive analysis | Positioning map, dimension scoring, TAM split | _(Step 4 output)_ | Current session |
 | Current stock price | For price target upside/downside | "$142.50" | 1 day |
-| Consensus estimates | For premium/discount to consensus | "NTM EPS: $2.45, NTM Rev: $1.28B" | 1 day |
+| Consensus estimates | For premium/discount to consensus | "NTM EPS: $2.45, NTM Rev: $1.28B" | 3 days |

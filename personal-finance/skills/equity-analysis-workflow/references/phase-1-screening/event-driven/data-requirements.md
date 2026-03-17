@@ -5,7 +5,7 @@ Fields required to run an event-driven screen (catalyst → entry point).
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Event type | Earnings, FDA decision, M&A close, product launch, spin-off, index inclusion, etc. | "FDA PDUFA decision" | Permanent |
-| Expected event date | Date or date range when the catalyst is expected | "2025-04-15" | 1 day |
+| Expected event date | Date or date range when the catalyst is expected | "2025-04-15" | 7 days |
 | Ticker | Company ticker(s) associated with the event | "MRNA" | Permanent |
 | Sector | Sector of the company | "Biotechnology" | Permanent |
 | Expected impact | Bull-case and bear-case price impact assessment | "Bull: +40% on approval; Bear: -25% on rejection" | 1 month |

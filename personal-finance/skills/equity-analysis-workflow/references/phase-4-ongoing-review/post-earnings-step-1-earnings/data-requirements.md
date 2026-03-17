@@ -11,5 +11,5 @@ Input fields needed to invoke `equity-research:earnings`.
 | Guidance update | Updated forward guidance | "Q1 2025 guidance: Rev $325–335M, EPS $0.65–0.68" | 1 quarter |
 | Prior consensus estimates | What was expected before results | "$0.62 EPS, $312M revenue" | Permanent |
 | Prior actuals (for YoY) | Same quarter last year | "Q4 2023: EPS $0.44, Rev $256M" | Permanent |
-| Analyst estimate revisions | Post-earnings consensus changes | "FY2025 EPS raised from $2.45 to $2.65" | 1 day |
+| Analyst estimate revisions | Post-earnings consensus changes | "FY2025 EPS raised from $2.45 to $2.65" | 3 days |
 | Current stock price | Post-earnings price reaction | "$158.00 (+11% on day)" | 1 day |

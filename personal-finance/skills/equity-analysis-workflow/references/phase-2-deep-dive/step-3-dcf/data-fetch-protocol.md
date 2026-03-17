@@ -13,4 +13,4 @@
 | Peer NTM revenue + FCF estimates | `https://finance.yahoo.com/quote/{PEER_TICKER}/analysis` per peer | `"Extract: NTM revenue and FCF consensus. Table format."` |
 | Peer revenue growth + margins | EDGAR 10-Q or Yahoo Finance per peer | `"Extract: LTM revenue growth, gross margin, FCF margin. Table only."` |
 
-_Peer data feeds `{YYYY-MM-DD}-peer-data.md` under `/Data/`; TTL 1 day._
+_Peer data feeds `{YYYY-MM-DD}-peer-data.md` under `/Data/`; TTL 3 days._

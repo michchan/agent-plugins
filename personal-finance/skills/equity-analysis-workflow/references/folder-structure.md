@@ -31,7 +31,7 @@ This ensures outputs land in the correct folder.
     /Data/                                  ← data files (caches) (inputs to skills)
       {YYYY-MM-DD}-company-research.md      ← Phase 2 Step 1; never overwrite — create new dated file
       {YYYY-MM-DD}-financial-model.md       ← Phase 2 Step 2; never overwrite — create new dated file
-      {YYYY-MM-DD}-peer-data.md             ← Phase 2 Step 3 (DCF comps input); TTL 1 day
+      {YYYY-MM-DD}-peer-data.md             ← Phase 2 Step 3 (DCF comps input)
       {YEAR}-Q{N}-pre-earnings.md           ← Phase 4 pre-earnings (per event, archived)
       {YEAR}-Q{N}-earnings.md               ← Phase 4 post-earnings (per event, archived)
       {YEAR}-Q{N}-between-earnings.md       ← Phase 4 between-earnings (per event, archived)

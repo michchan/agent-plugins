@@ -10,4 +10,4 @@
 | Income statement (4 years) | Revenue, gross profit, operating income, net income | "FY2024 Rev: $1.1B, Gross margin: 72%, EBIT: $95M" | 1 year |
 | Cash flow summary | FCF trend | "FY2024 FCF: $180M, FCF margin: 16%" | 1 year |
 | Current stock price | For context | "$142.50" | 1 day |
-| 52-week range | High and low | "$98.00 – $168.00" | 1 day |
+| 52-week range | High and low | "$98.00 – $168.00" | 3 days |
