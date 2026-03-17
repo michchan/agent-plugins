@@ -29,3 +29,18 @@ Fetched: {YYYY-MM-DD} _(always fetch fresh)_
 ## Current Stock Price
 Fetched: {YYYY-MM-DD} _(always fetch fresh)_
 - Price: ${VALUE}
+
+## Peer Comparable Data
+Fetched: {YYYY-MM-DD} _(TTL: 1 day — re-fetch if stale)_
+
+| Ticker | EV | NTM Revenue | NTM FCF | Rev Growth | FCF Margin | Gross Margin |
+|---|---|---|---|---|---|---|
+| {PEER_1} | — | — | — | —% | —% | —% |
+| {PEER_2} | — | — | — | —% | —% | —% |
+| {PEER_3} | — | — | — | —% | —% | —% |
+
+Derived multiples (for terminal value calibration):
+| Ticker | EV/NTM Rev | EV/NTM FCF |
+|---|---|---|
+| {PEER_1} | — | — |
+| Peer median | — | — |

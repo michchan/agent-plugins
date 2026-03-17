@@ -1,4 +1,4 @@
-# Phase 5 — Ongoing Review
+# Phase 4 — Ongoing Review
 
 Once a position is open (folder moves to `/Holding/`), shift to monitoring cadence.
 
@@ -13,6 +13,18 @@ Ask the user which review type applies before proceeding:
   - Invoke skill `equity-research:morning-note` — macro + portfolio-level developments
   - Invoke skill `equity-research:catalysts` — upcoming events across full portfolio
 - **Annual Review**: Invoke skill `equity-research:thesis` — reaffirm or close each position
+
+## Between-Earnings Entry Triggers
+
+Run Phase 4 between-earnings (with competitive focus) if any of the following occur since initiation:
+
+| Trigger | Threshold | Action |
+|---|---|---|
+| Named competitor announces M&A or major product expansion | Any such announcement | Run `equity-research:morning-note` with competitive framing; consider re-running Step 4 competitive analysis if material |
+| Peer group NTM multiple spread widens or narrows | >20% change in EV/NTM Rev spread since initiation | Re-fetch `{YYYY-MM-DD}-peer-data.md`; flag thesis impact in between-earnings file |
+| NRR or gross retention change | Moves >5 percentage points since initiation | Run `equity-research:morning-note`; update `{YEAR}-Q{N}-between-earnings.md` |
+
+These are between-earnings triggers. They do not replace post-earnings or annual review procedures.
 
 ## Detailed Instruction Map
 

@@ -70,7 +70,7 @@ Offer two options:
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
 1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
-2. Determine the file path from `references/folder-structure.md` (e.g. `top-down-{SECTOR}-{YYYY-MM-DD}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
+2. Determine the file path from `references/folder-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.
@@ -107,22 +107,21 @@ Identify the phase that matches the user's intent.
 |-------|---------|-----------------|
 | 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
 | 2 — Deep Dive (Initiation) | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-deep-dive/instruction.md` |
-| 3 — Comparison & Relative Value | Validate the stock against peers before committing capital. | `references/phase-3-comparison/instruction.md` |
-| 4 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-4-thesis/instruction.md` |
-| 5 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-5-ongoing-review/instruction.md` |
+| 3 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-3-thesis/instruction.md` |
+| 4 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-4-ongoing-review/instruction.md` |
 
 **Rhythm at a Glance**
 
 ```
 QUARTERLY
-  Pre-earnings   →  Phase 5 (pre-earnings)
-  Post-earnings  →  Phase 5 (post-earnings: earnings → model update → thesis update)
+  Pre-earnings   →  Phase 4 (pre-earnings)
+  Post-earnings  →  Phase 4 (post-earnings: earnings → model update → thesis update)
 
 ONGOING / AD-HOC
-  New idea       →  Phase 1 → Phase 2 → Phase 3 → Phase 4
+  New idea       →  Phase 1 → Phase 2 → Phase 3
 
 ANNUAL
-  Full review    →  Phase 5 (annual review)
+  Full review    →  Phase 4 (annual review)
 ```
 
 ### 2. Execute the phase

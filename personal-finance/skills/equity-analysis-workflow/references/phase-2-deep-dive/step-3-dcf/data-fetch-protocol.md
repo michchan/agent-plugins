@@ -9,3 +9,8 @@
 | Historical cash flow (4 years) | Current session; fallback: data file (Steps 1/2 output) | — |
 | Balance sheet (debt, cash) | Current session; fallback: data file (Steps 1/2 output) | — |
 | Key metrics / KPIs | Current session; fallback: data file (Step 1 output) | — |
+| Peer EV + market data | `https://finance.yahoo.com/quote/{PEER_TICKER}` per peer | `"Extract: current price, market cap, enterprise value. One line each."` |
+| Peer NTM revenue + FCF estimates | `https://finance.yahoo.com/quote/{PEER_TICKER}/analysis` per peer | `"Extract: NTM revenue and FCF consensus. Table format."` |
+| Peer revenue growth + margins | EDGAR 10-Q or Yahoo Finance per peer | `"Extract: LTM revenue growth, gross margin, FCF margin. Table only."` |
+
+_Peer data feeds `{YYYY-MM-DD}-peer-data.md` under `/Data/`; TTL 1 day._

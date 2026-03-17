@@ -5,9 +5,86 @@ For any stock that clears screening, this phase builds conviction. It runs as a 
 **Before starting: confirm with the user:**
 1. Equity type (Defensive / Core / Satellite)
 2. Lifecycle stage (Watchlist — not yet held, or Screening — still evaluating)
-3. Whether to run steps one at a time (pausing for review between each) or all at once
 
 This determines the folder path for all outputs.
+
+---
+
+## Pre-Execution Scope Confirmation
+
+After Q1 and Q2 are answered, perform a folder check and then ask Q3 and Q4 before starting any step.
+
+### Pre-question folder check
+
+Before presenting Q3, check:
+- Whether `/{Type}/{Stage}/{TICKER}/Initiation/` contains any `*-initiation-report/` subfolders
+- If yes: the most recent one's name and date
+- Which `Data/` cache files exist and whether each is within TTL (compare `Fetched:` date in the file against today's date)
+
+Surface as a one-line summary, for example:
+> Found: `/CRWD/Initiation/2026-03-16-initiation-report/`. Data caches: `2026-03-16-company-research.md` (1 day old ✓ within 1yr TTL), `2026-03-16-peer-data.md` (1 day old ✗ exceeds 1d TTL).
+
+If no initiation folder exists, say so and note that options 2 and 3 in Q3 behave identically to 1 and 4 respectively.
+
+### Q3 — Report and data mode
+
+Present options; wait for answer before showing Q4:
+
+1. **New report, reuse data** — create new `{today}-initiation-report/`; reuse Data/ caches within TTL per step *(recommended when an initiation folder exists but today is a different date)*
+2. **Update existing report, reuse data** — write into the most recent existing folder; reuse Data/ caches within TTL *(recommended when the most recent folder is already dated today)*
+3. **Update existing report, fresh data** — write into most recent folder; re-fetch all data regardless of TTL
+4. **New report, fresh data** — create new folder and re-fetch all data *(use only when a clean slate is explicitly needed)*
+
+### Q4 — Scope
+
+**For Q3 = 1 or 4 (new report context):**
+
+1. Full report — all steps *(default if user replies without selecting)*
+2. Skip DCF and valuation — Steps 1–2 → Step 4 → Step 5; no `dcf-model.xlsx`
+3. Skip competitive analysis — Steps 1–3 → Step 5; no `competitive-analysis.pptx`; Step 5 omits comp sections
+4. Skip financial model — all steps but no Excel outputs (`financial-model.xlsx`, `dcf-model.xlsx`)
+5. Research and thesis only — Steps 1 → Step 5 (narrative only); no Excel, no DCF, no comps
+
+Options are independently combinable except option 5, which supersedes all others.
+
+**For Q3 = 2 or 3 (update context):**
+
+1. Full report — re-run all steps *(default)*
+2. Selective — name the step(s) to re-run; all others reuse existing outputs as-is. Valid options: Step 1, Step 2, Step 3, Step 4, Step 5, or any combination.
+
+### Q5 — Execution cadence
+
+After Q4, ask:
+
+- **Step-by-step** — pause for review after each step before proceeding to the next
+- **All at once** — run all selected steps without pausing *(default)*
+
+### Confirmation line
+
+After Q5, emit one line and proceed immediately:
+
+> Running: [step list with data handling per step]. Writing into `/{TICKER}/Initiation/{YYYY-MM-DD}-initiation-report/`.
+
+### Branching table
+
+| Q3 | Q4 | Folder | Data caches | Steps run | Outputs reused vs. generated | Report sections |
+|---|---|---|---|---|---|---|
+| 1 (new, reuse) | 1 (full) | New `{today}-initiation-report/` | Check TTL per step; reuse if fresh | 1→2→3→4→5 | All generated fresh | All |
+| 1 (new, reuse) | 2 (skip DCF) | New folder | Check TTL steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation section |
+| 1 (new, reuse) | 3 (skip comp) | New folder | Check TTL steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit positioning map, dim scoring, TAM split |
+| 1 (new, reuse) | 4 (skip fin model) | New folder | Check TTL steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx outputs | All narrative; no Excel |
+| 1 (new, reuse) | 5 (research + thesis) | New folder | Check TTL step 1 | 1→5 | No Excel, no DCF, no comps | Step 1 + Step 5 thesis narrative only |
+| 2 (update, reuse) | 1 (full) | Most recent existing folder | Check TTL per step | 1→2→3→4→5 | Overwrite changed files | All |
+| 2 (update, reuse) | 2 (selective) | Most recent existing folder | Re-fetch for selected steps only | Named steps only | Unselected steps: reuse existing outputs | As applicable |
+| 3 (update, fresh) | 1 (full) | Most recent existing folder | Re-fetch all | 1→2→3→4→5 | All overwritten | All |
+| 3 (update, fresh) | 2 (selective) | Most recent existing folder | Re-fetch for selected steps only | Named steps only | Unselected steps: reuse existing outputs | As applicable |
+| 4 (new, fresh) | 1 (full) | New `{today}-initiation-report/` | Re-fetch all | 1→2→3→4→5 | All generated fresh | All |
+| 4 (new, fresh) | 2 (skip DCF) | New folder | Re-fetch steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation |
+| 4 (new, fresh) | 3 (skip comp) | New folder | Re-fetch steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit comp sections |
+| 4 (new, fresh) | 4 (skip fin model) | New folder | Re-fetch steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx | All narrative |
+| 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch step 1 | 1→5 | No Excel, no DCF, no comps | Step 1 + Step 5 narrative |
+
+---
 
 ## Initiation Workflow
 
@@ -16,7 +93,8 @@ This determines the folder path for all outputs.
 | **1. Company Research** | Data collection (workflow handles analysis) |
 | **2. Financial Model** | Data collection (workflow handles analysis) |
 | **3. Valuation (DCF)** | Invoke skill `financial-analysis:dcf` |
-| **4. Full Report** | Invoke skill `equity-research:initiating-coverage` |
+| **4. Competitive Analysis** | Invoke skill `financial-analysis:competitive-analysis` |
+| **5. Report Generation** | Invoke skill `equity-research:initiating-coverage` |
 
 ## Detailed Instruction Map
 
@@ -25,4 +103,5 @@ This determines the folder path for all outputs.
 | Step 1: Company Research | `step-1-company-research/` |
 | Step 2: Financial Model | `step-2-financial-model/` |
 | Step 3: DCF | `step-3-dcf/` |
-| Step 4: Full Report | `step-4-full-report/` |
+| Step 4: Competitive Analysis | `step-4-competitive-analysis/` |
+| Step 5: Report Generation | `step-5-report-generation/` |
