@@ -2,6 +2,14 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.1] - 2026-03-19
+
+### Changed
+
+- `equity-analysis-workflow` Phase 2 Step 3 (DCF): Added 4-level peer data resolution protocol to `data-fetch-protocol.md` — before fetching from Yahoo Finance, the agent checks (1) subject's own peer data cache, (2) other tickers' peer data files, (3) peer's own financial model. Reduces redundant fetches when peers overlap across tickers in the same sector.
+- `equity-analysis-workflow` Phase 2 Step 3 (DCF): Added transparency summary table showing per-peer, per-field data source before DCF runs.
+- `equity-analysis-workflow` Phase 2 Step 3 (DCF): `data-requirements.md` notes the cache resolution protocol with a soft reference to `data-fetch-protocol.md`.
+
 ## [0.2.0] - 2026-03-17
 
 ### Changed
