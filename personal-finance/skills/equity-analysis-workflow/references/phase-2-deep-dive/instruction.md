@@ -84,6 +84,10 @@ After Q5, emit one line and proceed immediately:
 | 4 (new, fresh) | 4 (skip fin model) | New folder | Re-fetch steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx | All narrative |
 | 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch step 1 | 1→5 | No Excel, no DCF, no comps | Step 1 + Step 5 narrative |
 
+### Any other question(s)
+
+MUST respect [SKILL.md](../../SKILL.md) for any question required before you start.
+
 ---
 
 ## Initiation Workflow

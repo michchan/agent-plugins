@@ -15,7 +15,7 @@ Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with opi
 
 ---
 
-## Rules
+## Rules (MUST READ FIRST‼️)
 
 Read the following sections before start working on the tasks.
 
@@ -55,7 +55,7 @@ Each subdirectory contains three files:
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
 
-#### Pre-fetch confirmation
+#### Pre-fetch confirmation (QUESTION BEFORE DATA FETCHING ‼️)
 
 Before fetching any data, ask the user to confirm the fetch.
 Offer two options:

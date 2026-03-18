@@ -2,6 +2,14 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.2] - 2026-03-19
+
+### Changed
+
+- `equity-analysis-workflow` `SKILL.md`: Added visual emphasis markers to "Rules" section header and pre-fetch confirmation header to improve agent compliance
+- `equity-analysis-workflow` Phase 2 instruction: Added explicit rule to respect `SKILL.md` for any questions before starting
+- `equity-analysis-workflow` Phase 2 Step 3 (DCF) `data-requirements.md`: Clarified peer comparable note to cover manual data prompts in addition to live fetches
+
 ## [0.2.1] - 2026-03-19
 
 ### Changed
