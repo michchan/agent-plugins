@@ -15,6 +15,8 @@ Input fields needed to invoke `financial-analysis:dcf`. Historical data comes fr
 ## Peer Comparable Data
 Required for exit-multiple terminal value calibration in `financial-analysis:dcf`.
 
+> _Before fetching live, the agent resolves peer fields from up to three cache sources (subject's peer data file → other tickers' peer data files → peer's own financial model). See `data-fetch-protocol.md` for the full resolution protocol._
+
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Peer tickers | Comparable company list | "PANW, S, FTNT" | 1 year |

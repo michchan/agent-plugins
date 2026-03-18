@@ -33,6 +33,7 @@ agent-plugins/
 ## Don't do
 
 - Commit before asking user approval, unless user requested.
+- Hardcode values (TTLs, field lists, paths) that are already defined in another reference file — soft-reference the source instead to avoid duplicated sources of truth.
 
 ## Versioning
 
