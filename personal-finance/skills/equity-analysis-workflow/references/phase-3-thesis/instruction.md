@@ -4,10 +4,6 @@ Before buying, lock the thesis in writing. This is your anchor for every future 
 
 Invoke skill `equity-research:thesis`.
 
-## Save path
-
-`/Equity-analyses/{Type}/Watchlist/{TICKER}/Thesis/thesis-v1-{YYYY-MM-DD}.md`
-
 ## Detailed Instruction Map
 
 | Task | Instructions |
