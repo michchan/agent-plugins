@@ -59,11 +59,25 @@ After Q4, ask:
 - **Step-by-step** — pause for review after each step before proceeding to the next
 - **All at once** — run all selected steps without pausing *(default)*
 
+### Q6 — Data collection mode
+
+Ask Q6 only when at least one fetch will occur:
+
+- **Q3 = 3 or 4**: always ask Q6 (fresh data required for all relevant steps).
+- **Q3 = 1 or 2**: ask Q6 only if the pre-question folder check found any stale or missing cache files for the steps that will run. If ALL relevant caches are fresh, skip Q6 — no fetch will occur.
+
+When Q6 applies, ask:
+
+> How should data be collected?
+> See SKILL.md › Data Handling › Pre-fetch confirmation for the options.
+
+Wait for the user's answer before emitting the confirmation line.
+
 ### Confirmation line
 
-After Q5, emit one line and proceed immediately:
+After Q6, emit one line and proceed immediately:
 
-> Running: [step list with data handling per step]. Writing into `/{TICKER}/Initiation/{YYYY-MM-DD}-initiation-report/`.
+> Running: [step list with data handling per step]. Data collection: [Data fetch mode, Cache mode]. Writing into `/{TICKER}/Initiation/{YYYY-MM-DD}-initiation-report/`.
 
 ### Branching table
 

@@ -65,6 +65,8 @@ Offer two options:
 
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
 
+**Timing in "all at once" mode.** When Q5 = "all at once", there is no per-step pause. The phase instruction must surface this question during scope confirmation (before execution begins). If the phase instruction does not have an explicit Q6 or equivalent, ask it immediately after Q5, before emitting the confirmation line.
+
 #### Post-fetch: write the cache file
 
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:

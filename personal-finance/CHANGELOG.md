@@ -2,6 +2,13 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.3] - 2026-03-19
+
+### Fixed
+
+- `equity-analysis-workflow` Phase 2 instruction: Added Q6 (data collection mode) to scope confirmation — asked before execution begins when at least one fetch will occur, fixing a gap where pre-fetch confirmation was silently skipped in "all at once" mode (Q5)
+- `equity-analysis-workflow` `SKILL.md`: Added timing note to pre-fetch confirmation section clarifying that "all at once" mode requires Q6 (or equivalent) to be surfaced during scope confirmation, not mid-execution
+
 ## [0.2.2] - 2026-03-19
 
 ### Changed
