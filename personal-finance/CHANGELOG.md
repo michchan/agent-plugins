@@ -2,6 +2,14 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.5] - 2026-03-19
+
+### Added
+
+- `equity-analysis-workflow` `folder-structure.md`: Added `Scripts/` directory adjacent to `Data/` at both the Screening level and the Ticker level — stores generation scripts for binary outputs (`.xlsx`, `.pptx`, `.docx`) using a `{YYYY-MM-DD}-{script-action-name}-{output-file-name}.py` naming convention
+- `equity-analysis-workflow` `folder-structure.md`: Added Scripts rules section — naming convention, most-recent-file discovery rule
+- `equity-analysis-workflow` `SKILL.md`: Added **Scripts** rule section with save rule (persist script after each binary output), discovery rule (check Scripts/ before formatting-intent steps), and trigger signals for the script-only update path
+
 ## [0.2.4] - 2026-03-19
 
 ### Added

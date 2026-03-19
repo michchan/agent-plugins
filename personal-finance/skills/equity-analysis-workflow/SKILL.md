@@ -92,6 +92,29 @@ If the expected previous-step cache file is not found:
 - If a fetch times out or fails, do **not** retry silently — surface the failure to the user
 - Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data
 
+### Scripts
+
+#### Save rule
+
+After any step that produces a binary output (`.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/folder-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
+
+#### Discovery rule
+
+Before starting any step where the user's intent is a formatting or structural update (not a data refresh), check the `Scripts/` folder first:
+
+1. **Script found** → present the "script-only update" path: modify only the relevant section of the script, re-run it, and skip data re-fetch entirely.
+2. **No script found** → generate the output normally and save the script as part of that run.
+
+#### Trigger signals for the script-only path
+
+Route to the script-only path when the user says things like:
+- "update formatting", "fix the chart", "change the layout", "tweak the template", "small update to [output file]"
+
+And **all** of the following are true:
+- No new earnings data has been released
+- No thesis change has been requested
+- No data staleness concern has been raised
+
 ### Skill Invocation
 
 Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.

@@ -10,6 +10,8 @@ This ensures outputs land in the correct folder.
       {YYYY-MM-DD}-top-down-{SECTOR}.md         ← top-down data cache (written from data-file-template.md)
       {YYYY-MM-DD}-bottom-up-{CRITERIA}.md      ← bottom-up data cache
       {YYYY-MM-DD}-events.md                    ← event-driven data cache
+    /Scripts/                                ← generation scripts for Screening binary outputs
+      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py
     {YYYY-MM-DD}-top-down-{SECTOR}-report.md       ← Phase 1 top-down: polished screening report (output of equity-research:sector)
     {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md    ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
     {YYYY-MM-DD}-events-report.md            ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
@@ -36,6 +38,8 @@ This ensures outputs land in the correct folder.
       {YEAR}-Q{N}-earnings.md               ← Phase 4 post-earnings (per event, archived)
       {YEAR}-Q{N}-between-earnings.md       ← Phase 4 between-earnings (per event, archived)
       {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
+    /Scripts/                               ← generation scripts for this ticker's binary outputs
+      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py   ← e.g. 2026-01-15-create-dcf-model-dcf-model.py
     /Initiation/
       {YYYY-MM-DD}-initiation-report/       ← one subfolder per run; never overwrite a prior run
         company-research.md                 ← Phase 2 Step 1
@@ -51,6 +55,11 @@ This ensures outputs land in the correct folder.
       {YYYY}-Q{N}-earnings-update.md        ← Phase 4 post-earnings report
     /_archived/                             ← ignored/superseded files
 ```
+
+## Scripts rules
+
+- Script name format: `{YYYY-MM-DD}-{script-action-name}-{output-file-name}.py` — date prefix identifies when the script was generated; `{output-file-name}` is the base name of the binary output it produces (e.g. `dcf-model`, `competitive-analysis`).
+- When discovering scripts for a given output file, sort by date prefix and take the most recent one.
 
 ## Cache file rules
 
