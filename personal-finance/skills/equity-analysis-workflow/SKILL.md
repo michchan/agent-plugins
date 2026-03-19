@@ -46,7 +46,7 @@ These rules apply to every phase and step.
 #### Locating reference files
 
 Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
-That table maps each step to a subdirectory (e.g. `step-1-company-research/`).
+That table maps each step to a subdirectory.
 Each subdirectory contains three files:
 
 | File | When to read |
@@ -54,6 +54,7 @@ Each subdirectory contains three files:
 | `data-requirements.md` | When you need to know what data fields are required, or what the cache TTL / refresh policy is |
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
+| `output-preferences.md` (if any) | Before you actually write the output, preferences to consider |
 
 #### Pre-fetch confirmation (QUESTION BEFORE DATA FETCHING ‼️)
 

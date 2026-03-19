@@ -2,6 +2,17 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.4] - 2026-03-19
+
+### Added
+
+- `output-preferences.md` for Phase 2 Step 5 (report generation): specifies SF Pro font, bullet-heavy writing style, and a requirement to visualize historical/comparable figures
+- Reference to `output-preferences.md` in the skill's reference file lookup table in `SKILL.md`
+
+### Changed
+
+- Minor wording cleanup in `SKILL.md`: removed hardcoded example subdirectory path to keep the instruction generic
+
 ## [0.2.3] - 2026-03-19
 
 ### Fixed
