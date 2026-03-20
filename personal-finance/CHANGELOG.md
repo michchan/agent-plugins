@@ -2,6 +2,14 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.2.6] - 2026-03-21
+
+### Changed
+
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-requirements.md`: Added **Time Span by Equity Type** table (Growth → 5 years, Core → 8 years, Defensive → 12 years) as the single source of truth for trailing-year span; updated IS, BS, and CF field rows to reference it by name instead of hardcoded counts
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-file-template.md`: Expanded IS, BS, and CF tables to 12 rows each (`FY{YEAR}` through `FY{YEAR-11}`) to cover the maximum span; added soft-reference note pointing to `data-requirements.md` › Time Span by Equity Type
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-fetch-protocol.md`: Updated IS, BS, and CF rows to soft-reference the time span table; added **Manual Prompt Batching** section with a `ceil(N/4)` batching algorithm for spans exceeding 5 years under Manual prompt mode
+
 ## [0.2.5] - 2026-03-19
 
 ### Added
