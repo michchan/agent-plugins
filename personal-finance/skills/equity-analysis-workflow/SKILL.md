@@ -10,14 +10,17 @@ description: >
 
 # Equity Analysis Workflow
 
-A personal investing skill for a buy-and-hold, core-satellite style investor (2–10 year horizon).
-Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with opinionated defaults.
+A personal investing skill that wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with a workflow of opinionated preferences and addons.
 
 ---
 
 ## Rules (MUST READ FIRST‼️)
 
 Read the following sections before start working on the tasks.
+
+### Investor style
+
+This is a buy-and-hold, core-satellite style investor, with **2–10+ year horizon**.
 
 ### Portfolio Philosophy
 
@@ -56,9 +59,9 @@ Each subdirectory contains three files:
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
 | `output-preferences.md` (if any) | Before you actually write the output, preferences to consider |
 
-#### Pre-fetch confirmation (QUESTION BEFORE DATA FETCHING ‼️)
+#### Pre-fetch confirmation (QUESTION BEFORE DATA COLLECTION ‼️)
 
-Before fetching any data, ask the user to confirm the fetch.
+Before collecting any data, ask the user to confirm the method to collect.
 Offer two options:
 
 1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/folder-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.

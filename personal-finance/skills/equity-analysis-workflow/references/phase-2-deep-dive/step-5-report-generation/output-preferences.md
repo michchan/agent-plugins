@@ -1,4 +1,4 @@
-# Output Preference
+# Output Preferences
 
 When you write the report:
 
