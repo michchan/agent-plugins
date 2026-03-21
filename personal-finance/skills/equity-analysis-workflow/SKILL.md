@@ -42,11 +42,7 @@ Confirm the equity type with the user before starting Phase 2 or later. Phase 1 
 
 **Ignore** any `/_archived/` folder.
 
-### Data Handling
-
-These rules apply to every phase and step.
-
-#### Locating reference files
+### Phase instruction files
 
 Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
 That table maps each step to a subdirectory.
@@ -57,8 +53,12 @@ Each subdirectory contains three files:
 | `data-requirements.md` | When you need to know what data fields are required, or what the cache TTL / refresh policy is |
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
-| `format-preferences.md` (if any) | Before you actually write the output, preferences to consider |
-| `content-preferences.md` (if any) | Before writing the output, additional sections required beyond the base skill's analysis framework |
+| `format-preferences.md` (optional) | Before you actually write the output, format/style preferences to consider |
+| `content-preferences.md` (optional) | Before writing the output, content preferences beyond what is derived from the base skill's analysis framework |
+
+### Data Handling
+
+These rules apply to every phase and step.
 
 #### Pre-fetch confirmation (QUESTION BEFORE DATA COLLECTION ‼️)
 
