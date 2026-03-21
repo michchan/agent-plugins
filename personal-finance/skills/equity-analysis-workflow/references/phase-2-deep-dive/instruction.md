@@ -43,7 +43,7 @@ Present options; wait for answer before showing Q4:
 2. Skip DCF and valuation — Steps 1–2 → Step 4 → Step 5; no `dcf-model.xlsx`
 3. Skip competitive analysis — Steps 1–3 → Step 5; no `competitive-analysis.pptx`; Step 5 omits comp sections
 4. Skip financial model — all steps but no Excel outputs (`financial-model.xlsx`, `dcf-model.xlsx`)
-5. Research and thesis only — Steps 1 → Step 5 (narrative only); no Excel, no DCF, no comps
+5. Research and thesis only — Steps 1–2 → Step 5 (narrative only); no Excel, no DCF, no comps. Step 1 fetches data only — no Excel output generated.
 
 Options are independently combinable except option 5, which supersedes all others.
 
@@ -87,7 +87,7 @@ After Q6, emit one line and proceed immediately:
 | 1 (new, reuse) | 2 (skip DCF) | New folder | Check TTL steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation section |
 | 1 (new, reuse) | 3 (skip comp) | New folder | Check TTL steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit positioning map, dim scoring, TAM split |
 | 1 (new, reuse) | 4 (skip fin model) | New folder | Check TTL steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx outputs | All narrative; no Excel |
-| 1 (new, reuse) | 5 (research + thesis) | New folder | Check TTL step 1 | 1→5 | No Excel, no DCF, no comps | Step 1 + Step 5 thesis narrative only |
+| 1 (new, reuse) | 5 (research + thesis) | New folder | Check TTL steps 1, 2 | 1→2→5 | No Excel, no DCF, no comps | Steps 1–2 + Step 5 thesis narrative only |
 | 2 (update, reuse) | 1 (full) | Most recent existing folder | Check TTL per step | 1→2→3→4→5 | Overwrite changed files | All |
 | 2 (update, reuse) | 2 (selective) | Most recent existing folder | Re-fetch for selected steps only | Named steps only | Unselected steps: reuse existing outputs | As applicable |
 | 3 (update, fresh) | 1 (full) | Most recent existing folder | Re-fetch all | 1→2→3→4→5 | All overwritten | All |
@@ -96,7 +96,7 @@ After Q6, emit one line and proceed immediately:
 | 4 (new, fresh) | 2 (skip DCF) | New folder | Re-fetch steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation |
 | 4 (new, fresh) | 3 (skip comp) | New folder | Re-fetch steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit comp sections |
 | 4 (new, fresh) | 4 (skip fin model) | New folder | Re-fetch steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx | All narrative |
-| 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch step 1 | 1→5 | No Excel, no DCF, no comps | Step 1 + Step 5 narrative |
+| 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch steps 1, 2 | 1→2→5 | No Excel, no DCF, no comps | Steps 1–2 + Step 5 narrative |
 
 ### Any other question(s)
 
@@ -108,8 +108,8 @@ MUST respect [SKILL.md](../../SKILL.md) for any question required before you sta
 
 | Step | Action |
 |------|--------|
-| **1. Company Research** | Data collection (workflow handles analysis) |
-| **2. Financial Model** | Data collection (workflow handles analysis) |
+| **1. Financial Model** | Data collection (workflow handles analysis) |
+| **2. Company Research** | Data collection (workflow handles analysis) |
 | **3. Valuation (DCF)** | Invoke skill `financial-analysis:dcf` |
 | **4. Competitive Analysis** | Invoke skill `financial-analysis:competitive-analysis` |
 | **5. Report Generation** | Invoke skill `equity-research:initiating-coverage` |
@@ -118,8 +118,8 @@ MUST respect [SKILL.md](../../SKILL.md) for any question required before you sta
 
 | Task | Instructions |
 |---|---|
-| Step 1: Company Research | `step-1-company-research/` |
-| Step 2: Financial Model | `step-2-financial-model/` |
+| Step 1: Financial Model | `step-1-financial-model/` |
+| Step 2: Company Research | `step-2-company-research/` |
 | Step 3: DCF | `step-3-dcf/` |
 | Step 4: Competitive Analysis | `step-4-competitive-analysis/` |
 | Step 5: Report Generation | `step-5-report-generation/` |

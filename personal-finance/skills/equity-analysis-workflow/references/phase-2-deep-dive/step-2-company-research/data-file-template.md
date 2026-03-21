@@ -27,28 +27,10 @@ Fetched: {YYYY-MM-DD}
 |---|---|---|
 | {KPI} | {VALUE} | {PERIOD} |
 
-## Income Statement Summary
-Fetched: {YYYY-MM-DD}
-| Year | Revenue | Gross Profit | Gross Margin | EBIT | Net Income |
-|---|---|---|---|---|---|
-| FY{YEAR} | — | — | —% | — | — |
-| FY{YEAR-1} | — | — | —% | — | — |
-| FY{YEAR-2} | — | — | —% | — | — |
-| FY{YEAR-3} | — | — | —% | — | — |
-
-## Cash Flow Summary
-Fetched: {YYYY-MM-DD}
-| Year | Operating CF | Capex | FCF | FCF Margin |
-|---|---|---|---|---|
-| FY{YEAR} | — | — | — | —% |
-| FY{YEAR-1} | — | — | — | —% |
-
-## Balance Sheet Summary
-Fetched: {YYYY-MM-DD}
-| Year | Total Debt | Cash | Net Debt | Total Equity |
-|---|---|---|---|---|
-| FY{YEAR} | — | — | — | — |
-| FY{YEAR-1} | — | — | — | — |
+## Historical Financials
+_(from Step 1 — not duplicated here)_
+See `{YYYY-MM-DD}-financial-model.md` for income statement, cash flow, and balance sheet detail.
+**Fallback (Step 1 absent):** populate income statement (4 years), cash flow (4 years), and balance sheet (2 years) inline using the same format as `step-1-financial-model/data-file-template.md`, with a `Fetched: {YYYY-MM-DD}` timestamp.
 
 ## Company History, Events & Acquisitions
 Fetched: {YYYY-MM-DD}
