@@ -2,6 +2,25 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.3.0] - 2026-03-21
+
+### Added
+
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-requirements.md` and `data-file-template.md`: Added **Quality & Capital Efficiency Ratios** section with return-on-equity, return-on-assets, return-on-invested-capital, asset turnover, and inventory turnover metrics
+- `equity-analysis-workflow` Phase 2 Step 1 (Company Research) `additional-sections.md`: Added two new output sections — company history/events/acquisitions (trailing 20 years) and major past price actions (trailing 10 years)
+- `equity-analysis-workflow` Phase 2 Step 1 (Company Research) `data-requirements.md`, `data-file-template.md`, `data-fetch-protocol.md`: Extended with fields for the two new company research sections
+- `equity-research:initiating-coverage` `SKILL.md`: Added `additional-sections.md` to the reference file lookup table
+
+### Changed
+
+- `equity-analysis-workflow`: Swapped step order — **Financial Model is now Step 1, Company Research is Step 2** so that company research can reuse already-fetched historical financial data instead of re-fetching it; updated all step references, folder names, and cross-step source citations
+- `equity-analysis-workflow` Phase 2 Step 2 (Company Research) `data-fetch-protocol.md`: Added fallback fetch instructions for when the financial model step is skipped
+- `equity-analysis-workflow` Phase 2 Q4=5 "Research and thesis only" scope: Updated to run steps 1→2→5 (Financial Model → Company Research → Report) so financial data is always available for the narrative
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-requirements.md` and `data-file-template.md`: Expanded Income Statement, Balance Sheet, and Cash Flow Statement field lists; added EBITDA, margins, EPS, Revenue Growth %, OpEx detail (R&D/S&M/G&A)
+- `equity-analysis-workflow` Phase 2 Step 2 (Financial Model) `data-fetch-protocol.md`: Replaced inline formula table with a cross-reference to `data-requirements.md`
+- `equity-analysis-workflow` `references/folder-structure.md`: Hidden system folders from the displayed folder structure
+- `equity-analysis-workflow` Phase 2 Step 5 (Report Generation) `output-preferences.md`: Refined output preference wordings
+
 ## [0.2.6] - 2026-03-21
 
 ### Changed
