@@ -29,6 +29,7 @@ This ensures outputs land in the correct folder.
     /Holding/
     /Closed/
 
+  # Each stock folder:
   /{Type}/{Stage}/{TICKER}/
     /.data/                                 ← data files (caches) (inputs to skills)
       {YYYY-MM-DD}-company-research.md      ← Phase 2 Step 1; never overwrite — create new dated file
@@ -40,19 +41,16 @@ This ensures outputs land in the correct folder.
       {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
     /.scripts/                              ← generation scripts for this ticker's binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}   ← e.g. 2026-01-15-create-dcf-model-dcf-model.{ext}
-    /Initiation/
-      {YYYY-MM-DD}-initiation-report/       ← one subfolder per run; never overwrite a prior run
-        company-research.md                 ← Phase 2 Step 1
-        financial-model.xlsx                ← Phase 2 Step 2
-        dcf-model.xlsx                      ← Phase 2 Step 3
-        competitive-analysis.pptx           ← Phase 2 Step 4
-        initiation-report.docx              ← Phase 2 Step 5
-        charts/
-    /Thesis/
-      {YYYY-MM-DD}-thesis-v1.md             ← Phase 3 (increment version on major updates)
-    /Reviews/
-      {YYYY}-Q{N}-earnings-preview.md       ← Phase 4 pre-earnings report
-      {YYYY}-Q{N}-earnings-update.md        ← Phase 4 post-earnings report
+    {YYYY-MM-DD}-initiation-report/         ← one subfolder per run; never overwrite a prior run (Phase 2)
+      company-research.md                   ← Phase 2 Step 1
+      financial-model.xlsx                  ← Phase 2 Step 2
+      dcf-model.xlsx                        ← Phase 2 Step 3
+      competitive-analysis.pptx             ← Phase 2 Step 4
+      initiation-report.docx                ← Phase 2 Step 5
+      charts/
+    {YYYY-MM-DD}-thesis-v1.md               ← Phase 3 (increment version on major updates)
+    {YYYY}-Q{N}-earnings-preview.md         ← Phase 4 pre-earnings report
+    {YYYY}-Q{N}-earnings-update.md          ← Phase 4 post-earnings report
     /_archived/                             ← ignored/superseded files
 ```
 
