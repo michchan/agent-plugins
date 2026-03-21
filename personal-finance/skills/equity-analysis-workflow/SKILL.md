@@ -18,6 +18,14 @@ A personal investing skill that wraps Anthropic's `equity-research:*` and `finan
 
 Read the following sections before start working on the tasks.
 
+### Required plugins
+
+The following plugins are required to be enabled:
+
+- Marketplace `anthropics/financial-services-plugins`
+  - `equity-research`
+  - `financial-analysis`
+
 ### Investor style
 
 This is a buy-and-hold, core-satellite style investor, with **2–10+ year horizon**.
@@ -124,6 +132,8 @@ And **all** of the following are true:
 ### Skill Invocation
 
 Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
+
+‼️ IMPORTANT: When you attempt to invoke the any of the skill and it is not found, ABORT the process and **ASK USER TO INSTALL AND ENABLE IT****. Refer to "Required plugins" section above for list of required plugins.
 
 ---
 
