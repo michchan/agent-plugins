@@ -4,54 +4,72 @@ _In `{Year - N}`, "N" represents trailing years for the equity type — see `dat
 
 ## Income Statement Summary
 Fetched: {YYYY-MM-DD}
-| Year | Revenue | Gross Profit | Gross Margin | EBIT | EBIT Margin | Net Income |
+| Year | Revenue | Revenue Growth % | Gross Profit | Gross Margin | EBIT | EBIT Margin | EBITDA | EBITDA Margin | Net Income | Net Income Margin | EPS (Diluted) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| FY{YEAR} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-1} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-2} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-3} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-4} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-5} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-6} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-7} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-8} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-9} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-10} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+| FY{YEAR-11} | — | —% | — | —% | — | —% | — | —% | — | —% | — |
+
+## OpEx Detail
+Fetched: {YYYY-MM-DD}
+_Omit columns not reported by the company._
+| Year | R&D ($) | R&D (% Rev) | S&M ($) | S&M (% Rev) | G&A ($) | G&A (% Rev) |
 |---|---|---|---|---|---|---|
-| FY{YEAR} | — | — | —% | — | —% | — |
-| FY{YEAR-1} | — | — | —% | — | —% | — |
-| FY{YEAR-2} | — | — | —% | — | —% | — |
-| FY{YEAR-3} | — | — | —% | — | —% | — |
-| FY{YEAR-4} | — | — | —% | — | —% | — |
-| FY{YEAR-5} | — | — | —% | — | —% | — |
-| FY{YEAR-6} | — | — | —% | — | —% | — |
-| FY{YEAR-7} | — | — | —% | — | —% | — |
-| FY{YEAR-8} | — | — | —% | — | —% | — |
-| FY{YEAR-9} | — | — | —% | — | —% | — |
-| FY{YEAR-10} | — | — | —% | — | —% | — |
-| FY{YEAR-11} | — | — | —% | — | —% | — |
+| FY{YEAR} | — | —% | — | —% | — | —% |
+| FY{YEAR-1} | — | —% | — | —% | — | —% |
+| FY{YEAR-2} | — | —% | — | —% | — | —% |
+| FY{YEAR-3} | — | —% | — | —% | — | —% |
+| FY{YEAR-4} | — | —% | — | —% | — | —% |
+| FY{YEAR-5} | — | —% | — | —% | — | —% |
+| FY{YEAR-6} | — | —% | — | —% | — | —% |
+| FY{YEAR-7} | — | —% | — | —% | — | —% |
+| FY{YEAR-8} | — | —% | — | —% | — | —% |
+| FY{YEAR-9} | — | —% | — | —% | — | —% |
+| FY{YEAR-10} | — | —% | — | —% | — | —% |
+| FY{YEAR-11} | — | —% | — | —% | — | —% |
 
 ## Balance Sheet Summary
 Fetched: {YYYY-MM-DD}
-| Year | Total Debt | Cash | Net Debt | Total Equity |
-|---|---|---|---|---|
-| FY{YEAR} | — | — | — | — |
-| FY{YEAR-1} | — | — | — | — |
-| FY{YEAR-2} | — | — | — | — |
-| FY{YEAR-3} | — | — | — | — |
-| FY{YEAR-4} | — | — | — | — |
-| FY{YEAR-5} | — | — | — | — |
-| FY{YEAR-6} | — | — | — | — |
-| FY{YEAR-7} | — | — | — | — |
-| FY{YEAR-8} | — | — | — | — |
-| FY{YEAR-9} | — | — | — | — |
-| FY{YEAR-10} | — | — | — | — |
-| FY{YEAR-11} | — | — | — | — |
+| Year | Total Assets | Current Assets | Current Liabilities | Total Debt | Cash | Net Debt | Total Equity | Goodwill & Intangibles | Net Debt / EBITDA | Book Value Per Share |
+|---|---|---|---|---|---|---|---|---|---|---|
+| FY{YEAR} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-1} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-2} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-3} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-4} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-5} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-6} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-7} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-8} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-9} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-10} | — | — | — | — | — | — | — | — | —x | — |
+| FY{YEAR-11} | — | — | — | — | — | — | — | — | —x | — |
 
 ## Cash Flow Summary
 Fetched: {YYYY-MM-DD}
-| Year | Operating CF | Capex | FCF | FCF Margin |
-|---|---|---|---|---|
-| FY{YEAR} | — | — | — | —% |
-| FY{YEAR-1} | — | — | — | —% |
-| FY{YEAR-2} | — | — | — | —% |
-| FY{YEAR-3} | — | — | — | —% |
-| FY{YEAR-4} | — | — | — | —% |
-| FY{YEAR-5} | — | — | — | —% |
-| FY{YEAR-6} | — | — | — | —% |
-| FY{YEAR-7} | — | — | — | —% |
-| FY{YEAR-8} | — | — | — | —% |
-| FY{YEAR-9} | — | — | — | —% |
-| FY{YEAR-10} | — | — | — | —% |
-| FY{YEAR-11} | — | — | — | —% |
+| Year | Operating Cash Flow | Capex | FCF | FCF Margin | FCF Yield | SBC | Change in Working Capital | Dividends Paid | Share Repurchases |
+|---|---|---|---|---|---|---|---|---|---|
+| FY{YEAR} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-1} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-2} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-3} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-4} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-5} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-6} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-7} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-8} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-9} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-10} | — | — | — | —% | —% | — | — | — | — |
+| FY{YEAR-11} | — | — | — | —% | —% | — | — | — | — |
 
 ## Key Metrics / KPIs
 Fetched: {YYYY-MM-DD}

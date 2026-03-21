@@ -10,6 +10,10 @@
 | Cash flow summary | Current session (Step 1 output); fallback: data file | — |
 | Key metrics / KPIs | Current session (Step 1 output); fallback: data file | — |
 
+## Derived / Computed Fields
+
+The other fields require **no additional fetch** — compute them from raw data already collected. See `data-requirements.md` › "Derived Field Formulas" for methods.
+
 ## Manual Prompt Batching
 
 When **Manual prompt** is selected and the equity type's trailing-year span (N) exceeds 5 (see `data-requirements.md` › Time Span by Equity Type), split data collection into separate prompts — one per 4-year batch.

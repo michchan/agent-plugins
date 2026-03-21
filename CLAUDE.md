@@ -34,6 +34,7 @@ agent-plugins/
 
 - Commit before asking user approval, unless user requested.
 - Hardcode values (TTLs, field lists, paths) that are already defined in another reference file — soft-reference the source instead to avoid duplicated sources of truth.
+- Use financial statement shorthand like "IS" (Income Statement), "CF" (Cash Flow), or "BS" (Balance Sheet) — instead always write out the full name.
 
 ## Versioning
 
