@@ -71,6 +71,23 @@ Fetched: {YYYY-MM-DD}
 | FY{YEAR-10} | — | — | — | —% | —% | — | — | — | — |
 | FY{YEAR-11} | — | — | — | —% | —% | — | — | — | — |
 
+## Quality & Capital Efficiency Ratios
+_Computed from data above — no additional fetch required. See `data-requirements.md` › Derived Field Formulas._
+| Year | ROIC | ROE | ROA | FCF Conversion | Net Debt / EBITDA | Interest Coverage |
+|---|---|---|---|---|---|---|
+| FY{YEAR} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-1} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-2} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-3} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-4} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-5} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-6} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-7} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-8} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-9} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-10} | —% | —% | —% | —% | —x | —x |
+| FY{YEAR-11} | —% | —% | —% | —% | —x | —x |
+
 ## Key Metrics / KPIs
 Fetched: {YYYY-MM-DD}
 | Metric | Value | Period |

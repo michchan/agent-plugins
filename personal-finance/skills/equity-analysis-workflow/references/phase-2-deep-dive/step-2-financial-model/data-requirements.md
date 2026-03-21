@@ -40,5 +40,10 @@ Applies to: Income Statement, Balance Sheet, and Cash Flow Summary.
 | Book Value Per Share | `Total Equity / Diluted Shares Outstanding` |
 | FCF Yield | `FCF / Market Cap` — uses current stock price × diluted shares |
 | R&D / S&M / G&A % of Revenue | `Line Item ($) / Revenue` |
+| ROIC | `NOPAT / Invested Capital` — NOPAT = EBIT × (1 − effective tax rate); Invested Capital = Total Equity + Net Debt; effective tax rate = Tax Expense / Pre-tax Income (Income Statement) |
+| ROE | `Net Income / Total Equity` |
+| ROA | `Net Income / Total Assets` |
+| FCF Conversion | `FCF / Net Income` |
+| Interest Coverage | `EBIT / Interest Expense` — Interest Expense from Income Statement (available in Step 1 output) |
 
 If D&A is not surfaced from Step 1 output, it is typically the largest non-cash line in the operating section of the cash flow statement — fetch it from the same Income Statement / Cash Flow source.
