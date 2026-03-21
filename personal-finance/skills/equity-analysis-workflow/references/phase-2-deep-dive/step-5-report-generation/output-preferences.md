@@ -13,4 +13,4 @@ When you write the report:
 
 ### Presentation
 
-- Visualize at least the historical or comparable figures, like growth rate, margin trend etc.
+- Visualize at least the historical or comparable figures, like growth rate, margin trend etc (Unless instructed to skip).
