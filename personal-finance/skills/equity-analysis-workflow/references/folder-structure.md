@@ -5,32 +5,28 @@ This ensures outputs land in the correct folder.
 
 ```
 /Equity-analyses/
-  /Screening/                                ← Phase 1 outputs (equity type not yet determined)
-    /.data/                                  ← Phase 1 raw data cache files
-      {YYYY-MM-DD}-top-down-{SECTOR}.md         ← top-down data cache (written from data-file-template.md)
-      {YYYY-MM-DD}-bottom-up-{CRITERIA}.md      ← bottom-up data cache
-      {YYYY-MM-DD}-events.md                    ← event-driven data cache
+  /Screening/                                     ← Phase 1 outputs (equity type not yet determined)
+    /.data/                                       ← Phase 1 raw data cache files
+      {YYYY-MM-DD}-top-down-{SECTOR}.md               ← top-down data cache (written from data-file-template.md)
+      {YYYY-MM-DD}-bottom-up-{CRITERIA}.md            ← bottom-up data cache
+      {YYYY-MM-DD}-events.md                          ← event-driven data cache
     /.scripts/                               ← generation scripts for Screening binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}
-    {YYYY-MM-DD}-top-down-{SECTOR}-report.md       ← Phase 1 top-down: polished screening report (output of equity-research:sector)
-    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md    ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
-    {YYYY-MM-DD}-events-report.md            ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
-    /_archived/                              ← ignored/superseded screening cache files
-  /Defensive/
-    /Watchlist/        ← initiated, not yet held
-    /Holding/          ← current positions
-    /Closed/           ← exited positions
+    {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report (output of equity-research:sector)
+    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
+    {YYYY-MM-DD}-events-report.md                 ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
+    /_archived/                                   ← ignored/superseded screening cache files
+  /Watchlist/                                     ← for initiated coverage and watching, not yet held 
+    /{THEME}/                                         ← contains "each stock folder" for a user-defined theme name
+  /Defensive/                                     ← contains "each stock folder" of active holding of the "type"
+    /Closed/                                          ← contains "each stock folder" of exited positions
   /Core/
-    /Watchlist/
-    /Holding/
     /Closed/
   /Satellite/
-    /Watchlist/
-    /Holding/
     /Closed/
 
-  # Each stock folder:
-  /{Type}/{Stage}/{TICKER}/
+  # Shorthand:
+  /{Stage-or-Type}/[Closed/]{TICKER}/
     /.data/                                 ← data files (caches) (inputs to skills)
       {YYYY-MM-DD}-company-research.md      ← Phase 2 Step 1; never overwrite — create new dated file
       {YYYY-MM-DD}-financial-model.md       ← Phase 2 Step 2; never overwrite — create new dated file
@@ -66,6 +62,7 @@ This ensures outputs land in the correct folder.
 
 ## Lifecycle transitions
 
-- **Screening → Watchlist**: After Phase 2 initiation + Phase 3 thesis. Assign equity type (Defensive/Core/Satellite) at this point and create the ticker folder under the appropriate type.
-- **Watchlist → Holding**: After buying. Move the folder; no file changes needed.
-- **Holding → Closed**: After selling. Move the folder; add a closing note to the thesis file with exit rationale and date.
+- **Screening → Watchlist**: After Phase 1, when a ticker is worth monitoring. Create the ticker folder under `/Watchlist/`.
+- **Watchlist → Initiated**: After Phase 2 initiation + Phase 3 thesis. Move folder to `/Initiated/`; assign equity type (Defensive/Core/Satellite) at this point.
+- **Initiated → /{Type}/**: After buying. Move folder to the appropriate type folder (e.g. `/Defensive/{TICKER}/`); no file changes needed.
+- **/{Type}/ → /{Type}/Closed/**: After selling. Move folder into `Closed/`; add a closing note to the thesis file with exit rationale and date.

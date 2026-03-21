@@ -42,6 +42,8 @@ Confirm the equity type with the user before starting Phase 2 or later. Phase 1 
 
 **Ignore** any `/_archived/` folder.
 
+**Confirm the THEME name with the user, when it comes to creating watchlist items.
+
 ### Phase instruction files
 
 Each phase instruction file (`instruction.md`) contains a **Detailed Instruction Map** table.
