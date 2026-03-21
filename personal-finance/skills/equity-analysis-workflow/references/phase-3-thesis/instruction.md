@@ -4,7 +4,7 @@ Before buying, lock the thesis in writing. This is your anchor for every future 
 
 Invoke skill `equity-research:thesis`.
 
-## Detailed Instruction Map
+## Detailed Specification Map
 
 | Task | Instructions |
 |---|---|

@@ -26,7 +26,7 @@ Run Phase 4 between-earnings (with competitive focus) if any of the following oc
 
 These are between-earnings triggers. They do not replace post-earnings or annual review procedures.
 
-## Detailed Instruction Map
+## Detailed Specification Map
 
 | Task | Instructions |
 |---|---|

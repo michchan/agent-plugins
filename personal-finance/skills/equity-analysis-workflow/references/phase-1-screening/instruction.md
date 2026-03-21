@@ -10,7 +10,7 @@ The top of the funnel. Start here when you don't have a specific name yet.
 | **Bottom-up** (criteria → names) | Screen with user's criteria | `/equity-research:screen` |
 | **Event-driven** (catalyst → entry point) | Upcoming events across watchlist or sector | `/equity-research:catalysts` |
 
-## Detailed Instruction Map
+## Detailed Specification Map
 
 | Task | Instructions |
 |---|---|

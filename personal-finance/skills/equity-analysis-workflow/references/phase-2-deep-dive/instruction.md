@@ -114,7 +114,7 @@ MUST respect [SKILL.md](../../SKILL.md) for any question required before you sta
 | **4. Competitive Analysis** | Invoke skill `financial-analysis:competitive-analysis` |
 | **5. Report Generation** | Invoke skill `equity-research:initiating-coverage` |
 
-## Detailed Instruction Map
+## Detailed Specification Map
 
 | Task | Instructions |
 |---|---|
