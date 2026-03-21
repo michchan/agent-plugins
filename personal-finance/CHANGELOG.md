@@ -2,6 +2,13 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.3.4] - 2026-03-22
+
+### Changed
+
+- `equity-analysis-workflow` `SKILL.md`: Refined skill details spec description
+- `equity-analysis-workflow` Phase instruction files: Refined descriptions for all phases (1-4)
+
 ## [0.3.3] - 2026-03-21
 
 ### Changed
