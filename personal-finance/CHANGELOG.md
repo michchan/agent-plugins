@@ -2,6 +2,12 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.3.3] - 2026-03-21
+
+### Changed
+
+- `equity-analysis-workflow` `SKILL.md`: Added required plugins confirmation to skill
+
 ## [0.3.2] - 2026-03-21
 
 ### Changed
