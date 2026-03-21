@@ -2,6 +2,17 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.3.2] - 2026-03-21
+
+### Changed
+
+- `equity-analysis-workflow` `folder-structure.md`: Flattened the per-ticker output folder — removed nested `/Initiation/`, `/Thesis/`, and other phase subfolders; outputs now sit directly in the ticker folder
+- `equity-analysis-workflow` `folder-structure.md`: Revised folder lifecycle stages — added explicit `/Watchlist/` stage (post Phase 1), renamed post-thesis stage to `/Initiated/`, and clarified move to `/{Type}/` only happens after buying
+- `equity-analysis-workflow` `SKILL.md`: Added rule to confirm THEME name with the user when creating watchlist items
+- `equity-analysis-workflow` `SKILL.md`: Reorganised reference file definitions — split into "Phase instruction files" and "Data Handling" sections; refined descriptions for `format-preferences.md` and `content-preferences.md`
+- `equity-analysis-workflow` Phase 2 Step 1 (Company Research): Renamed `additional-sections.md` → `content-preferences.md`; updated section headings and SKILL.md reference table
+- `equity-analysis-workflow` Phase 2 Step 5 (Report Generation): Renamed `output-preferences.md` → `format-preferences.md`; updated section headings and SKILL.md reference table
+
 ## [0.3.1] - 2026-03-21
 
 ### Changed
