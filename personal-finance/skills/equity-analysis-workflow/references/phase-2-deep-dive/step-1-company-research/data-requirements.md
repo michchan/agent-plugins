@@ -11,3 +11,5 @@
 | Cash flow summary | FCF trend | "FY2024 FCF: $180M, FCF margin: 16%" | 1 year |
 | Current stock price | For context | "$142.50" | 1 day |
 | 52-week range | High and low | "$98.00 – $168.00" | 3 days |
+| Company history, events & acquisitions | Major milestones, pivots, acquisitions, divestitures, regulatory events in trailing 20 years | "2017: Acquired XYZ for $1.2B; 2020: pivoted to SaaS model" | 1 year |
+| Past major price actions | Noticeable price moves (>±10%) with causes — trailing 10 years | "Mar 2020: −45% (COVID selloff); Nov 2021: +60% (earnings beat + raised guidance)" | 1 year |

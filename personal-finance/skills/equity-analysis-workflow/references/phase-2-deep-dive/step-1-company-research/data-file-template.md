@@ -50,6 +50,19 @@ Fetched: {YYYY-MM-DD}
 | FY{YEAR} | — | — | — | — |
 | FY{YEAR-1} | — | — | — | — |
 
+## Company History, Events & Acquisitions
+Fetched: {YYYY-MM-DD}
+
+- {YEAR}: {EVENT}
+- {YEAR}: {EVENT}
+
+## Past Major Price Actions
+Fetched: {YYYY-MM-DD}
+
+| Period | Move | Cause |
+|---|---|---|
+| {DATE_RANGE} | {MAGNITUDE} | {CAUSE} |
+
 ## Current Market Data
 Fetched: {YYYY-MM-DD} _(always fetch fresh — do not use if stale)_
 - Current price: ${VALUE}

@@ -1,6 +1,6 @@
 ---
 name: Release
-description: Bump plugin version, commit, and tag the release
+description: Bump plugin version, commit, and tag the release. Use when use asks to "release". Do NOT use when only "commit" is mentioned.
 argument-hint: "[plugin-name] [patch|minor|major]"
 ---
 
