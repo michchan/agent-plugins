@@ -11,7 +11,7 @@ This ensures outputs land in the correct folder.
       {YYYY-MM-DD}-bottom-up-{CRITERIA}.md      ← bottom-up data cache
       {YYYY-MM-DD}-events.md                    ← event-driven data cache
     /.scripts/                               ← generation scripts for Screening binary outputs
-      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py
+      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}
     {YYYY-MM-DD}-top-down-{SECTOR}-report.md       ← Phase 1 top-down: polished screening report (output of equity-research:sector)
     {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md    ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
     {YYYY-MM-DD}-events-report.md            ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
@@ -39,7 +39,7 @@ This ensures outputs land in the correct folder.
       {YEAR}-Q{N}-between-earnings.md       ← Phase 4 between-earnings (per event, archived)
       {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
     /.scripts/                              ← generation scripts for this ticker's binary outputs
-      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py   ← e.g. 2026-01-15-create-dcf-model-dcf-model.py
+      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}   ← e.g. 2026-01-15-create-dcf-model-dcf-model.{ext}
     /Initiation/
       {YYYY-MM-DD}-initiation-report/       ← one subfolder per run; never overwrite a prior run
         company-research.md                 ← Phase 2 Step 1

@@ -2,6 +2,12 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.3.1] - 2026-03-21
+
+### Changed
+
+- `equity-analysis-workflow` `folder-structure.md`: Updated script naming convention from `.py` suffix to `.{ext}` placeholder to clarify that scripts can be in any format (Python, shell, etc.), not exclusively Python; updated examples and cross-references
+
 ## [0.3.0] - 2026-03-21
 
 ### Added
