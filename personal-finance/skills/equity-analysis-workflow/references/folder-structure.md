@@ -6,11 +6,11 @@ This ensures outputs land in the correct folder.
 ```
 /Equity-analyses/
   /Screening/                                ← Phase 1 outputs (equity type not yet determined)
-    /Data/                                   ← Phase 1 raw data cache files
+    /.data/                                  ← Phase 1 raw data cache files
       {YYYY-MM-DD}-top-down-{SECTOR}.md         ← top-down data cache (written from data-file-template.md)
       {YYYY-MM-DD}-bottom-up-{CRITERIA}.md      ← bottom-up data cache
       {YYYY-MM-DD}-events.md                    ← event-driven data cache
-    /Scripts/                                ← generation scripts for Screening binary outputs
+    /.scripts/                               ← generation scripts for Screening binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py
     {YYYY-MM-DD}-top-down-{SECTOR}-report.md       ← Phase 1 top-down: polished screening report (output of equity-research:sector)
     {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md    ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
@@ -30,7 +30,7 @@ This ensures outputs land in the correct folder.
     /Closed/
 
   /{Type}/{Stage}/{TICKER}/
-    /Data/                                  ← data files (caches) (inputs to skills)
+    /.data/                                 ← data files (caches) (inputs to skills)
       {YYYY-MM-DD}-company-research.md      ← Phase 2 Step 1; never overwrite — create new dated file
       {YYYY-MM-DD}-financial-model.md       ← Phase 2 Step 2; never overwrite — create new dated file
       {YYYY-MM-DD}-peer-data.md             ← Phase 2 Step 3 (DCF comps input)
@@ -38,7 +38,7 @@ This ensures outputs land in the correct folder.
       {YEAR}-Q{N}-earnings.md               ← Phase 4 post-earnings (per event, archived)
       {YEAR}-Q{N}-between-earnings.md       ← Phase 4 between-earnings (per event, archived)
       {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
-    /Scripts/                               ← generation scripts for this ticker's binary outputs
+    /.scripts/                              ← generation scripts for this ticker's binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.py   ← e.g. 2026-01-15-create-dcf-model-dcf-model.py
     /Initiation/
       {YYYY-MM-DD}-initiation-report/       ← one subfolder per run; never overwrite a prior run
