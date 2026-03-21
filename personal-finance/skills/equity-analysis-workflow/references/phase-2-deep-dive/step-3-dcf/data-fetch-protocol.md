@@ -16,21 +16,21 @@ For each required peer ticker {P}, resolve each field using the following priori
 
 ### Level 1: Subject's own peer data cache
 
-- File: subject's `*-peer-data.md` (path per folder-structure.md, most recent)
+- File: subject's `*-peer-data.md` (path per file-structure.md, most recent)
 - Look for row where Ticker = {P}
 - Apply per-field TTL per `data-requirements.md`; skip stale fields and mark them as needing resolution
 
 ### Level 2: Cross-ticker peer data file
 
 - Only for fields not resolved in Level 1
-- Scan all other tickers' `*-peer-data.md` files (path per folder-structure.md, exclude subject)
+- Scan all other tickers' `*-peer-data.md` files (path per file-structure.md, exclude subject)
 - For each file: check Peer Comparable Data table for a row where Ticker = {P}
 - Select the most recently fetched match; apply per-field TTL per `data-requirements.md`
 
 ### Level 3: Peer's own financial model
 
 - Only for fields not yet resolved that can be derived from a financial model (see derivations below)
-- Find {P}'s `*-financial-model.md` (path per folder-structure.md, most recent)
+- Find {P}'s `*-financial-model.md` (path per file-structure.md, most recent)
 - Derive:
   - Revenue Growth → Income Statement section: (LTM Revenue / prior year) - 1
   - FCF Margin → Cash Flow Summary section: most recent FCF Margin column

@@ -1,4 +1,4 @@
-# Folder Structure
+# File Structure
 
 **Always ask the user to confirm equity type and lifecycle stage before creating any files.**
 This ensures outputs land in the correct folder.
@@ -49,6 +49,10 @@ This ensures outputs land in the correct folder.
     {YYYY}-Q{N}-earnings-update.md          ← Phase 4 post-earnings report
     /_archived/                             ← ignored/superseded files
 ```
+
+## File management
+
+- Do NOT create/keep empty folders.
 
 ## Scripts rules
 

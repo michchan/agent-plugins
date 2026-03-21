@@ -35,10 +35,10 @@ which metrics matter most.
 
 Confirm the equity type with the user before starting Phase 2 or later. Phase 1 (Screening) is type-agnostic — equity type is not yet determined.
 
-### Folder Structure
+### File Structure
 
 **Always confirm equity type and lifecycle stage with the user before creating any files.**
-**Read** `references/folder-structure.md` for the full tree and lifecycle transition rules.
+**Read** `references/file-structure.md` for the full tree and lifecycle transition rules.
 
 **Ignore** any `/_archived/` folder.
 
@@ -67,7 +67,7 @@ These rules apply to every phase and step.
 Before collecting any data, ask the user to confirm the method to collect.
 Offer two options:
 
-1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/folder-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
+1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
 2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using `data-requirements.md` for fields/sources and `data-file-template.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
@@ -79,7 +79,7 @@ Offer two options:
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
 1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
-2. Determine the file path from `references/folder-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
+2. Determine the file path from `references/file-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.
@@ -102,7 +102,7 @@ If the expected previous-step cache file is not found:
 
 #### Save rule
 
-After any step that produces a binary output (`.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/folder-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
+After any step that produces a binary output (`.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/file-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
 
 #### Discovery rule
 
