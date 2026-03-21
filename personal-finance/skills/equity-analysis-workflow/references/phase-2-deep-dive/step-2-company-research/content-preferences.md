@@ -1,10 +1,10 @@
-# Additional Sections — Phase 2 / Step 1: Company Research
+# Content Preferences
+
+## Additional section
 
 Include these sections in the company research output in addition to the standard analysis framework.
 
----
-
-## Company History, Events & Acquisitions
+### Company History, Events & Acquisitions
 
 Narrative covering:
 - Major strategic pivots or business model changes
@@ -17,7 +17,7 @@ Organize chronologically. Aim for 1–2 sentences per event.
 
 ---
 
-## Past Major Price Actions
+### Past Major Price Actions
 
 Annotated timeline of noticeable price moves (>±20% within a short period, or longer structural trends):
 - Date range
