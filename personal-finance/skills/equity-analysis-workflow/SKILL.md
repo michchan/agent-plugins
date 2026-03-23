@@ -64,7 +64,7 @@ Each subdirectory contains three files:
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
 | `content-preferences.md` (if any) | Before you compose the analysis, content preferences beyond what is derived from the base skill's analysis framework |
-| `format-preferences.md` (if any) | Before you actually write the output, format/style preferences to consider |
+| `format-preferences.md` (if any) | Before you actually write the output (or generation script), format/style preferences to consider |
 
 ### Data Handling
 
