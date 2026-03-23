@@ -152,7 +152,7 @@ Identify the phase that matches the user's intent.
 | 3 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-3-thesis/instruction.md` |
 | 4 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-4-ongoing-review/instruction.md` |
 
-**Rhythm at a Glance**
+**Reference: Rhythm at a Glance**
 
 ```
 QUARTERLY
@@ -168,8 +168,6 @@ ANNUAL
 
 ### 2. Execute the phase
 
-Follow these steps in order:
-
-1. **Read the phase instruction file** identified in Task 1 before doing anything else.
-2. **Collect data** following Rules > Data Handling.
-3. **Invoke delegated skills** per Rules > Skill Invocation.
+**Follow the phase instruction file** identified in Task 1, with following considerations in mind:
+- **Before you collect/compile data**: read through and follow "Rules > Data Handling".
+- **When you invoke delegated skill(s)**: read through and follow "Rules > Skill Invocation".

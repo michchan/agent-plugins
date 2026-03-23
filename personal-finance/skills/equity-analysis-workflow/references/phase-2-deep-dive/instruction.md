@@ -116,7 +116,7 @@ MUST respect [SKILL.md](../../SKILL.md) for any question required before you sta
 
 ## Detailed Specification Map
 
-| Task | Instructions |
+| Task | Detailed specification |
 |---|---|
 | Step 1: Financial Model | `step-1-financial-model/` |
 | Step 2: Company Research | `step-2-company-research/` |

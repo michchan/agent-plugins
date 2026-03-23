@@ -1,34 +1,38 @@
 # Phase 4 — Ongoing Review
 
-Once a position is open (folder moves to `/Holding/`), shift to monitoring cadence.
+## Rules (READ FIRST)
 
-Ask the user which review type applies before proceeding:
+### Objective
 
-- **Pre-Earnings**: Invoke skill `equity-research:earnings-preview`
-- **Post-Earnings**: three steps in sequence — ask to run step by step or all at once:
-  1. Invoke skill `equity-research:earnings` — beat/miss analysis, thesis check
-  2. Invoke skill `equity-research:model-update` — update actuals, revise forward estimates
-  3. Invoke skill `equity-research:thesis` — update or reaffirm
-- **Between Earnings** (lightweight): two independent options — ask which to run:
-  - Invoke skill `equity-research:morning-note` — macro + portfolio-level developments
-  - Invoke skill `equity-research:catalysts` — upcoming events across full portfolio
-- **Annual Review**: Invoke skill `equity-research:thesis` — reaffirm or close each position
+Once a position is open (folder moves to `/Holding/`), shift to a monitoring cadence. Select the review type that matches the current situation.
 
-## Between-Earnings Entry Triggers
+### Review Type Map
 
-Run Phase 4 between-earnings (with competitive focus) if any of the following occur since initiation:
-
-| Trigger | Threshold | Action |
+| Review Type | Description | Skill(s) |
 |---|---|---|
-| Named competitor announces M&A or major product expansion | Any such announcement | Run `equity-research:morning-note` with competitive framing; consider re-running Step 4 competitive analysis if material |
-| Peer group NTM multiple spread widens or narrows | >20% change in EV/NTM Rev spread since initiation | Re-fetch `{YYYY-MM-DD}-peer-data.md`; flag thesis impact in between-earnings file |
-| NRR or gross retention change | Moves >5 percentage points since initiation | Run `equity-research:morning-note`; update `{YEAR}-Q{N}-between-earnings.md` |
+| **Pre-Earnings** | Preview upcoming earnings with scenarios | `equity-research:earnings-preview` |
+| **Post-Earnings** | Beat/miss analysis → model update → thesis reaffirmation (sequential) | `equity-research:earnings` → `equity-research:model-update` → `equity-research:thesis` |
+| **Between Earnings** | Lightweight monitoring; two independent options — ask which to run | `equity-research:morning-note` or `equity-research:catalysts` |
+| **Annual Review** | Reaffirm or close each position | `equity-research:thesis` |
 
-These are between-earnings triggers. They do not replace post-earnings or annual review procedures.
+### Review Type Triggers
 
-## Detailed Specification Map
+Use these to determine the appropriate review type when initiating Phase 4:
 
-| Task | Instructions |
+| Review Type | Trigger |
+|---|---|
+| **Pre-Earnings** | Earnings date is within the upcoming 1–2 weeks |
+| **Post-Earnings** | Company has reported results this period |
+| **Annual Review** | 12 months have passed since initiation or last annual review |
+| **Between Earnings** (competitive focus) | Named competitor announces M&A or major product expansion (any such announcement) |
+| **Between Earnings** (valuation focus) | Peer group NTM multiple spread widens or narrows >20% in EV/NTM Rev since initiation |
+| **Between Earnings** (fundamental focus) | NRR or gross retention moves >5 percentage points since initiation |
+
+Between-earnings triggers do not replace post-earnings or annual review procedures.
+
+### Detailed Specification Map
+
+| Review Type | Detailed specification |
 |---|---|
 | Pre-Earnings | `pre-earnings/` |
 | Post-Earnings Step 1: Earnings Analysis | `post-earnings-step-1-earnings/` |
@@ -36,3 +40,13 @@ These are between-earnings triggers. They do not replace post-earnings or annual
 | Post-Earnings Step 3: Thesis Update | `post-earnings-step-3-thesis/` |
 | Between Earnings | `between-earnings/` |
 | Annual Review | `annual-review/` |
+
+## Tasks
+
+1. Ask the user which review type applies (Pre-Earnings, Post-Earnings, Between Earnings, or Annual Review). If user hasn't provided initially, suggest the review type according to "Review Type Triggers", then confirm with user.
+2. Confirm with user if necessary:
+    - For **Post-Earnings**: confirm whether to run all steps sequentially or step-by-step with pauses.
+    - For **Between Earnings**: confirm which option to run.
+3. Find and read the detailed specification(s) from "Rules > Detailed Specification Map".
+4. Collect and compile data as instructed in the spec.
+5. Invoke the skill(s) in the order specified by the Review Type Map.

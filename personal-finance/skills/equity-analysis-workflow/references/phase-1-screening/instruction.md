@@ -1,8 +1,12 @@
 # Phase 1 — Screening & Idea Generation
 
-The top of the funnel. Start here when you don't have a specific name yet.
+## Rules (READ FIRST)
 
-## Entry Points
+### Objective
+
+The top of the funnel. Start here when user don't have a specific name yet.
+
+### Approach Map
 
 | Approach | Description | Skill |
 |---|---|---|
@@ -10,10 +14,17 @@ The top of the funnel. Start here when you don't have a specific name yet.
 | **Bottom-up** (criteria → names) | Screen with user's criteria | `/equity-research:screen` |
 | **Event-driven** (catalyst → entry point) | Upcoming events across watchlist or sector | `/equity-research:catalysts` |
 
-## Detailed Specification Map
+### Detailed Specification Map
 
-| Task | Instructions |
+| Approach | Detailed specification |
 |---|---|
-| Top-down screening | `top-down/` |
-| Bottom-up screening | `bottom-up/` |
-| Event-driven screening | `event-driven/` |
+| Top-down | `top-down/` |
+| Bottom-up | `bottom-up/` |
+| Event-driven | `event-driven/` |
+
+## Tasks
+
+1. Select the approach from "Rules > Approach Map".
+2. Find and read the corresponding detailed specification from "Rules > Detailed specification".
+3. Collect and compile data as instructed in base rules.
+4. Invoke the delegated skill to analyze and output the report.
