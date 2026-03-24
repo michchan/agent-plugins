@@ -169,5 +169,5 @@ ANNUAL
 ### 2. Execute the phase
 
 **Follow the phase instruction file** identified in Task 1, with following considerations in mind:
-- **Before you collect/compile data**: read through and follow "Rules > Data Handling".
+- **When you collect/compile data**: read through and follow "Rules > Data Handling".
 - **When you invoke delegated skill(s)**: read through and follow "Rules > Skill Invocation".
