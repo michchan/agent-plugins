@@ -1,9 +1,5 @@
 # Content Preferences
 
-## Template
-
-Output based on `output-template.md` file of this task.
-
 ## Additional section
 
 Include these sections in the company research output in addition to the standard analysis framework.
