@@ -21,6 +21,6 @@ Policy: run either one of the tasks.
 ## Tasks
 
 1. Select the approach from the "Subtask Map".
-2. Find and read the corresponding standard specification files.
-3. Collect and compile data following the specification and with respect to the "Data Collection & Compilation" rules.
-4. Invoke the delegated skill to analyze and output the report with respect to the "Analysis & Output" rules.
+2. Find and read the corresponding detailed specification from "Rules > Subtask Map".
+3. Collect and compile data following the specification and the "Data Collection & Compilation" rules in SKILL.md.
+4. Invoke the skill with respect to the "Analysis & Output" rules in SKILL.md.
