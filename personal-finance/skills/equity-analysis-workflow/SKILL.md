@@ -43,6 +43,8 @@ which metrics matter most.
 
 Confirm the equity type with the user before starting Phase 2 or later. Phase 1 (Screening) is type-agnostic — equity type is not yet determined.
 
+---
+
 ### File Structure
 
 **Always confirm equity type and lifecycle stage with the user before creating any files.**
@@ -52,21 +54,30 @@ Confirm the equity type with the user before starting Phase 2 or later. Phase 1 
 
 **Confirm the THEME name with the user, when it comes to creating watchlist items.
 
-### Phase Detailed Specification (spec) files
+### Phase Specification Structure
 
-Each phase instruction file (`instruction.md`) contains a **Detailed Specification Map** table.
-That table maps each step to a subdirectory.
-Each subdirectory contains three files:
+#### Phase instruction entry point
 
-| File | When to read |
+Each phase contains an `instruction.md` file which is the entry point of the phase.
+
+#### Phase subtask map and standard specification files
+
+Each phase can contain a single task or multiple subtasks. There should be an instruction or mapping table which guides you how to find the corresponding path of task/subtask specification.
+
+In either cases (of single task or multiple subtasks), there will be certain specification files for the task, depending on the needs. Here is a list of standard specification files you might find in the subtask:
+
+| File | When to read (if not specifically instructed) |
 |---|---|
+| `subtask-instruction.md` | When it exists: read for step-specific instructions, including content preferences (additional sections, analysis focus) and format preferences (output template, layout, style). |
 | `data-requirements.md` | When you need to know what data fields are required, or what the cache TTL / refresh policy is |
 | `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
 | `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
-| `content-preferences.md` (if any) | Before you compose the analysis, content preferences beyond what is derived from the base skill's analysis framework |
-| `format-preferences.md` (if any) | Before you actually write the output (or generation script), format/style preferences to consider |
 
-### Data Handling
+*IMPORTANT NOTE:* depending on each subtask, the use of each file can be instructed to use in another way different from above use cases. Use this table as a baseline and follow the specific instructions (if any).
+
+---
+
+### Data Collection & Compilation
 
 These rules apply to every phase and step.
 
@@ -106,20 +117,30 @@ If the expected previous-step cache file is not found:
 - If a fetch times out or fails, do **not** retry silently — surface the failure to the user
 - Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data
 
-### Scripts
+---
 
-#### Save rule
+### Analysis & Output
+
+#### Skill Invocation
+
+Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
+
+‼️ IMPORTANT: When you attempt to invoke the any of the skill and it is not found, ABORT the process and **ASK USER TO INSTALL AND ENABLE IT****. Refer to "Required plugins" section above for list of required plugins.
+
+#### Output Scripts
+
+##### Save rule
 
 After any step that produces a binary output (`.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/file-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
 
-#### Discovery rule
+##### Discovery rule
 
 Before starting any step where the user's intent is a formatting or structural update (not a data refresh), check the `Scripts/` folder first:
 
 1. **Script found** → present the "script-only update" path: modify only the relevant section of the script, re-run it, and skip data re-fetch entirely.
 2. **No script found** → generate the output normally and save the script as part of that run.
 
-#### Trigger signals for the script-only path
+##### Trigger signals for the script-only path
 
 Route to the script-only path when the user says things like:
 - "update formatting", "fix the chart", "change the layout", "tweak the template", "small update to [output file]"
@@ -128,12 +149,6 @@ And **all** of the following are true:
 - No new earnings data has been released
 - No thesis change has been requested
 - No data staleness concern has been raised
-
-### Skill Invocation
-
-Whenever a phase instruction file lists a skill to run — shown as `/namespace:name` — invoke it using the **Skill tool** with `skill: "namespace:name"` (drop the leading `/`). You are the orchestrator; do not ask the user to type the slash command themselves.
-
-‼️ IMPORTANT: When you attempt to invoke the any of the skill and it is not found, ABORT the process and **ASK USER TO INSTALL AND ENABLE IT****. Refer to "Required plugins" section above for list of required plugins.
 
 ---
 
@@ -169,5 +184,5 @@ ANNUAL
 ### 2. Execute the phase
 
 **Follow the phase instruction file** identified in Task 1, with following considerations in mind:
-- **When you collect/compile data**: read through and follow "Rules > Data Handling".
-- **When you invoke delegated skill(s)**: read through and follow "Rules > Skill Invocation".
+- **When you collect/compile data**: read through and follow "Rules > Data Collection & Compilation".
+- **When you invoke delegated skill(s) to analyze and output**: read through and follow "Rules > Analysis & Output".

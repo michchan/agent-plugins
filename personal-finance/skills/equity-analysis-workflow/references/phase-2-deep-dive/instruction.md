@@ -129,7 +129,7 @@ Ask only when at least one fetch will occur:
 When applicable, ask:
 
 > How should data be collected?
-> See SKILL.md › Data Handling › Pre-fetch confirmation for the options.
+> See SKILL.md › Data Collection & Compilation › Pre-fetch confirmation for the options.
 
 Wait for the user's answer before emitting the confirmation line.
 
