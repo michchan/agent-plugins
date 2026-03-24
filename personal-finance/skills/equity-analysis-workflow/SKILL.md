@@ -62,7 +62,7 @@ Each phase contains an `instruction.md` file which is the entry point of the pha
 
 #### Phase subtask map and standard specification files
 
-Each phase can contain a single task or multiple subtasks. There should be an instruction or mapping table which guides you how to find the corresponding path of task/subtask specification.
+Each phase can contain a single task or multiple subtasks. There could be an instruction or mapping table which guides you how to find the corresponding path of task/subtask specification.
 
 In either cases (of single task or multiple subtasks), there will be certain specification files for the task, depending on the needs. Here is a list of standard specification files you might find in the subtask:
 

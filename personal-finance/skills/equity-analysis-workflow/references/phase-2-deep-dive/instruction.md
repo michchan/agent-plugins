@@ -47,6 +47,22 @@ Ask in order; wait for each answer before asking the next:
 ## Tasks
 
 1. Run "Rules > Pre-execution Checks".
+
 2. For each step in scope, find and read the corresponding detailed specification from "Rules > Subtask Map".
-3. Follow `subtask-instruction.md`.
-4. Repeat steps 2–3 for each remaining step in scope.
+
+3. Load `equity-research:initiating-coverage` skill, with passed custom rules:
+   - mention the corresponding task to do (e.g. `Task 1`)
+   - follow data requirements from the skill, collect and compile data following the "Data Collection & Compilation" rules in `equity-analysis-workflow/SKILL.md`
+   - respect "Analysis & Output" rules in `equity-analysis-workflow/SKILL.md`
+   - respect rules in this file (e.g. generate a prompt and wait for user to collect data for "Manual prompt" data mode).
+
+   Example prompt:
+   ```
+   Use `equity-research:initiating-coverage` skill, Do Task 4 for {Exchange:Ticker}, with following instructions: {Your generated extra instructions}
+   ```
+
+   The result should go in either way:
+   1. If "auto fetch" data mode is selected by user, it goes straight from data collection to the result/output.
+   2. If "manual prompt" data mode is selected by user, it first returns a "prompt" for user to collect the data and return to you. Then it uses the returned data to achieve the result/output.
+
+4. Repeat steps 2–4 for each remaining step in scope.
