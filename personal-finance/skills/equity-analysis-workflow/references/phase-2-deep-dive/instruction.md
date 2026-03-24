@@ -10,21 +10,23 @@ For any stock that clears screening, this phase builds conviction. It runs as a 
 
 | Step | Task | Type | Instruction |
 |---|---|---|---|
-| 1 | Financial Model | Data collection & compilation only | Collect data according to specification. |
+| 1 | Financial Data Collection | Data collection & compilation only | Collect historical financial data according to specification. |
 | 2 | Company Research | Data collection & compilation only | Collect data according to specification. |
-| 3 | Valuation (DCF) | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `financial-analysis:dcf`. |
-| 4 | Competitive Analysis | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `financial-analysis:competitive-analysis`. |
-| 5 | Report Generation | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `equity-research:initiating-coverage`. |
+| 3 | Financial Modeling | Data compilation + analysis | Read Step 1 and Step 2 outputs, then build forward projections according to specification. |
+| 4 | DCF Valuation | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `financial-analysis:dcf`. |
+| 5 | Competitive Analysis | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `financial-analysis:competitive-analysis`. |
+| 6 | Report Generation | Data collection & compilation + analysis | Collect data according to specification, then invoke skill `equity-research:initiating-coverage`. |
 
 ### Detailed Specification Map
 
 | Step | Task | Detailed specification |
 |---|---|---|
-| 1 | Financial Model | `step-1-financial-model/` |
+| 1 | Financial Data Collection | `step-1-financial-data/` |
 | 2 | Company Research | `step-2-company-research/` |
-| 3 | DCF | `step-3-dcf/` |
-| 4 | Competitive Analysis | `step-4-competitive-analysis/` |
-| 5 | Report Generation | `step-5-report-generation/` |
+| 3 | Financial Modeling | `step-3-financial-model/` |
+| 4 | DCF Valuation | `step-4-dcf/` |
+| 5 | Competitive Analysis | `step-5-competitive-analysis/` |
+| 6 | Report Generation | `step-6-report-generation/` |
 
 ### Pre-execution Checks
 
@@ -81,36 +83,36 @@ Present options; wait for answer before showing step 5:
 **For mode 1 or 4 (new report context):**
 
 1. Full report — all steps *(default if user replies without selecting)*
-2. Skip DCF and valuation — Steps 1–2 → Step 4 → Step 5; no `dcf-model.xlsx`
-3. Skip competitive analysis — Steps 1–3 → Step 5; no `competitive-analysis.pptx`; Step 5 omits comp sections
-4. Skip financial model — all steps but no Excel outputs (`financial-model.xlsx`, `dcf-model.xlsx`)
-5. Research and thesis only — Steps 1–2 → Step 5 (narrative only); no Excel, no DCF, no comps. Step 1 fetches data only — no Excel output generated.
+2. Skip DCF and valuation — Steps 1–2 → Step 3 → Step 5 → Step 6; no `dcf-model.xlsx`
+3. Skip competitive analysis — Steps 1–4 → Step 6; no `competitive-analysis.pptx`; Step 6 omits comp sections
+4. Skip financial model — all steps but no Excel outputs (`financial-model.xlsx`, `dcf-model.xlsx`); Step 3 is skipped; Step 4 uses consensus estimates only
+5. Research and thesis only — Steps 1–2 → Step 6 (narrative only); no Excel, no DCF, no comps
 
 Options are independently combinable except option 5, which supersedes all others.
 
 **For mode 2 or 3 (update context):**
 
 1. Full report — re-run all steps *(default)*
-2. Selective — name the step(s) to re-run; all others reuse existing outputs as-is. Valid options: Step 1, Step 2, Step 3, Step 4, Step 5, or any combination.
+2. Selective — name the step(s) to re-run; all others reuse existing outputs as-is. Valid options: Step 1, Step 2, Step 3, Step 4, Step 5, Step 6, or any combination.
 
 **Branching table:**
 
 | Mode | Scope | Folder | Data caches | Steps run | Outputs reused vs. generated | Report sections |
 |---|---|---|---|---|---|---|
-| 1 (new, reuse) | 1 (full) | New `{today}-initiation-report/` | Check TTL per step; reuse if fresh | 1→2→3→4→5 | All generated fresh | All |
-| 1 (new, reuse) | 2 (skip DCF) | New folder | Check TTL steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation section |
-| 1 (new, reuse) | 3 (skip comp) | New folder | Check TTL steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit positioning map, dim scoring, TAM split |
-| 1 (new, reuse) | 4 (skip fin model) | New folder | Check TTL steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx outputs | All narrative; no Excel |
-| 1 (new, reuse) | 5 (research + thesis) | New folder | Check TTL steps 1, 2 | 1→2→5 | No Excel, no DCF, no comps | Steps 1–2 + Step 5 thesis narrative only |
-| 2 (update, reuse) | 1 (full) | Most recent existing folder | Check TTL per step | 1→2→3→4→5 | Overwrite changed files | All |
+| 1 (new, reuse) | 1 (full) | New `{today}-initiation-report/` | Check TTL per step; reuse if fresh | 1→2→3→4→5→6 | All generated fresh | All |
+| 1 (new, reuse) | 2 (skip DCF) | New folder | Check TTL steps 1, 2, 3, 5 | 1→2→3→5→6 | No dcf-model.xlsx | Omit valuation section |
+| 1 (new, reuse) | 3 (skip comp) | New folder | Check TTL steps 1, 2, 3, 4 | 1→2→3→4→6 | No competitive-analysis.pptx | Omit positioning map, dim scoring, TAM split |
+| 1 (new, reuse) | 4 (skip fin model) | New folder | Check TTL steps 1, 2, 4, 5 | 1→2→4→5→6 | No .xlsx outputs; Step 4 uses consensus only | All narrative; no Excel |
+| 1 (new, reuse) | 5 (research + thesis) | New folder | Check TTL steps 1, 2 | 1→2→6 | No Excel, no DCF, no comps | Steps 1–2 + Step 6 thesis narrative only |
+| 2 (update, reuse) | 1 (full) | Most recent existing folder | Check TTL per step | 1→2→3→4→5→6 | Overwrite changed files | All |
 | 2 (update, reuse) | 2 (selective) | Most recent existing folder | Re-fetch for selected steps only | Named steps only | Unselected steps: reuse existing outputs | As applicable |
-| 3 (update, fresh) | 1 (full) | Most recent existing folder | Re-fetch all | 1→2→3→4→5 | All overwritten | All |
+| 3 (update, fresh) | 1 (full) | Most recent existing folder | Re-fetch all | 1→2→3→4→5→6 | All overwritten | All |
 | 3 (update, fresh) | 2 (selective) | Most recent existing folder | Re-fetch for selected steps only | Named steps only | Unselected steps: reuse existing outputs | As applicable |
-| 4 (new, fresh) | 1 (full) | New `{today}-initiation-report/` | Re-fetch all | 1→2→3→4→5 | All generated fresh | All |
-| 4 (new, fresh) | 2 (skip DCF) | New folder | Re-fetch steps 1, 2, 4 | 1→2→4→5 | No dcf-model.xlsx | Omit valuation |
-| 4 (new, fresh) | 3 (skip comp) | New folder | Re-fetch steps 1, 2, 3 | 1→2→3→5 | No competitive-analysis.pptx | Omit comp sections |
-| 4 (new, fresh) | 4 (skip fin model) | New folder | Re-fetch steps 1, 3, 4 | 1→2→3→4→5 | No .xlsx | All narrative |
-| 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch steps 1, 2 | 1→2→5 | No Excel, no DCF, no comps | Steps 1–2 + Step 5 narrative |
+| 4 (new, fresh) | 1 (full) | New `{today}-initiation-report/` | Re-fetch all | 1→2→3→4→5→6 | All generated fresh | All |
+| 4 (new, fresh) | 2 (skip DCF) | New folder | Re-fetch steps 1, 2, 3, 5 | 1→2→3→5→6 | No dcf-model.xlsx | Omit valuation |
+| 4 (new, fresh) | 3 (skip comp) | New folder | Re-fetch steps 1, 2, 3, 4 | 1→2→3→4→6 | No competitive-analysis.pptx | Omit comp sections |
+| 4 (new, fresh) | 4 (skip fin model) | New folder | Re-fetch steps 1, 2, 4, 5 | 1→2→4→5→6 | No .xlsx; Step 4 uses consensus only | All narrative |
+| 4 (new, fresh) | 5 (research + thesis) | New folder | Re-fetch steps 1, 2 | 1→2→6 | No Excel, no DCF, no comps | Steps 1–2 + Step 6 narrative |
 
 #### 6. Execution cadence
 

@@ -1,4 +1,4 @@
-# {TICKER} — Financial Model Data
+# {TICKER} — Financial Data
 
 _In `{Year - N}`, "N" represents trailing years for the equity type — see `data-requirements.md` › Time Span by Equity Type._
 

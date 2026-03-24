@@ -2,8 +2,8 @@
 
 ## Inputs from Prior Steps
 _(No re-fetch needed)_
-- [ ] Step 1 company research: {FILE_PATH or "current session"}
-- [ ] Step 3 peer data: {FILE_PATH or "current session"}
+- [ ] Step 2 company research: {FILE_PATH or "current session"}
+- [ ] Step 4 peer data: {FILE_PATH or "current session"}
 
 ## Competitive Analysis Output
 _(From `financial-analysis:competitive-analysis`)_

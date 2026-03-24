@@ -29,8 +29,8 @@ Fetched: {YYYY-MM-DD}
 
 ## Historical Financials
 _(from Step 1 — not duplicated here)_
-See `{YYYY-MM-DD}-financial-model.md` for income statement, cash flow, and balance sheet detail.
-**Fallback (Step 1 absent):** populate income statement (4 years), cash flow (4 years), and balance sheet (2 years) inline using the same format as `step-1-financial-model/data-file-template.md`, with a `Fetched: {YYYY-MM-DD}` timestamp.
+See `{YYYY-MM-DD}-financial-data.md` for income statement, cash flow, and balance sheet detail.
+**Fallback (Step 1 absent):** populate income statement (4 years), cash flow (4 years), and balance sheet (2 years) inline using the same format as `step-1-financial-data/data-file-template.md`, with a `Fetched: {YYYY-MM-DD}` timestamp.
 
 ## Company History, Events & Acquisitions
 Fetched: {YYYY-MM-DD}

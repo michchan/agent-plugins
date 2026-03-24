@@ -1,7 +1,7 @@
 # {TICKER} — DCF Valuation Data
 
-## Historical Financials (from Step 1 / Step 2)
-_(No re-fetch needed — read from Step 2 output)_
+## Historical Financials (from Step 1)
+_(No re-fetch needed — read from Step 1 output)_
 
 | Year | Revenue | EBIT | FCF | Net Debt |
 |---|---|---|---|---|
@@ -10,8 +10,8 @@ _(No re-fetch needed — read from Step 2 output)_
 | FY{YEAR-2} | — | — | — | — |
 | FY{YEAR-3} | — | — | — | — |
 
-## Forward Projections (from Step 2 Model)
-_(No re-fetch needed — read from Step 2 output)_
+## Forward Projections (from Step 3)
+_(No re-fetch needed — read from Step 3 output)_
 
 | Year | Revenue | EBIT | FCF |
 |---|---|---|---|

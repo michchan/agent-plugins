@@ -1,4 +1,4 @@
-# Data Requirements — Phase 2 / Step 2: Financial Model
+# Data Requirements — Phase 2 / Step 1: Financial Data Collection
 
 ## Time Span by Equity Type (READ FIRST)
 
@@ -44,6 +44,6 @@ Applies to: Income Statement, Balance Sheet, and Cash Flow Summary.
 | ROE | `Net Income / Total Equity` |
 | ROA | `Net Income / Total Assets` |
 | FCF Conversion | `FCF / Net Income` |
-| Interest Coverage | `EBIT / Interest Expense` — Interest Expense from Income Statement (available in Step 1 output) |
+| Interest Coverage | `EBIT / Interest Expense` — Interest Expense from Income Statement collected above |
 
-If D&A is not surfaced from Step 1 output, it is typically the largest non-cash line in the operating section of the cash flow statement — fetch it from the same Income Statement / Cash Flow source.
+If D&A is not surfaced from the income statement data, it is typically the largest non-cash line in the operating section of the cash flow statement — fetch it from the same Income Statement / Cash Flow source.
