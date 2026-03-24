@@ -2,7 +2,7 @@
 
 Use this template when composing a manual fetch prompt for the user to copy-paste into their own tools.
 
-Populate each section using the current step's `data-requirements.md` (for fields and sources) and `data-file-template.md` (for the expected output structure).
+Populate each section using the data requirements (for fields and sources). Derive the return format structure from the data requirements following `references/data-cache-file-instruction.md`.
 
 ---
 
@@ -20,7 +20,7 @@ Fetch:
 - [Field 2]
 - [Field 3]
 
-Source suggestion: [Source name and/or URL from data-fetch-protocol.md]
+Source suggestion: [Source name and/or URL from the data requirements]
 
 ---
 
@@ -32,18 +32,18 @@ Fetch:
 - [Field 2]
 - [Field 3]
 
-Source: [URL from data-fetch-protocol.md]
+Source: [URL from the data requirements]
 
 ---
 
 ## [N]. [Section Name]
-[Repeat as needed for each data group in data-requirements.md]
+[Repeat as needed for each data group in the data requirements]
 
 ---
 
 Return everything as a single markdown code block, structured exactly like this:
 
-[Paste the full contents of data-file-template.md here, with {PLACEHOLDER} tokens for each value]
+[Paste the expected cache file structure here, derived from the data requirements per `data-cache-file-instruction.md`, with {PLACEHOLDER} tokens for each value]
 ```
 
 ---
@@ -52,7 +52,7 @@ Return everything as a single markdown code block, structured exactly like this:
 
 1. **Role line** — always open with `You are a financial data assistant.`
 2. **Brief description** — one sentence after the role line summarising the fetch context (ticker, sector, phase, step).
-3. **Numbered sections** — one section per logical data group in `data-requirements.md`; keep them short and scannable.
-4. **Sources** — pull suggested sources from `data-fetch-protocol.md`; include a URL where available.
-5. **Return format** — always close with the instruction to return as a single markdown code block, followed by the full structure from `data-file-template.md` with `{VALUE}` or `{PLACEHOLDER}` tokens.
+3. **Numbered sections** — one section per logical data group in the data requirements; keep them short and scannable.
+4. **Sources** — pull suggested sources from the data requirements; include a URL where available.
+5. **Return format** — always close with the instruction to return as a single markdown code block, followed by the expected file structure (derived from the data requirements per `references/data-cache-file-instruction.md`) with `{VALUE}` or `{PLACEHOLDER}` tokens.
 6. **"Return as a markdown codeblock"** — explicitly include this instruction in the prompt so the tool returns parseable output.

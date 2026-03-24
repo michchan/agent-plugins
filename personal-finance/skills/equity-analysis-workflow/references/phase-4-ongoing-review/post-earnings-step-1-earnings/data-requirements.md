@@ -11,3 +11,14 @@
 | Prior actuals (for YoY) | Same quarter last year | "Q4 2023: EPS $0.44, Rev $256M" | Permanent |
 | Analyst estimate revisions | Post-earnings consensus changes | "FY2025 EPS raised from $2.45 to $2.65" | 3 days |
 | Current stock price | Post-earnings price reaction | "$158.00 (+11% on day)" | 1 day |
+
+## Fetch Protocol
+
+| Data | Source | Prompt |
+|---|---|---|
+| Reported EPS vs. consensus | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: reported EPS, consensus EPS, beat/miss amount. One line each."` |
+| Reported revenue vs. consensus | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: reported revenue, consensus revenue, beat/miss. One line each."` |
+| IR press release | Company IR page (earnings press release URL) | `"Extract: segment results, key metrics, and updated guidance. Under 400 words. Bullet points."` |
+| Updated guidance | Same IR press release | Included in above prompt |
+| Analyst estimate revisions | `https://finance.yahoo.com/quote/{TICKER}/analysis` | `"Extract: consensus EPS and revenue estimates post-earnings update. Table format."` |
+| Post-earnings stock price | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: current price. One line."` |

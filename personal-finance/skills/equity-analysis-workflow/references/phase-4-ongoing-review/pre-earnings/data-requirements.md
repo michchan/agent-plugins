@@ -11,3 +11,13 @@
 | Prior year comp | Same quarter last year actuals | "Q4 2023: EPS $0.44, Rev $256M" | 1 year |
 | Earnings date + time | BMO or AMC, exact date | "2025-02-05, AMC" | 7 days |
 | Current stock price | For risk/reward framing | "$142.50" | 1 day |
+
+## Fetch Protocol
+
+| Data | Source | Prompt |
+|---|---|---|
+| Consensus EPS estimate | `https://finance.yahoo.com/quote/{TICKER}/analysis` | `"Extract: consensus EPS estimate for upcoming quarter and full year. Table format."` |
+| Consensus revenue estimate | Same as above | `"Extract: consensus revenue estimate for upcoming quarter and full year. Table format."` |
+| Earnings date + time | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: next earnings date and whether BMO or AMC. One line."` |
+| Current stock price | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: current price. One line."` |
+| Analyst estimate revisions | `https://finance.yahoo.com/quote/{TICKER}/analysis` | `"Summarize any recent upward or downward EPS/revenue estimate revisions. Under 100 words."` |

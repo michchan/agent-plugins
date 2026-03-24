@@ -69,9 +69,7 @@ In either cases (of single task or multiple subtasks), there will be certain spe
 | File | When to read (if not specifically instructed) |
 |---|---|
 | `subtask-instruction.md` | When it exists: read for step-specific instructions, including content preferences (additional sections, analysis focus) and format preferences (output template, layout, style). |
-| `data-requirements.md` | When you need to know what data fields are required, or what the cache TTL / refresh policy is |
-| `data-file-template.md` | When you need to read or write the data cache file; also use as the structure reference when the user provides data from an external source |
-| `data-fetch-protocol.md` | When you need to fetch data from external sources; always follow the field list in `data-requirements.md` and write output in the shape of `data-file-template.md` |
+| `data-requirements.md` | When it exists: read for field definitions, TTL / refresh policy, fetch sources, and fetch prompts. Write cache file output following `references/data-cache-file-instruction.md`. |
 
 *IMPORTANT NOTE:* depending on each subtask, the use of each file can be instructed to use in another way different from above use cases. Use this table as a baseline and follow the specific instructions (if any).
 
@@ -86,8 +84,9 @@ These rules apply to every phase and step.
 Before collecting any data, ask the user to confirm the method to collect.
 Offer two options:
 
-1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in `data-requirements.md`. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
-2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using `data-requirements.md` for fields/sources and `data-file-template.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
+1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in the data requirements. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
+   
+2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
 
@@ -97,7 +96,7 @@ Offer two options:
 
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
-1. Use `data-file-template.md` as the file structure — fill every section with the fetched data
+1. Derive file structure from the data requirements following `references/data-cache-file-instruction.md`
 2. Determine the file path from `references/file-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
@@ -115,7 +114,7 @@ If the expected previous-step cache file is not found:
 
 - Give each individual fetch task a reasonable timeout; do not wait indefinitely
 - If a fetch times out or fails, do **not** retry silently — surface the failure to the user
-- Ask the user whether to: retry, fall back to an alternative source listed in `data-fetch-protocol.md`, or proceed with partial data
+- Ask the user whether to: retry, fall back to an alternative source listed in the data requirements, or proceed with partial data
 
 ---
 
@@ -183,6 +182,7 @@ ANNUAL
 
 ### 2. Execute the phase
 
-**Follow the phase instruction file** identified in Task 1, with following considerations in mind:
+**Follow the phase instruction file** identified in Task 1, with following considerations in mind (IMPORTANT):
 - **When you collect/compile data**: read through and follow "Rules > Data Collection & Compilation".
 - **When you invoke delegated skill(s) to analyze and output**: read through and follow "Rules > Analysis & Output".
+- Override any **file structure** instruction from the delegated skill, by the "File Structure" rules.

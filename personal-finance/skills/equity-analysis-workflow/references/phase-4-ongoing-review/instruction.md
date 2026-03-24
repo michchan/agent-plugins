@@ -28,5 +28,5 @@ Between-earnings triggers do not replace post-earnings or annual review procedur
    - **Post-Earnings**: run all steps sequentially or step-by-step with pauses?
    - **Between Earnings**: which skill option to run?
 3. Find and read the detailed specification(s) from "Rules > Review Type Map".
-4. Collect and compile data following the specification and the "Data Collection & Compilation" rules in SKILL.md.
-5. Invoke the skill(s) in the order specified by the Review Type Map with respect to the "Analysis & Output" rules in SKILL.md.
+4. Collect and compile data following the specification and the "Data Collection & Compilation" rules in `equity-analysis-workflow/SKILL.md`.
+5. Invoke the skill(s) in the order specified by the Review Type Map with respect to the "Analysis & Output" rules in `equity-analysis-workflow/SKILL.md`.

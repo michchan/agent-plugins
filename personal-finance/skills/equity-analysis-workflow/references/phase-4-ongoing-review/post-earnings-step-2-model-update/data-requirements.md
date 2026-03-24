@@ -8,3 +8,12 @@
 | Prior financial model | Existing model from Phase 2 Step 2 | _(saved Phase 2 output)_ | Saved |
 | Historical actuals | Prior quarters' actuals for model baseline | _(from prior session cache or Step 1 output)_ | 1 quarter |
 | Current stock price | For per-share model update | "$158.00" | 1 day |
+
+## Fetch Protocol
+
+| Data | Source | Prompt |
+|---|---|---|
+| Step 1 earnings analysis (reported EPS, revenue, segment results, guidance) | Current session | — |
+| Phase 2 Step 2 financial model (baseline model to update) | Saved output | — |
+| Revised consensus estimates (NTM) | `https://finance.yahoo.com/quote/{TICKER}/analysis` | `"Extract: updated NTM and N+1 EPS and revenue consensus post-earnings. Table format."` |
+| Current stock price | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: current price. One line."` |

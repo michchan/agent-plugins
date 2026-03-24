@@ -16,3 +16,14 @@ Sourced from Phase 2 and Phase 3 outputs.
 | Monitoring triggers | Events or metrics that would prompt thesis review | "NRR below 110% for 2 consecutive quarters" | Manual |
 | Peer context | Relative valuation vs. peers | _(Phase 3 Step 1 output)_ | 1 quarter |
 | Competitive positioning summary | Moat assessment | _(Phase 3 Step 2 output)_ | 1 year |
+
+## Fetch Protocol
+
+| Data | Source | Prompt |
+|---|---|---|
+| Phase 2 Step 5 full initiating coverage report | Saved output | — |
+| Phase 2 Step 3 DCF price target | Saved output | — |
+| Phase 2 Step 4 comps-based valuation | Saved output | — |
+| Phase 3 Step 1 peer multiples and relative positioning | Saved output | — |
+| Phase 3 Step 2 competitive analysis and moat assessment | Saved output | — |
+| Current stock price | `https://finance.yahoo.com/quote/{TICKER}` | `"Extract: current price. One line."` |

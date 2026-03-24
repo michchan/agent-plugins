@@ -7,7 +7,7 @@ This ensures outputs land in the correct folder.
 /Equity-analyses/
   /Screening/                                     ← Phase 1 outputs (equity type not yet determined)
     /.data/                                       ← Phase 1 raw data cache files
-      {YYYY-MM-DD}-top-down-{SECTOR}.md               ← top-down data cache (written from data-file-template.md)
+      {YYYY-MM-DD}-top-down-{SECTOR}.md               ← top-down data cache
       {YYYY-MM-DD}-bottom-up-{CRITERIA}.md            ← bottom-up data cache
       {YYYY-MM-DD}-events.md                          ← event-driven data cache
     /.scripts/                               ← generation scripts for Screening binary outputs
