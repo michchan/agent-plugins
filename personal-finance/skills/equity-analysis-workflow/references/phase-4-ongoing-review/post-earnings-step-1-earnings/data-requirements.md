@@ -1,7 +1,5 @@
 # Data Requirements — Phase 5 / Post-Earnings Step 1: Earnings Analysis
 
-Input fields needed to invoke `equity-research:earnings`.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Reported EPS | Actual EPS vs. consensus | "$0.68 vs. $0.62 consensus (+$0.06 beat)" | Permanent |

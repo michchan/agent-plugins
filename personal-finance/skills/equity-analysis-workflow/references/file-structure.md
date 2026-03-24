@@ -12,9 +12,9 @@ This ensures outputs land in the correct folder.
       {YYYY-MM-DD}-events.md                          ← event-driven data cache
     /.scripts/                               ← generation scripts for Screening binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}
-    {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report (output of equity-research:sector)
-    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report (output of equity-research:screen)
-    {YYYY-MM-DD}-events-report.md                 ← Phase 1 event-driven: polished report (output of equity-research:catalysts)
+    {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report 
+    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report 
+    {YYYY-MM-DD}-events-report.md                 ← Phase 1 event-driven: polished report 
     /_archived/                                   ← ignored/superseded screening cache files
   /Watchlist/                                     ← for initiated coverage and watching, not yet held 
     /{THEME}/                                         ← contains "each stock folder" for a user-defined theme name

@@ -1,6 +1,6 @@
 # Data Requirements — Phase 5 / Annual Review
 
-Input fields needed to invoke `equity-research:thesis` for an annual position review.
+Data needed to invoke the skill for an annual position review.
 
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|

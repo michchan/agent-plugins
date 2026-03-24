@@ -1,6 +1,6 @@
 # Data Requirements — Phase 4 / Thesis Documentation
 
-Input fields needed to invoke `equity-research:thesis`. Sourced from Phase 2 and Phase 3 outputs.
+Sourced from Phase 2 and Phase 3 outputs.
 
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|

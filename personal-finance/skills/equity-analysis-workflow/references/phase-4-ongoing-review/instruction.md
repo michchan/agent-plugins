@@ -11,9 +11,9 @@ Once a position is open (folder moves to `/Holding/`), shift to a monitoring cad
 | Review Type | Description | Skill(s) |
 |---|---|---|
 | **Pre-Earnings** | Preview upcoming earnings with scenarios | `equity-research:earnings-preview` |
-| **Post-Earnings** | Beat/miss analysis → model update → thesis reaffirmation (sequential) | `equity-research:earnings` → `equity-research:model-update` → `equity-research:thesis` |
-| **Between Earnings** | Lightweight monitoring; two independent options — ask which to run | `equity-research:morning-note` or `equity-research:catalysts` |
-| **Annual Review** | Reaffirm or close each position | `equity-research:thesis` |
+| **Post-Earnings** | Beat/miss analysis → model update → thesis reaffirmation (sequential) | `equity-research:earnings` → `equity-research:model-update` → `equity-research:thesis-tracker` |
+| **Between Earnings** | Lightweight monitoring; two independent options — ask which to run | `equity-research:morning-note` or `equity-research:catalyst-calendar` |
+| **Annual Review** | Reaffirm or close each position | `equity-research:thesis-tracker` |
 
 ### Review Type Triggers
 

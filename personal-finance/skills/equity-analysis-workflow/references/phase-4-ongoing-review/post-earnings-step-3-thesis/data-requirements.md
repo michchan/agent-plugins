@@ -1,7 +1,5 @@
 # Data Requirements — Phase 5 / Post-Earnings Step 3: Thesis Update
 
-Input fields needed to invoke `equity-research:thesis` for a post-earnings thesis update.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Current thesis | Existing thesis document | _(saved Phase 4 output)_ | Saved |

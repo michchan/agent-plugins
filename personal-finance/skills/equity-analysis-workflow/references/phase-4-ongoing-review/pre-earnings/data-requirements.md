@@ -1,7 +1,5 @@
 # Data Requirements — Phase 5 / Pre-Earnings
 
-Input fields needed to invoke `equity-research:earnings-preview`.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | Consensus EPS estimate | Street consensus for upcoming quarter | "$0.62" | 3 days |

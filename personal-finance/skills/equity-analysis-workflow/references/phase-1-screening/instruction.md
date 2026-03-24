@@ -12,9 +12,9 @@ Policy: run either one of the tasks.
 
 | Task | Description | Skill to invoke | Specification path |
 |---|---|---|---|
-| **Top-down** (macro → sector → names) | Sector overview, then drill into names | `/equity-research:sector` | `top-down/` |
-| **Bottom-up** (criteria → names) | Screen with user's criteria | `/equity-research:screen` | `bottom-up/` |
-| **Event-driven** (catalyst → entry point) | Upcoming events across watchlist or sector | `/equity-research:catalysts` |`event-driven/` |
+| **Top-down** (macro → sector → names) | Sector overview, then drill into names | `equity-research:sector-overview` | `top-down/` |
+| **Bottom-up** (criteria → names) | Screen with user's criteria | `equity-research:idea-generation` | `bottom-up/` |
+| **Event-driven** (catalyst → entry point) | Upcoming events across watchlist or sector | `equity-research:catalyst-calendar` |`event-driven/` |
 
 ---
 

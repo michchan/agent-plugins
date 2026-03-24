@@ -1,8 +1,8 @@
 # Data Requirements — Phase 5 / Between Earnings
 
-Input fields for `equity-research:morning-note` or `equity-research:catalysts`.
+Select the section(s) needed.
 
-## Morning Note (`equity-research:morning-note`)
+## Morning Note
 
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
@@ -12,7 +12,7 @@ Input fields for `equity-research:morning-note` or `equity-research:catalysts`.
 | Price / volume data | Recent price action and volume trends | "+8% over past month on above-avg volume" | 1 day |
 | Current stock price | For context | "$142.50" | 1 day |
 
-## Catalyst Calendar (`equity-research:catalysts`)
+## Catalyst Calendar
 
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|

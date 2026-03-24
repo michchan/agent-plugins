@@ -1,7 +1,5 @@
 # Data Requirements — Phase 5 / Post-Earnings Step 2: Model Update
 
-Input fields needed to invoke `equity-research:model-update`.
-
 | Field | Description | Example | Cache TTL |
 |---|---|---|---|
 | New actuals to plug in | Reported EPS, revenue, margins, KPIs for the quarter | _(from Step 1 output)_ | Current session |
