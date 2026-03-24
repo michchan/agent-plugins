@@ -38,12 +38,11 @@ This ensures outputs land in the correct folder.
     /.scripts/                              ← generation scripts for this ticker's binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}   ← e.g. 2026-01-15-create-dcf-model-dcf-model.{ext}
     {YYYY-MM-DD}-initiation-report/         ← one subfolder per run; never overwrite a prior run (Phase 2)
-      company-research.md                   ← Phase 2 Step 1
-      financial-model.xlsx                  ← Phase 2 Step 2
-      dcf-model.xlsx                        ← Phase 2 Step 3
-      competitive-analysis.pptx             ← Phase 2 Step 4
-      initiation-report.docx                ← Phase 2 Step 5
-      charts/
+      {Ticker}-company-research.md          ← Phase 2 Step 1
+      {Ticker}-financial-model.xlsx         ← Phase 2 Step 2
+      {Ticker}-valuation-analysis.pdf       ← Phase 2 Step 3
+      {Ticker}-initiation-report.docx       ← Phase 2 Step 5
+      charts/                               ← Phase 2 Step 4
     {YYYY-MM-DD}-thesis-v1.md               ← Phase 3 (increment version on major updates)
     {YYYY}-Q{N}-earnings-preview.md         ← Phase 4 pre-earnings report
     {YYYY}-Q{N}-earnings-update.md          ← Phase 4 post-earnings report
