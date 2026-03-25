@@ -60,20 +60,20 @@ Inputs to skills. Never overwrite — always create a new dated file.
 
 | File | Phase | Description |
 |------|-------|-------------|
-| `{YYYY-MM-DD}-company-research.data.md` | Phase 2 Step 1 | Company research cache |
-| `{YYYY-MM-DD}-financial-model.data.md` | Phase 2 Step 2 | Financial model cache |
-| `{YYYY-MM-DD}-peer-data.data.md` | Phase 2 Step 3 | Peer data for DCF comps |
-| `{YEAR}-Q{N}-pre-earnings.data.md` | Phase 4 | Pre-earnings data (per event, archived) |
-| `{YEAR}-Q{N}-earnings.data.md` | Phase 4 | Post-earnings data (per event, archived) |
-| `{YEAR}-Q{N}-between-earnings.data.md` | Phase 4 | Between-earnings data (per event, archived) |
-| `{YEAR}-annual-review.data.md` | Phase 4 | Annual review data (per year, archived) |
+| `{YYYY-MM-DD}-{TICKER}-company-research.data.md` | Phase 2 Step 1 | Company research cache |
+| `{YYYY-MM-DD}-{TICKER}-financial-model.data.md` | Phase 2 Step 2 | Financial model cache |
+| `{YYYY-MM-DD}-{TICKER}-peer-data.data.md` | Phase 2 Step 3 | Peer data for DCF comps |
+| `{YEAR}-Q{N}-{TICKER}-pre-earnings.data.md` | Phase 4 | Pre-earnings data (per event, archived) |
+| `{YEAR}-Q{N}-{TICKER}-earnings.data.md` | Phase 4 | Post-earnings data (per event, archived) |
+| `{YEAR}-Q{N}-{TICKER}-between-earnings.data.md` | Phase 4 | Between-earnings data (per event, archived) |
+| `{YEAR}-{TICKER}-annual-review.data.md` | Phase 4 | Annual review data (per year, archived) |
 
 #### Scripts and prompts
 
 | Path | Description |
 |------|-------------|
-| `.scripts/{YYYY-MM-DD}-{output-name}.{action}.script.{ext}` | Generation scripts for this ticker's binary outputs |
-| `.prompts/{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
+| `.scripts/{YYYY-MM-DD}-{TICKER}-{output-name}.{action}.{ext}` | Generation scripts for this ticker's binary outputs |
+| `.prompts/{YYYY-MM-DD}-{TICKER}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
 
 #### Initiation report (`{YYYY-MM-DD}-initiation-report/`)
 
