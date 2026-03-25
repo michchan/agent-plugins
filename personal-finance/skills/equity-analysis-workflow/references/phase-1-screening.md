@@ -22,6 +22,6 @@ Policy: run one of the following. If not specified, ask the user before proceedi
 
 1. Select the approach from the "Subtask Map". If not clear from context, ask the user before proceeding.
 
-2. Load the corresponding skill from the "Subtask Map", with the following custom rules:
+2. Invoke the corresponding skill from the "Subtask Map" using the Skill tool, with the following custom rules:
    - Follow data requirements from the skill; collect and compile data following the "Data Collection & Compilation" rules in `equity-analysis-workflow/SKILL.md`.
    - Respect the "Analysis & Output" rules in `equity-analysis-workflow/SKILL.md`.

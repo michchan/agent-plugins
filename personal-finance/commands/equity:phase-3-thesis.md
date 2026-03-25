@@ -3,4 +3,4 @@ description: Phase 3 — Write or update an investment thesis
 argument-hint: "[ticker] [optional: new | update]"
 ---
 
-Load the `equity-analysis-workflow` skill and run Phase 3.
+Invoke the `equity-analysis-workflow` skill using the Skill tool and run Phase 3.

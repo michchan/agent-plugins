@@ -145,6 +145,35 @@ Whenever a phase instruction file lists a skill to run — shown as `/namespace:
 
 ‼️ IMPORTANT: When you attempt to invoke the any of the skill and it is not found, ABORT the process and **ASK USER TO INSTALL AND ENABLE IT****. Refer to "Required plugins" section above for list of required plugins.
 
+#### Mid-workflow re-entry
+
+When the user resumes a workflow mid-way (e.g. "complete step 5", "continue from
+step 3", "previous steps are done"), the following rules apply without exception:
+
+##### Existing output files are inputs, not the workflow spec
+
+Files produced by prior steps (reports, models, charts, data caches) tell you
+what was already done. They do not contain the step specifications, output format
+rules, file naming conventions, or quality checks for the remaining steps.
+Always invoke the required skill(s) before reading any prior output.
+
+##### Skill invocation is unconditional
+
+The phrase "previous steps are complete" does not reduce or remove the obligation
+to invoke the skill. Invoke first, then read prior outputs as source material.
+
+##### Recognize the shortcut signal
+
+If you find yourself reasoning "I can see what's needed from the existing files
+so I'll skip the skill invocation" — that reasoning is the signal to stop and
+invoke the skill before proceeding. If you are not sure, always CONFIRM with user.
+
+##### Cross-step context still requires skill invocation
+
+Even when prior outputs provide rich context (financial data, charts, research
+docs), the skill defines how to interpret and use that context for the remaining
+steps. Context richness is not a substitute for workflow specification.
+
 #### Preferred Output format (IMPORTANT)
 
 Unless user has specified, **use MARKDOWN (`.md`) format** for each output which is designed to be Word document (`.docx`) or PDF (`.pdf`) by its delegated skill. This intentionally OVERRIDES the original instructions in the delegated skills. This rule does NOT apply to spreadsheet files (e.g. Excel - `.xlsx`).

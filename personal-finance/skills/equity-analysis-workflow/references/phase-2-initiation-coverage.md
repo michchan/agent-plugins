@@ -57,13 +57,13 @@ Ask in order; wait for each answer before asking the next:
 
 2. For each step in scope, find and read the corresponding detailed specification from "Rules > Subtask Map".
 
-3. Load `equity-research:initiating-coverage` skill, with passed custom rules:
+3. (‼️MUST NOT SKIP) Invoke `equity-research:initiating-coverage` skill using the skill tool, with passed custom rules:
    - mention the corresponding task to do (e.g. `Task 1`)
    - follow data requirements from the skill, collect and compile data following the "Data Collection & Compilation" rules in `equity-analysis-workflow/SKILL.md`
    - respect "Analysis & Output" rules in `equity-analysis-workflow/SKILL.md`
    - respect rules in this file (e.g. generate a prompt and wait for user to collect data for "Manual prompt" data mode).
 
-   Example prompt:
+   Example instruction to invoke the skill:
    ```
    Use `equity-research:initiating-coverage` skill, Do Task 4 for {Exchange:Ticker}, with following instructions: {Your generated extra instructions}
    ```
