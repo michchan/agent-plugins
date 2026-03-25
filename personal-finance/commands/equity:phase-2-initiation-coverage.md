@@ -1,5 +1,5 @@
 ---
-description: Phase 2 — Full deep dive and initiation on a stock
+description: Phase 2 — Initiation coverage on a stock
 argument-hint: "[ticker] [equity type: Defensive | Core | Satellite] [lifecycle: Watchlist | Screening] [optional: step-by-step | all-at-once]"
 ---
 

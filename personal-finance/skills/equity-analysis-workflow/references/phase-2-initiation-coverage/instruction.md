@@ -1,4 +1,4 @@
-# Phase 2 — Deep Dive (Initiation)
+# Phase 2 — Initiation Coverage
 
 ## Rules (READ FIRST)
 

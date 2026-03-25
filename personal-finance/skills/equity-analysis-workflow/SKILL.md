@@ -172,7 +172,7 @@ Identify the phase that matches the user's intent.
 | Phase | Purpose | Instruction file |
 |-------|---------|-----------------|
 | 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
-| 2 — Deep Dive (Initiation) | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-deep-dive/instruction.md` |
+| 2 — Initiation Coverage | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-initiation-coverage/instruction.md` |
 | 3 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-3-thesis/instruction.md` |
 | 4 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-4-ongoing-review/instruction.md` |
 

@@ -9,7 +9,7 @@ A collection of Claude Code plugins extending AI agent capabilities for personal
 Skills and commands for personal finance — investing, portfolio management, and financial planning. Wraps Anthropic's `equity-research:*` and `financial-analysis:*` skills with a personal investor lens.
 
 **Skills**
-- `equity-analysis-workflow` — Full 5-phase workflow: screening → deep dive → comparison → thesis → ongoing review
+- `equity-analysis-workflow` — Full 5-phase workflow: screening → initiation coverage → comparison → thesis → ongoing review
 - `accounting-workflow` *(planned)*
 - `portfolio-management-workflow` *(planned)*
 
@@ -17,7 +17,7 @@ Skills and commands for personal finance — investing, portfolio management, an
 | Command | Description |
 |---------|-------------|
 | `phase-1-screen` | Screen for equity ideas (top-down / bottom-up / event-driven) |
-| `phase-2-deep-dive` | Full deep-dive initiation on a stock |
+| `phase-2-initiation-coverage` | Initiation coverage on a stock |
 | `phase-3-compare` | Compare a stock against peers (comps + competitive analysis) |
 | `phase-4-thesis` | Write or update an investment thesis |
 | `phase-5-review` | Ongoing position review (pre/post-earnings, between-earnings, annual) |
