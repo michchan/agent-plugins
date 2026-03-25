@@ -145,7 +145,7 @@ When you write any report (excluding spreadsheet) output, the following must be 
 - Use arabic numbers over romantic numbers:
   - ❌ Wrong - "SECTION II — COMPANY 101
   - ✅ Correct - "SECTION 2 — COMPANY 101
-- Always include a table of content with clickable links to sections.
+- Always include a table of content with clickable links to sections. It must include ALL the headings and sub-headings in a nested format.
 
 #### Output Scripts storage and discovery
 
