@@ -42,7 +42,7 @@ Ask in order; wait for each answer before asking the next:
 
    For modes 2 & 3 (update): 1. Full re-run *(default)*, or 2. Selective — name the step(s) to re-run.
 
-6. **Execution cadence** — Step-by-step (pause after each) or All at once *(default)*
+6. **Execution cadence** — Step-by-step (**default**, pause after each) or All at once.
 
 7. **Data collection mode** — Ask only when at least one fetch will occur: always for modes 3–4; for modes 1–2 only if any relevant caches are stale or missing. See `equity-analysis-workflow/SKILL.md` › Data Collection & Compilation.
 
