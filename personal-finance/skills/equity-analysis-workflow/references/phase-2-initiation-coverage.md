@@ -29,8 +29,8 @@ Ask in order; wait for each answer before asking the next:
 2. **Folder check** — Before presenting step 4, check if `/{Type}/{Stage}/{TICKER}/Initiation/` has any `*-initiation-report/` subfolders; surface the most recent name/date and cache freshness per TTL.
 
 3. **Report and data mode**:
-   - 1. New report, reuse data *(recommended when an initiation folder exists but is dated before today)*
-   - 2. Update existing report, reuse data *(recommended when the most recent folder is dated today)*
+   - 1. New report, reuse cached data if appropriate *(recommended when an initiation folder exists but is dated before today)*
+   - 2. Update existing report, reuse cached data if appropriate *(recommended when the most recent folder is dated today)*
    - 3. Update existing report, fresh data
    - 4. New report, fresh data *(clean slate)*
 

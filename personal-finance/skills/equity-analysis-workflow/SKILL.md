@@ -54,21 +54,6 @@ Confirm the equity type with the user before starting Phase 2 or later. Phase 1 
 
 **Confirm the THEME name with the user, when it comes to creating watchlist items.
 
-### Phase Specification Structure
-
-#### Phase subtask map and standard specification files
-
-Each phase can contain a single task or multiple subtasks. There could be an instruction or mapping table which guides you how to find the corresponding path of task/subtask specification.
-
-In either cases (of single task or multiple subtasks), there will be certain specification files for the task, depending on the needs. Here is a list of standard specification files you might find in the subtask:
-
-| File | When to read (if not specifically instructed) |
-|---|---|
-| `subtask-instruction.md` | When it exists: read for step-specific instructions, including content preferences (additional sections, analysis focus) and format preferences (output template, layout, style). |
-| `data-requirements.md` | When it exists: read for field definitions, TTL / refresh policy, fetch sources, and fetch prompts. Write cache file output following `references/data-cache-file-instruction.md`. |
-
-*IMPORTANT NOTE:* depending on each subtask, the use of each file can be instructed to use in another way different from above use cases. Use this table as a baseline and follow the specific instructions (if any).
-
 ---
 
 ### Data Collection & Compilation
@@ -80,9 +65,49 @@ These rules apply to every phase and step.
 Before collecting any data, ask the user to confirm the method to collect.
 Offer two options:
 
-1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in the data requirements. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
+1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL  of each piece of data. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
    
 2. **Manual prompt** — compose a fetch prompt following the instruction in `references/manual-data-prompt.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
+
+#### Cache data TTL rules
+
+Whenever looking up cache data, you must respect the "time-to-live" (TTL) for each type of data. If the current time has passed the TTL of the piece of data, you must acquire fresh data instead.
+
+Read `references/data-ttl-guide.md` for TTL tiers, field-level lookup tables, and partial-staleness handling rules. Apply that guide whenever evaluating cache freshness.
+
+**_If you are not sure, always confirm with user._**
+
+#### Self-cache data lookup
+
+If the user confirms to reuse data when appropriate, always lookup self cache data for partially/fully reuse.
+
+#### Cross-step data dependencies
+
+Some fields in a step depend on cached output from a previous step (for token efficiency).
+If the expected previous-step cache file is not found:
+- Do **not** silently skip or blindly re-fetch
+- Ask the user: was the previous step intentionally skipped, or should you re-fetch the missing data?
+- Proceed only after the user confirms
+
+#### Related data lookup
+
+Always actively lookup peers' data to save data fetching effort by reusing cached data. For example, to find related cached data, you can:
+- lookup peers' data folders 
+- lookup the screening data folder
+
+#### Fetch resilience (Auto-fetch mode)
+
+- Give each individual fetch task a reasonable timeout; do not wait indefinitely
+- If a fetch times out or fails, do **not** retry silently — surface the failure to the user
+- Ask the user whether to: retry, fall back to an alternative source listed in the data requirements, or proceed with partial data
+
+#### Data validation
+
+Always validate the data integrity as a professional financial data analyst, to scan and detect any data discrepancy by:
+- **comparing** with related data in **other steps** of the same phase
+- **comparing** with related data **with peers'** data
+- **comparing** with related data in a related screening (for example, same sector)
+- always **confirming** with user about any question/suspicion of invalid data
 
 #### Post-fetch/prompt: save the fetch instruction
 
@@ -109,20 +134,6 @@ After fetching data (whether via Auto-fetch or Manual prompt), **always write th
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.
-
-#### Cross-step data dependencies
-
-Some fields in a step's data file depend on cached output from a previous step (for token efficiency).
-If the expected previous-step cache file is not found:
-- Do **not** silently skip or blindly re-fetch
-- Ask the user: was the previous step intentionally skipped, or should you re-fetch the missing data?
-- Proceed only after the user confirms
-
-#### Fetch resilience
-
-- Give each individual fetch task a reasonable timeout; do not wait indefinitely
-- If a fetch times out or fails, do **not** retry silently — surface the failure to the user
-- Ask the user whether to: retry, fall back to an alternative source listed in the data requirements, or proceed with partial data
 
 ---
 
@@ -177,6 +188,16 @@ And **all** of the following are true:
 - No new earnings data has been released
 - No thesis change has been requested
 - No data staleness concern has been raised
+
+#### Context window management
+
+##### Warning upon 50% of context usage
+
+After you finished the current task, if the current session already used more than 50% of context usage, raise this warning to the user and suggest starting the next task in another session, with a suggested prompt in codeblock for user to copy.
+
+##### Auto-compact before next step
+
+In a multi-step workflow, when the user has confirmed to proceed to next step after a step is completed, auto-compact the session before actually proceeding to next step.
 
 ---
 
