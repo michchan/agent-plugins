@@ -126,11 +126,21 @@ Whenever a phase instruction file lists a skill to run — shown as `/namespace:
 
 ‼️ IMPORTANT: When you attempt to invoke the any of the skill and it is not found, ABORT the process and **ASK USER TO INSTALL AND ENABLE IT****. Refer to "Required plugins" section above for list of required plugins.
 
-#### Output Scripts
+#### Preferred Output format (IMPORTANT)
+
+Unless user has specified, **use MARKDOWN (`.md`) format** for each output which is designed to be Word document (`.docx`) or PDF (`.pdf`) by its delegated skill. This intentionally OVERRIDES the original instructions in the delegated skills. This rule does NOT apply to spreadsheet files (e.g. Excel - `.xlsx`).
+
+The followings must be noted:
+- KEEP any spreadsheet file in its own format.
+- SKIP any header/footer instruction
+- SKIP any technical instruction about docx or pdf construction
+- Consider any adaption required to output in markdown
+
+#### Output Scripts storage and discovery
 
 ##### Save rule
 
-After any step that produces a binary output (`.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/file-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
+After any step that produces a binary output (e.g. `.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/file-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
 
 ##### Discovery rule
 
