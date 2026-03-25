@@ -2,6 +2,21 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.5.0] - 2026-03-26
+
+### Added
+
+- `equity-analysis-workflow` `SKILL.md`: Added mid-workflow re-entry section — skill invocation via the Skill tool is unconditional even when resuming from existing outputs; clarified Phase 2 Step 3 (Financial Modeling) as must-not-skip
+- `equity-analysis-workflow`: Added `data-ttl-guide.md` reference with cache TTL guidance for data lookup
+
+### Changed
+
+- `equity-analysis-workflow` All commands and phase references: Enforced explicit Skill tool invocation phrasing ("Invoke ... using the Skill tool") across all 4 phase commands and phase reference files
+- `equity-analysis-workflow` `SKILL.md`: Expanded data lookup and cache handling guidance; refactored to integrate with new `data-ttl-guide.md`
+- `equity-analysis-workflow` Phase 2 (Initiation Coverage): Relaxed equity type as a soft requirement — self-determined for new reports rather than prompted
+- `equity-analysis-workflow` `file-structure.md`: Updated data, script, and prompt file naming conventions
+- `equity-analysis-workflow` References: Flattened phase file structure — moved `instruction.md` files out of per-phase subdirectories into flat `references/` filenames (`phase-1-screening.md`, etc.)
+
 ## [0.4.0] - 2026-03-25
 
 ### Added
