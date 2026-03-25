@@ -2,6 +2,33 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.4.0] - 2026-03-25
+
+### Added
+
+- `equity-analysis-workflow` Phase 2 Step 6 (Report Generation): Added preferred report content formatting reference
+- `equity-analysis-workflow` Phase 2 Step 2 (Company Research): Added output template for business research
+
+### Changed
+
+- `equity-analysis-workflow` Phase 2 deep-dive: Restructured from 5-step to **6-step workflow** — split "Financial Model" into Step 1 (Financial Data Collection, historical only) and Step 3 (Financial Modeling, forward projections); inserted Company Research as Step 2 between them; renumbered DCF → Step 4, Competitive Analysis → Step 5, Report Generation → Step 6; updated all cross-references across 22 files
+- `equity-analysis-workflow`: Consolidated all per-step `data-fetch-protocol.md` and `data-file-template.md` files into unified `data-requirements.md` across Phases 2, 3, and 4; added `data-cache-file-instruction.md` as shared cache handling reference
+- `equity-analysis-workflow`: Simplified all phase instruction files to unified subtask table format
+- `equity-analysis-workflow` Phase 2: Inlined subtask instructions into the main phase instruction file; removed per-subtask instruction files
+- `equity-analysis-workflow` Phases 2, 3, and 4: Restructured all phase instructions with explicit rules/tasks separation
+- `equity-analysis-workflow`: Renamed phase to "initiation coverage"
+- `equity-analysis-workflow` Phase 2 Step 6 (Report Generation): Moved output template reference to `format-preferences.md`; forced preferred output format to `.md` files
+- `equity-analysis-workflow` `SKILL.md`: Avoided mentioning "NOT DISCLOSED" option in data prompts; refined skill instruction format; updated all cross-references; expanded table of contents to include all sub-headings
+
+### Fixed
+
+- `equity-analysis-workflow` Phase 2 instruction: Task naming misalignment
+- `equity-analysis-workflow`: File structure issues
+
+### Removed
+
+- Deprecated per-step reference files (22 files) superseded by the `data-requirements.md` consolidation
+
 ## [0.3.4] - 2026-03-22
 
 ### Changed
