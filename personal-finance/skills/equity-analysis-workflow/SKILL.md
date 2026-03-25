@@ -88,6 +88,18 @@ Offer two options:
    
 2. **Manual prompt** — compose a fetch prompt following the instruction in `references/manual-data-prompt.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
+#### Post-fetch/prompt: save the fetch instruction
+
+After every data fetch — regardless of mode — **always save a record to the `.prompts/` folder** before proceeding:
+
+- **Auto-fetch**: write the data-requirements fields and sources used (ticker, phase, step, field list, resolved source URLs) as a markdown file
+- **Manual prompt**: write the raw composed prompt text (without the surrounding code-block fences)
+
+In both cases:
+1. Derive the save path from `references/file-structure.md` (`.prompts/` lives adjacent to `Data/` and `Scripts/` at each scope level)
+2. Name the file: `{YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md`
+3. Write the file using the Write tool
+
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
 
 **Timing in "all at once" mode.** When Q5 = "all at once", there is no per-step pause. The phase instruction must surface this question during scope confirmation (before execution begins). If the phase instruction does not have an explicit Q6 or equivalent, ask it immediately after Q5, before emitting the confirmation line.

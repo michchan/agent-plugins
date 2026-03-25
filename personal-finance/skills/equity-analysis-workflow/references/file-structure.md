@@ -12,6 +12,8 @@ This ensures outputs land in the correct folder.
       {YYYY-MM-DD}-events.md                          ← event-driven data cache
     /.scripts/                               ← generation scripts for Screening binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}
+    /.prompts/                               ← saved fetch instructions (auto and manual) for Screening
+      {YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md
     {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report 
     {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report 
     {YYYY-MM-DD}-events-report.md                 ← Phase 1 event-driven: polished report 
@@ -37,6 +39,8 @@ This ensures outputs land in the correct folder.
       {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
     /.scripts/                              ← generation scripts for this ticker's binary outputs
       {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}   ← e.g. 2026-01-15-create-dcf-model-dcf-model.{ext}
+    /.prompts/                              ← saved fetch instructions (auto and manual) for this ticker
+      {YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md
     {YYYY-MM-DD}-initiation-report/         ← one subfolder per run; never overwrite a prior run (Phase 2)
       {Ticker}-company-research.md          ← Phase 2 Step 1
       {Ticker}-financial-model.xlsx         ← Phase 2 Step 2
