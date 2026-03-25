@@ -86,7 +86,7 @@ Offer two options:
 
 1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL in the data requirements. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
    
-2. **Manual prompt** — compose a fetch prompt following the structure in `references/manual-data-prompt-template.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
+2. **Manual prompt** — compose a fetch prompt following the instruction in `references/manual-data-prompt.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. Return the prompt in a code block so the user can copy-paste it into their own tools.
 
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
 
