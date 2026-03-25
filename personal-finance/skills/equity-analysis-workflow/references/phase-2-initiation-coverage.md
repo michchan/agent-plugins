@@ -14,7 +14,7 @@ The following specifications will be used according to "Tasks" instructions.
 |---|---|
 | 1 | Company Research |
 | 2 | Financial Modeling |
-| 3 | Valuation Analysis | 
+| 3 | Valuation Analysis |
 | 4 | Chart Generation |
 | 5 | Report Assembly |
 

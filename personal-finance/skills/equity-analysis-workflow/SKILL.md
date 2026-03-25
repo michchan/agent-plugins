@@ -56,10 +56,6 @@ Confirm the equity type with the user before starting Phase 2 or later. Phase 1 
 
 ### Phase Specification Structure
 
-#### Phase instruction entry point
-
-Each phase contains an `instruction.md` file which is the entry point of the phase.
-
 #### Phase subtask map and standard specification files
 
 Each phase can contain a single task or multiple subtasks. There could be an instruction or mapping table which guides you how to find the corresponding path of task/subtask specification.
@@ -194,10 +190,10 @@ Identify the phase that matches the user's intent.
 
 | Phase | Purpose | Instruction file |
 |-------|---------|-----------------|
-| 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening/instruction.md` |
-| 2 — Initiation Coverage | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-initiation-coverage/instruction.md` |
-| 3 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-3-thesis/instruction.md` |
-| 4 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-4-ongoing-review/instruction.md` |
+| 1 — Screening & Idea Generation | Top of funnel. Start here when you don't have a specific name yet. | `references/phase-1-screening.md` |
+| 2 — Initiation Coverage | Sequential workflow that builds conviction on a specific stock. | `references/phase-2-initiation-coverage.md` |
+| 3 — Thesis Documentation | Lock the investment thesis in writing before buying. | `references/phase-3-thesis.md` |
+| 4 — Ongoing Review | Monitoring cadence for open positions (pre/post-earnings, between, annual). | `references/phase-4-ongoing-review.md` |
 
 **Reference: Rhythm at a Glance**
 
