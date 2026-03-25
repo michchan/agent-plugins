@@ -97,7 +97,7 @@ After every data fetch — regardless of mode — **always save a record to the 
 
 In both cases:
 1. Derive the save path from `references/file-structure.md` (`.prompts/` lives adjacent to `Data/` and `Scripts/` at each scope level)
-2. Name the file: `{YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md`
+2. Name the file: `{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md`
 3. Write the file using the Write tool
 
 **Skill invocation is unconditional.** Choosing Manual prompt does NOT mean skipping sub-skill invocation. It just controls how data is collected.
@@ -109,7 +109,7 @@ In both cases:
 After fetching data (whether via Auto-fetch or Manual prompt), **always write the result to a cache file** before proceeding to analysis:
 
 1. Derive file structure from the data requirements following `references/data-cache-file-instruction.md`
-2. Determine the file path from `references/file-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.md` under `/Equity-analyses/Screening/Data/` for a Phase 1 top-down screen)
+2. Determine the file path from `references/file-structure.md` (e.g. `{YYYY-MM-DD}-top-down-{SECTOR}.data.md` under `/Equity-analyses/Screening/.data/` for a Phase 1 top-down screen)
 3. Write the file using the Write tool — do not skip this step, even for one-off screens
 
 This cache file is the single source of truth for downstream analysis and cross-step dependencies.

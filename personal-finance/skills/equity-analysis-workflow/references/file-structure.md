@@ -3,68 +3,130 @@
 **Always ask the user to confirm equity type and lifecycle stage before creating any files.**
 This ensures outputs land in the correct folder.
 
+## Folder Skeleton
+
 ```
 /Equity-analyses/
-  /Screening/                                     ← Phase 1 outputs (equity type not yet determined)
-    /.data/                                       ← Phase 1 raw data cache files
-      {YYYY-MM-DD}-top-down-{SECTOR}.md               ← top-down data cache
-      {YYYY-MM-DD}-bottom-up-{CRITERIA}.md            ← bottom-up data cache
-      {YYYY-MM-DD}-events.md                          ← event-driven data cache
-    /.scripts/                               ← generation scripts for Screening binary outputs
-      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}
-    /.prompts/                               ← saved fetch instructions (auto and manual) for Screening
-      {YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md
-    {YYYY-MM-DD}-top-down-{SECTOR}-report.md          ← Phase 1 top-down: polished screening report 
-    {YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md       ← Phase 1 bottom-up: polished screening report 
-    {YYYY-MM-DD}-events-report.md                 ← Phase 1 event-driven: polished report 
-    /_archived/                                   ← ignored/superseded screening cache files
-  /Watchlist/                                     ← for initiated coverage and watching, not yet held 
-    /{THEME}/                                         ← contains "each stock folder" for a user-defined theme name
-  /Defensive/                                     ← contains "each stock folder" of active holding of the "type"
-    /Closed/                                          ← contains "each stock folder" of exited positions
+  /Screening/
+    /.data/
+    /.scripts/
+    /.prompts/
+  /Watchlist/
+    /{THEME}/
+      /{TICKER}/
+  /Defensive/
+    /{TICKER}/
+    /Closed/
+      /{TICKER}/
   /Core/
+    /{TICKER}/
     /Closed/
+      /{TICKER}/
   /Satellite/
+    /{TICKER}/
     /Closed/
-
-  # Shorthand:
-  /{Stage-or-Type}/[Closed/]{TICKER}/
-    /.data/                                 ← data files (caches) (inputs to skills)
-      {YYYY-MM-DD}-company-research.md      ← Phase 2 Step 1; never overwrite — create new dated file
-      {YYYY-MM-DD}-financial-model.md       ← Phase 2 Step 2; never overwrite — create new dated file
-      {YYYY-MM-DD}-peer-data.md             ← Phase 2 Step 3 (DCF comps input)
-      {YEAR}-Q{N}-pre-earnings.md           ← Phase 4 pre-earnings (per event, archived)
-      {YEAR}-Q{N}-earnings.md               ← Phase 4 post-earnings (per event, archived)
-      {YEAR}-Q{N}-between-earnings.md       ← Phase 4 between-earnings (per event, archived)
-      {YEAR}-annual-review.md               ← Phase 4 annual review (per year, archived)
-    /.scripts/                              ← generation scripts for this ticker's binary outputs
-      {YYYY-MM-DD}-{script-action-name}-{output-file-name}.{ext}   ← e.g. 2026-01-15-create-dcf-model-dcf-model.{ext}
-    /.prompts/                              ← saved fetch instructions (auto and manual) for this ticker
-      {YYYY-MM-DD}-{phase}-{step}-fetch-prompt.md
-    {YYYY-MM-DD}-initiation-report/         ← one subfolder per run; never overwrite a prior run (Phase 2)
-      {Ticker}-company-research.md          ← Phase 2 Step 1
-      {Ticker}-financial-model.xlsx         ← Phase 2 Step 2
-      {Ticker}-valuation-analysis.md        ← Phase 2 Step 3
-      {Ticker}-initiation-report.md         ← Phase 2 Step 5
-      charts/                               ← Phase 2 Step 4
-    {YYYY-MM-DD}-thesis-v1.md               ← Phase 3 (increment version on major updates)
-    {YYYY}-Q{N}-earnings-preview.md         ← Phase 4 pre-earnings report
-    {YYYY}-Q{N}-earnings-update.md          ← Phase 4 post-earnings report
-    /_archived/                             ← ignored/superseded files
+      /{TICKER}/
 ```
+
+## Path Descriptions
+
+### `/Equity-analyses/`
+
+Root folder for all equity analysis work.
+
+### `/Screening/`
+
+Phase 1 outputs. Equity type is not yet determined at this stage.
+
+| Path | Description |
+|------|-------------|
+| `.data/{YYYY-MM-DD}-top-down-{SECTOR}.data.md` | Phase 1 top-down raw data cache |
+| `.data/{YYYY-MM-DD}-bottom-up-{CRITERIA}.data.md` | Phase 1 bottom-up raw data cache |
+| `.data/{YYYY-MM-DD}-events.data.md` | Phase 1 event-driven raw data cache |
+| `.scripts/` | Generation scripts for Screening binary outputs |
+| `.prompts/{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
+| `_archived/` | Ignored or superseded screening cache files |
+| `{YYYY-MM-DD}-top-down-{SECTOR}-report.md` | Phase 1 top-down polished screening report |
+| `{YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md` | Phase 1 bottom-up polished screening report |
+| `{YYYY-MM-DD}-events-report.md` | Phase 1 event-driven polished report |
+
+### `/{Stage-or-Type}/[Closed/]{TICKER}/` — Stock folder layout
+
+Shared layout used by `/Watchlist/{THEME}/{TICKER}/` and `/{Type}/[Closed/]{TICKER}/`.
+
+#### Data files (`.data/`)
+
+Inputs to skills. Never overwrite — always create a new dated file.
+
+| File | Phase | Description |
+|------|-------|-------------|
+| `{YYYY-MM-DD}-company-research.data.md` | Phase 2 Step 1 | Company research cache |
+| `{YYYY-MM-DD}-financial-model.data.md` | Phase 2 Step 2 | Financial model cache |
+| `{YYYY-MM-DD}-peer-data.data.md` | Phase 2 Step 3 | Peer data for DCF comps |
+| `{YEAR}-Q{N}-pre-earnings.data.md` | Phase 4 | Pre-earnings data (per event, archived) |
+| `{YEAR}-Q{N}-earnings.data.md` | Phase 4 | Post-earnings data (per event, archived) |
+| `{YEAR}-Q{N}-between-earnings.data.md` | Phase 4 | Between-earnings data (per event, archived) |
+| `{YEAR}-annual-review.data.md` | Phase 4 | Annual review data (per year, archived) |
+
+#### Scripts and prompts
+
+| Path | Description |
+|------|-------------|
+| `.scripts/{YYYY-MM-DD}-{output-name}.{action}.script.{ext}` | Generation scripts for this ticker's binary outputs |
+| `.prompts/{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
+
+#### Initiation report (`{YYYY-MM-DD}-initiation-report/`)
+
+One subfolder per run — never overwrite a prior run (Phase 2).
+
+| File | Phase | Description |
+|------|-------|-------------|
+| `{Ticker}-company-research.md` | Phase 2 Step 1 | Company research |
+| `{Ticker}-financial-model.xlsx` | Phase 2 Step 2 | Financial model |
+| `{Ticker}-valuation-analysis.md` | Phase 2 Step 3 | Valuation analysis |
+| `{Ticker}-initiation-report.md` | Phase 2 Step 5 | Full initiation report |
+| `charts/` | Phase 2 Step 4 | Charts folder |
+
+#### Top-level stock files
+
+| File | Phase | Description |
+|------|-------|-------------|
+| `{YYYY-MM-DD}-thesis-v1.md` | Phase 3 | Investment thesis; increment version on major updates |
+| `{YYYY}-Q{N}-earnings-preview.md` | Phase 4 | Pre-earnings report |
+| `{YYYY}-Q{N}-earnings-update.md` | Phase 4 | Post-earnings report |
+| `_archived/` | — | Ignored or superseded files |
+
+---
+
+## `_archived/` folders
+
+An `_archived/` folder may appear at any level — inside a stage/type folder (e.g. `/Screening/_archived/`, `/Watchlist/_archived/`) or inside a ticker folder. Move files here when they are superseded or no longer active. Always ignore `_archived/` when reading or discovering files.
 
 ## File management
 
 - Do NOT create/keep empty folders.
 
-## Scripts rules
+## File naming convention
 
-- Script name format: `{YYYY-MM-DD}-{script-action-name}-{output-file-name}.py` — date prefix identifies when the script was generated; `{output-file-name}` is the base name of the binary output it produces (e.g. `dcf-model`, `competitive-analysis`).
-- When discovering scripts for a given output file, sort by date prefix and take the most recent one.
+All files in `.data/`, `.scripts/`, and `.prompts/` follow the same pattern:
+
+```
+{YYYY-MM-DD}-{descriptive-name}.{type}.{ext}
+```
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Data cache | `{YYYY-MM-DD}-{name}.data.md` | `2026-03-25-company-research.data.md` |
+| Script | `{YYYY-MM-DD}-{output-name}.{action}.script.{ext}` | `2026-03-25-dcf-model.create.script.py` |
+| Prompt | `{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | `2026-03-25-phase-2-step-1-fetch.prompt.md` |
+
+## File discovery rule
+
+For any file type, sort by `YYYY-MM-DD` prefix and take the most recent file matching the name pattern.
 
 ## Cache file rules
 
-- When reading a cached file, always use the most recent one for each data type (sort by `YYYY-MM-DD` prefix, take last).
+- Never overwrite a data cache file — always create a new dated file.
 - Never write into an existing initiation subfolder unless the user selects "Update existing report" in the Phase 2 scope confirmation (Q3 = 2 or 3).
 
 ## Lifecycle transitions
