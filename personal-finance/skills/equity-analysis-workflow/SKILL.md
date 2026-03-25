@@ -136,6 +136,17 @@ The followings must be noted:
 - SKIP any technical instruction about docx or pdf construction
 - Consider any adaption required to output in markdown
 
+#### Preferred report content formatting
+
+When you write any report (excluding spreadsheet) output, the following must be noted:
+- Do NOT prepend any page number to a heading. See following examples:
+  - ❌ Wrong - "PAGE 1 — INVESTMENT SUMMARY"
+  - ✅ Correct - "Section 1 - INVESTMENT SUMMARY"
+- Use arabic numbers over romantic numbers:
+  - ❌ Wrong - "SECTION II — COMPANY 101
+  - ✅ Correct - "SECTION 2 — COMPANY 101
+- Always include a table of content with clickable links to sections.
+
 #### Output Scripts storage and discovery
 
 ##### Save rule
