@@ -10,13 +10,13 @@ For any stock that clears screening, this phase builds conviction. It runs as a 
 
 The following specifications will be used according to "Tasks" instructions.
 
-| Step | Task | Specification path |
-|---|---|---|
-| 1 | Company Research | `company-research/` |
-| 2 | Financial Modeling | `financial-model/` |
-| 3 | DCF Valuation | `dcf/` |
-| 4 | Chart Generation | `chart-generation/` |
-| 5 | Report Assembly | `report-assembly/` |
+| Step | Task |
+|---|---|
+| 1 | Company Research |
+| 2 | Financial Modeling |
+| 3 | Valuation Analysis | 
+| 4 | Chart Generation |
+| 5 | Report Assembly |
 
 ### Pre-execution Checks
 
@@ -36,7 +36,7 @@ Ask in order; wait for each answer before asking the next:
 
 5. **Scope** for modes 1 & 4 (new report):
    - 1. Full report — Steps 1→2→3→4→5 *(default)*
-   - 2. Skip DCF/Valuation — Steps 1→2→4→5; no valuation analysis or comps; Step 4 uses consensus only
+   - 2. Skip Valuation Analaysis — Steps 1→2→4→5; no valuation analysis or comps; Step 4 uses consensus only
    - 3. Skip financial model — Steps 1→3→4→5; no `.xlsx`; Step 3 uses consensus estimates only
    - 4. Research & thesis only — Steps 1→5; narrative only; no Excel, no valuation, no charts
 
