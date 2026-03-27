@@ -2,6 +2,11 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.6.2] - 2026-03-28
+
+### Changed
+- `equity-analysis-workflow` SKILL.md manual prompt handling: Clarified behavior differences between local and remote sessions — writes to file with clipboard copy in local sessions, outputs to chat as codeblock in remote sessions
+
 ## [0.6.1] - 2026-03-28
 
 ### Changed
