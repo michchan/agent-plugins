@@ -195,6 +195,24 @@ When you write any report (excluding spreadsheet) output, the following must be 
   - ✅ Correct - "SECTION 2 — COMPANY 101
 - Always include a table of content with clickable links to sections. It must include ALL the headings and sub-headings in a nested format.
 
+#### Report section structure consistency
+
+Before writing any report, scan existing reports of the same type in the same scope folder (per `references/file-structure.md`). For each match, extract top-level and second-level headings only — skip full content. Ignore `_archived/` folders.
+
+- **Two or more found:** use the heading structure that appears in the majority as the standard.
+- **One found:** treat it as the provisional standard.
+- **None found:** note this explicitly and proceed freely — the new report's structure becomes the first baseline.
+
+Surface the derived structure to the user as a brief outline and confirm before writing.
+
+You may deviate from the standard only when content genuinely warrants it (e.g. a section irrelevant to a Defensive stock). Any deviation must be minimal, confirmed with the user, and noted in an HTML comment directly below the document title:
+
+```
+<!-- Structure note: omitted "X" — reason -->
+```
+
+**Do not treat** heading-label differences with the same semantic role as structural deviations.
+
 #### Output Scripts storage and discovery
 
 ##### Save rule
