@@ -2,6 +2,12 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.6.0] - 2026-03-27
+
+### Changed
+- Added "Major price action history" section to company research reference (phase 2 initiation coverage)
+- Fixed file naming instruction conflicts in file structure reference
+
 ## [0.5.1] - 2026-03-27
 
 ### Changed
