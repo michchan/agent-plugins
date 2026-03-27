@@ -2,6 +2,13 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.5.1] - 2026-03-27
+
+### Changed
+- Improve content section structure consistency in equity analysis workflow skill
+- Add valuation consistency rules to phase 2 initiation coverage reference
+- Simplify script update guidance in equity analysis workflow skill
+
 ## [0.5.0] - 2026-03-26
 
 ### Added
