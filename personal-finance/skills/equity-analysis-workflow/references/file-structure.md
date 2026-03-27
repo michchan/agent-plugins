@@ -44,7 +44,7 @@ Phase 1 outputs. Equity type is not yet determined at this stage.
 | `.data/{YYYY-MM-DD}-bottom-up-{CRITERIA}.data.md` | Phase 1 bottom-up raw data cache |
 | `.data/{YYYY-MM-DD}-events.data.md` | Phase 1 event-driven raw data cache |
 | `.scripts/` | Generation scripts for Screening binary outputs |
-| `.prompts/{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
+| `.prompts/` | Saved fetch instructions (auto and manual) |
 | `_archived/` | Ignored or superseded screening cache files |
 | `{YYYY-MM-DD}-top-down-{SECTOR}-report.md` | Phase 1 top-down polished screening report |
 | `{YYYY-MM-DD}-bottom-up-{CRITERIA}-report.md` | Phase 1 bottom-up polished screening report |
@@ -72,8 +72,8 @@ Inputs to skills. Never overwrite — always create a new dated file.
 
 | Path | Description |
 |------|-------------|
-| `.scripts/{YYYY-MM-DD}-{TICKER}-{output-name}.{action}.{ext}` | Generation scripts for this ticker's binary outputs |
-| `.prompts/{YYYY-MM-DD}-{TICKER}-{phase}-{step}-fetch.prompt.md` | Saved fetch instructions (auto and manual) |
+| `.scripts/`| Generation scripts for this ticker's binary outputs |
+| `.prompts/` | Saved fetch instructions (auto and manual) |
 
 #### Initiation report (`{YYYY-MM-DD}-initiation-report/`)
 
@@ -117,8 +117,8 @@ All files in `.data/`, `.scripts/`, and `.prompts/` follow the same pattern:
 | Type | Pattern | Example |
 |------|---------|---------|
 | Data cache | `{YYYY-MM-DD}-{name}.data.md` | `2026-03-25-company-research.data.md` |
-| Script | `{YYYY-MM-DD}-{output-name}.{action}.script.{ext}` | `2026-03-25-dcf-model.create.script.py` |
-| Prompt | `{YYYY-MM-DD}-{phase}-{step}-fetch.prompt.md` | `2026-03-25-phase-2-step-1-fetch.prompt.md` |
+| Script | `{YYYY-MM-DD}-{TICKER}-{output-name}.{action}.script.{ext}` | `2026-03-25-dcf-model.create.script.py` |
+| Prompt | `{YYYY-MM-DD}-{TICKER}-{phase}-{step}-fetch.prompt.md` | `2026-03-25-phase-2-step-1-fetch.prompt.md` |
 
 ## File discovery rule
 
