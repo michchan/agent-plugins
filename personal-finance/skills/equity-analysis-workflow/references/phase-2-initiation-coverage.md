@@ -18,6 +18,24 @@ The following specifications will be used according to "Tasks" instructions.
 | 4 | Chart Generation |
 | 5 | Report Assembly |
 
+### Subtask pre-analysis rules
+
+#### Step 3 - Valuation Analysis
+
+##### Ensure valuation consistency and fairness
+
+Make sure the analysis is fair. If other stocks in the same sector folder have existing valuation analyses, scan them and compare methodology choices — DCF approach, PT construction convention, comps anchoring rationale. For any difference, either align with the existing approach or document a clear justification for why a different choice is appropriate here. Surface both options to the user and confirm before writing the analysis.
+
+##### Ensure data consistency (Update only)
+
+When you update existing analysis: Whenever valuation analysis numbers change (PT, rating, implied return, key comps figures), re-update the corresponding generation script and `*-initiation-report.md` **in the same pass**, and regenerate affected valuation charts by invoking `equity-research:initiating-coverage` Task 4 with selective scope limited to changed charts.
+
+### Subtask post-analysis rules
+
+#### Step 3 - Valuation Analysis
+
+Double check with the rules of this task in "Subtask pre-analysis rules".
+
 ### Pre-execution Checks
 
 Ask in order; wait for each answer before asking the next:
@@ -57,7 +75,9 @@ Ask in order; wait for each answer before asking the next:
 
 2. For each step in scope, find and read the corresponding detailed specification from "Rules > Subtask Map".
 
-3. (‼️MUST NOT SKIP) Invoke `equity-research:initiating-coverage` skill using the skill tool, with passed custom rules:
+3. Read and consider "Subtask pre-analysis rules".
+
+4. (‼️MUST NOT SKIP) Invoke `equity-research:initiating-coverage` skill using the skill tool, with passed custom rules:
    - mention the corresponding task to do (e.g. `Task 1`)
    - follow data requirements from the skill, collect and compile data following the "Data Collection & Compilation" rules in `equity-analysis-workflow/SKILL.md`
    - respect "Analysis & Output" rules in `equity-analysis-workflow/SKILL.md`
@@ -72,4 +92,7 @@ Ask in order; wait for each answer before asking the next:
    1. If "auto fetch" data mode is selected by user, it goes straight from data collection to the result/output.
    2. If "manual prompt" data mode is selected by user, it first returns a "prompt" for user to collect the data and return to you. Then it uses the returned data to achieve the result/output.
 
-4. Repeat steps 2–4 for each remaining step in scope.
+5. Double check works with "Subtask post-analysis rules".
+
+6. Repeat steps 2–5 for each remaining step in scope.
+

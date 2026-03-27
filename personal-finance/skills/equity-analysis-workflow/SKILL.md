@@ -201,22 +201,13 @@ When you write any report (excluding spreadsheet) output, the following must be 
 
 After any step that produces a binary output (e.g. `.xlsx`, `.pptx`, `.docx`), save the generation script to the `Scripts/` folder adjacent to `Data/` using the naming convention in `references/file-structure.md`. Do **not** save scripts for markdown outputs — those are directly re-editable.
 
-##### Discovery rule
+##### Use scripts for updating tasks
 
-Before starting any step where the user's intent is a formatting or structural update (not a data refresh), check the `Scripts/` folder first:
+When you are asked to update an existing result that is not plain text/markdown file (e.g. docx, spreadsheet or image), you should find the corresponding script to update and re-generate the result.
 
-1. **Script found** → present the "script-only update" path: modify only the relevant section of the script, re-run it, and skip data re-fetch entirely.
-2. **No script found** → generate the output normally and save the script as part of that run.
+#### Prevent stale data and outputs
 
-##### Trigger signals for the script-only path
-
-Route to the script-only path when the user says things like:
-- "update formatting", "fix the chart", "change the layout", "tweak the template", "small update to [output file]"
-
-And **all** of the following are true:
-- No new earnings data has been released
-- No thesis change has been requested
-- No data staleness concern has been raised
+When you are asked to update some existing **"numbers"**, make sure that is sync across all data, scripts and outputs.
 
 #### Context window management
 
