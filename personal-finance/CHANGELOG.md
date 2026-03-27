@@ -2,6 +2,11 @@
 
 All notable changes to the `personal-finance` plugin will be documented here.
 
+## [0.6.1] - 2026-03-28
+
+### Changed
+- `equity-analysis-workflow` Manual data prompt handling: Skip manual prompt output in chat; write to file instead with clipboard copy and link display for streamlined data entry
+
 ## [0.6.0] - 2026-03-27
 
 ### Changed
