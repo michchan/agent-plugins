@@ -20,6 +20,12 @@ The following specifications will be used according to "Tasks" instructions.
 
 ### Subtask pre-analysis rules
 
+#### Step 1 - Company Research
+
+##### Additional section - Major price actions history
+
+Include a new major price action history section along with company history. List noticeable price moves greater in the past 10 years (up to today), including events represent significant shifts (typically ≥ ±20% or equivalent high-impact single-day volatility) driven by earnings, guidance revisions, or structural market changes. For each: date range, approximate magnitude, and primary cause (e.g. earnings miss, guidance cut, macro shock, M&A, short report). Use a chronological table.
+
 #### Step 3 - Valuation Analysis
 
 ##### Ensure valuation consistency and fairness
@@ -31,8 +37,6 @@ Make sure the analysis is fair. If other stocks in the same sector folder have e
 When you update existing analysis: Whenever valuation analysis numbers change (PT, rating, implied return, key comps figures), re-update the corresponding generation script and `*-initiation-report.md` **in the same pass**, and regenerate affected valuation charts by invoking `equity-research:initiating-coverage` Task 4 with selective scope limited to changed charts.
 
 ### Subtask post-analysis rules
-
-#### Step 3 - Valuation Analysis
 
 Double check with the rules of this task in "Subtask pre-analysis rules".
 
