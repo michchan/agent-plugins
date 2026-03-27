@@ -67,7 +67,9 @@ Offer two options:
 
 1. **Auto-fetch** — before fetching, check whether a cache file already exists at the path defined in `references/file-structure.md`. If it exists, read it and compare the `Fetched:` date against the TTL  of each piece of data. If the cache is still fresh, reuse it and skip the fetch. If stale or missing, proceed with fetching.
    
-2. **Manual prompt** — compose a fetch prompt following the instruction in `references/manual-data-prompt.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure. **Do NOT output the prompt text to chat.** Instead: write the prompt to the `.prompts/` file (per the post-fetch save rule below), copy its content to the clipboard via `pbcopy`, and present the file path as a clickable link so the user can open it from the same environment.
+2. **Manual prompt** — compose a fetch prompt following the instruction in `references/manual-data-prompt.md`, using the data requirements for fields/sources and `references/data-cache-file-instruction.md` for the expected output structure.
+   - **Write to file + clipboard** — when running in a local session (default): **Do NOT output the prompt text to chat.** Instead: write the prompt to the `.prompts/` file (per the post-fetch save rule below), copy its content to the clipboard via `pbcopy`, and present the file path as a clickable link so the user can open it from the same environment.
+   - **Output to chat as codeblock** — when running in a remote session (e.g. dispatch) OR when the user explicitly requests it: output the prompt text to chat inside a fenced code block. Still write the `.prompts/` file per the post-fetch save rule.
 
 #### Cache data TTL rules
 
