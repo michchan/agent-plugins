@@ -1,6 +1,6 @@
 # Manual Data Prompt Template
 
-Use this template when composing a manual fetch prompt for the user to copy-paste into their own tools.
+Use this template when composing a manual fetch prompt. After composing, write it to the `.prompts/` file and copy its content to the clipboard — do **not** return the prompt text in chat.
 
 Populate each section using the data requirements (for fields and sources).
 
